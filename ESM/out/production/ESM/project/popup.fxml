@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="center" hgap="10" prefHeight="200.0" prefWidth="400.0" vgap="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.popupcont">
+<GridPane alignment="center" hgap="10" prefHeight="486.0" prefWidth="453.0" vgap="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.popupcont">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -14,20 +14,20 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <AnchorPane prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: black;">
+      <AnchorPane prefHeight="487.0" prefWidth="456.0" style="-fx-background-color: black;">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" stroke="WHITE" strokeType="INSIDE" width="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="486.0" stroke="WHITE" strokeType="INSIDE" width="453.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <effect>
                   <DropShadow />
                </effect>
             </Rectangle>
-            <JFXTextArea fx:id="text" focusColor="MEDIUMSPRINGGREEN" layoutX="20.0" layoutY="55.0" prefHeight="105.0" prefWidth="350.0" promptText="Text Here" unFocusColor="#9d9d9d" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="30.0" />
+            <JFXTextArea fx:id="text" focusColor="MEDIUMSPRINGGREEN" layoutX="20.0" layoutY="55.0" prefHeight="390.0" prefWidth="403.0" promptText="Text Here" unFocusColor="#9d9d9d" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="30.0" />
             <JFXButton fx:id="ok_btn" buttonType="RAISED" layoutX="345.0" layoutY="172.0" onAction="#closeWindow" ripplerFill="MEDIUMSPRINGGREEN" text="Accept" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0">
                <effect>
                   <DropShadow />
                </effect>
             </JFXButton>
-            <JFXTextField fx:id="head" focusColor="MEDIUMSPRINGGREEN" layoutX="20.0" layoutY="23.0" prefHeight="25.0" prefWidth="300.0" promptText="Heading Here" unFocusColor="#9d9d9d" AnchorPane.topAnchor="10.0">
+            <JFXTextField fx:id="head" focusColor="MEDIUMSPRINGGREEN" layoutX="20.0" layoutY="14.0" prefHeight="25.0" prefWidth="300.0" promptText="Heading Here" unFocusColor="#9d9d9d" AnchorPane.topAnchor="14.0">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

@@ -123,12 +123,11 @@ public class mainmenucont {
     }
     // give controller of sp ign in scene
     public void handleAboutButton(ActionEvent actionEvent) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-        popup("About Us", "We are a team of highly qualified individuals who started this in the start of this year and thanks to Almighty Allah, we are here now. We deal in all kinds of events and try to provide the best services possible.\n" +
+        popup("About Us", "We are a team of highly qualified individuals who started this project at the beginning of December and thanks to Almighty Allah, We are here now. We deal in all kinds of events and try to provide the best services possible.\n" +
                 "Currently we are providing 3 major services:\n" +
                 "\t\t1: Media Services\n" +
                 "\t\t2: Location Services\n" +
-                "\t\t3: Catering Services\n" +
-                "\n" +
+                "\t\t3: Catering Services\n" + "\n" +
                 "We plan to expand our scope in the near future. For any further assistance, feel free to contact us");
     }
 
@@ -165,7 +164,7 @@ public class mainmenucont {
                 "\n" +
                 "Account means a unique account created for You to access our Service or parts of our Service.\n" +
                 "\n" +
-                "Company (referred to as either \"the Company\", \"We\", \"Us\" or \"Our\" in this Agreement) refers to FCIAH Event Planners, Helwan University, Helwan.\n" +
+                "Company (referred to as either \"the Company\", \"We\", \"Us\" or \"Our\" in this Agreement) refers to FCIAH Planners, FCIAH, Helwan University, Helwan.\n" +
                 "\n" +
                 "Cookies are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses.\n" +
                 "\n" +

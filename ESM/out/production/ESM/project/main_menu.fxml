@@ -96,12 +96,12 @@
                   <DropShadow />
                </effect>
             </JFXButton>
-            <JFXTextField focusColor="MEDIUMSPRINGGREEN" layoutX="355.0" layoutY="358.0" promptText="Customer ID/Email" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+            <JFXTextField focusColor="#48d39c" layoutX="355.0" layoutY="358.0" promptText="Customer ID/Email" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                <font>
                   <Font size="19.0" />
                </font>
             </JFXTextField>
-            <JFXTextField layoutX="355.0" layoutY="419.0" promptText="Password" style="-fx-prompt-text-fill: white; -fx-text-fill: white;">
+            <JFXTextField focusColor="#49d19c" layoutX="355.0" layoutY="419.0" promptText="Password" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                <font>
                   <Font size="19.0" />
                </font>
