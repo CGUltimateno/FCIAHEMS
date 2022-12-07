@@ -26,7 +26,7 @@ public class mainmenucont {
     }
 
     public void handleAdminButton(ActionEvent actionEvent) throws IOException {
-        System.out.println("Manager button pressed");
+        System.out.println("Admin button pressed");
         goToAdminSignIn();
     }
 
@@ -74,7 +74,8 @@ public class mainmenucont {
         Parent root = loader.load();
 
         //Get controller of admin ign in scene
-
+        Admin_Signin_Controller controller = loader.getController();
+        controller.enableAdminButton();
 
         // close current window
         Stage window = (Stage) admin_btn.getScene().getWindow();
