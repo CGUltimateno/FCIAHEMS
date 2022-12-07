@@ -38,13 +38,16 @@ public void start(Stage primaryStage) throws Exception{
     }
 
     public static void setSQL() {
-        Database.setDb_name("esm");
+        Database.setDb_name("database");
         Database.setDb_user("root");
-        Database.setDb_pass("1234");
+        Database.setDb_pass("12345");
     }
-
+    public static void setEmailDetails() {
+        emailClass.init(System.getProperties(), "mohameddeaf65@gmail.com", "securepassword");
+    }
     public static void main(String[] args) {
         setSQL();
+        setEmailDetails();
         launch(args);
     }
 }

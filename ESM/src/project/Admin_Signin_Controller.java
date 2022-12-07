@@ -54,16 +54,16 @@ public class Admin_Signin_Controller {
 
         // Login successful - go to welcome screen
         else {
-            // check if employee is a manager
+            // check if employee is an admin
             if (emp.isAdmin(id)) {
                 System.out.println("Login successful");
-                //LoggedInUsers.initEmp(id);
+                LoggedInUsers.initEmp(id);
 
                 // send email
                 String msg = "You have just signed in to our system.";
-                //emailClass.sendEmail("Successful Login", msg, LoggedInUsers.getEmp().getEmail());
+                emailClass.sendEmail("Successful Login", msg, LoggedInUsers.getEmp().getEmail());
 
-                // goToAdmMenu();
+                goToAdminMenu();
             }
 
             else {
@@ -107,34 +107,34 @@ public class Admin_Signin_Controller {
         window.show();
     }
 
-   // public void goToAdminMenu() throws IOException {
-     //   System.out.println("Loading manager menu window");
+   public void goToAdminMenu() throws IOException {
+        System.out.println("Loading manager menu window");
 
-        //Load next
-       //  FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin_menu.fxml"));
-      //  Parent root = loader.load();
+      //  Load next
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin_menu.fxml"));
+       Parent root = loader.load();
 
-        //Get controller of manager menu scene
-       /// adsignincont controller = loader.getController();
-        //controller.setName(LoggedInUsers.getEmp().getName());
+        // Get controller of manager menu scene
+        Admin_menu_Controller controller = loader.getController();
+        controller.setName(LoggedInUsers.getEmp().getName());
 
         // close current window
-     //   Stage window = (Stage) exit_btn.getScene().getWindow();
-     //   window.close();
+      Stage window = (Stage) exit_btn.getScene().getWindow();
+       window.close();
 
         // start new window for admin scene
-      //  window = new Stage();
-       // window.setScene(new Scene(root, 900, 600));
+      window = new Stage();
+      window.setScene(new Scene(root, 900, 600));
 
-     //   Font.loadFont(getClass().getResourceAsStream("Fonts/Alifiyah.otf"), 10);
-     //   Font.loadFont(getClass().getResourceAsStream("Fonts/Honeymoon Avenue Script Demo.ttf"), 10);
+        Font.loadFont(getClass().getResourceAsStream("Fonts/Alifiyah.otf"), 10);
+        Font.loadFont(getClass().getResourceAsStream("Fonts/Honeymoon Avenue Script Demo.ttf"), 10);
 
-     //   Font.loadFont(getClass().getResourceAsStream("Fonts/ArchivoNarrow-Regular.ttf"), 10);
-     //   Font.loadFont(getClass().getResourceAsStream("Fonts/JuliusSansOne-Regular.ttf"), 10);
+      Font.loadFont(getClass().getResourceAsStream("Fonts/ArchivoNarrow-Regular.ttf"), 10);
+      Font.loadFont(getClass().getResourceAsStream("Fonts/JuliusSansOne-Regular.ttf"), 10);
 
-     //   window.setTitle("Admin Menu");
-     //   window.show();
-  //  }
+      window.setTitle("Admin Menu");
+       window.show();
+  }
 
     // open popup
     public void openPopup(String heading, String text) throws IOException, LineUnavailableException, UnsupportedAudioFileException {

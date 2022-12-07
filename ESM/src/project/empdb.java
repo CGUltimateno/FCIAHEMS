@@ -375,7 +375,7 @@ public class empdb
 
     public void updateField(String id, String field, String new_value, boolean isNumeric) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/database" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
         )
         {
             if (conn != null) {
@@ -456,7 +456,7 @@ public class empdb
     // Returns true if password changed successfully, false otherwise
     public boolean changeEmployeePassword(String id, String old_pass, String new_pass) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/database" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
         )
         {
             if (conn != null) {
@@ -491,7 +491,7 @@ public class empdb
 
     public void deletePasswordRecord(String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/database" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
         )
         {
             if (conn != null) {
@@ -523,7 +523,7 @@ public class empdb
     // Default password is same as emp_id when employee is created
     public void addPasswordRecord(String id, String pass) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/database" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
         )
         {
             if (conn != null) {
