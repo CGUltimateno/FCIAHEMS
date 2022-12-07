@@ -30,9 +30,9 @@ public class Admin_Signin_Controller {
     ///////////////////////////////////////////////////
 
     public void enableAdminButton() {
-        this.admin_btn.setSelected(true);
-        this.admin_btn.setDisable(true);
-        this.admin_btn.setOpacity(1);
+        admin_btn.setSelected(true);
+        admin_btn.setDisable(true);
+        admin_btn.setOpacity(1);
     }
 
     ///////////////////////////////////////////////////
