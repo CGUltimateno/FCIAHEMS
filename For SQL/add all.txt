@@ -45,46 +45,46 @@ account_number varchar(20),
 priority_status numeric(38,0)
 );
 
-insert into customer(cust_id, name, cnic, age, phone_no, email, account_number, priority_status)
+insert into customer(cust_id, name,  age, phone_no, email, account_number, priority_status)
 values('10001', 'Hassaan Shahzad', '32201-482843-4', 20, '0321-2565432', 'donttalktome@gmail.com', '023113566', 1);
 
-insert into customer(cust_id, name, cnic, age, phone_no, email, account_number, priority_status)
+insert into customer(cust_id, name,  age, phone_no, email, account_number, priority_status)
 values('10002', 'Ahmed Khan', '22345-674839-4', 43, '0354-456652', 'akjjan@yahoo.com', '046773566', 2);
 
-insert into customer(cust_id, name, cnic, age, phone_no, email, account_number, priority_status)
+insert into customer(cust_id, name,  age, phone_no, email, account_number, priority_status)
 values('10003', 'Sara Ismail', '32345-678429-5', 33, '0301-2534332', 'ssismail@gmail.com', '023676785', 3);
 
-insert into customer(cust_id, name, cnic, age, phone_no, email, account_number, priority_status)
+insert into customer(cust_id, name,  age, phone_no, email, account_number, priority_status)
 values('10004', 'Hassan Shahzad', '32344-675629-5', 18, '0301-2584332', 'chhxnshah@gmail.com', '023676485', 3);
 
-insert into customer(cust_id, name, cnic, age, phone_no, email, account_number, priority_status)
+insert into customer(cust_id, name,  age, phone_no, email, account_number, priority_status)
 values('10005', 'Funk Jood', '32344-698759-5', 20, '0301-8474332', 'detectivefunkjood@gmail.com', '0234426485', 1);
 
-insert into customer(cust_id, name, cnic, age, phone_no, email, account_number, priority_status)
+insert into customer(cust_id, name,  age, phone_no, email, account_number, priority_status)
 values('10006', 'Sana Ali', '32344-675629-5', 21, '0321-87941662', 'sanakahnn@gmail.com', '023676485', 3);
 
-insert into customer(cust_id, name, cnic, age, phone_no, email, account_number, priority_status)
+insert into customer(cust_id, name,  age, phone_no, email, account_number, priority_status)
 values('10007', 'Abeera Fatima', '32344-675629-5', 22, '0301-2584332', 'abeerafatima9@gmail.com', '023676485', 3);
 
-insert into customer(cust_id, name, cnic, age, phone_no, email, account_number, priority_status)
+insert into customer(cust_id, name,  age, phone_no, email, account_number, priority_status)
 values('10008', 'Shopper Man', '32344-675629-5', 21, '0301-2584332', 'hxnxhah@gmail.com', '023676485', 3);
 
-insert into customer(cust_id, name, cnic, age, phone_no, email, account_number, priority_status)
+insert into customer(cust_id, name,  age, phone_no, email, account_number, priority_status)
 values('10009', 'Azka Khurram', '32344-675629-5', 21, '0301-2584332', 'azkakhurram666@gmail.com', '023676485', 3);
 
-insert into customer(cust_id, name, cnic, age, phone_no, email, account_number, priority_status)
+insert into customer(cust_id, name,  age, phone_no, email, account_number, priority_status)
 values('10010', 'Sana Khan', '32344-675629-5', 22, '0301-2584332', 'sanakhan_17@outlook.com', '023676485', 1);
 
-insert into customer(cust_id, name, cnic, age, phone_no, email, account_number, priority_status)
+insert into customer(cust_id, name,  age, phone_no, email, account_number, priority_status)
 values('10011', 'Azka Ali', '32344-675629-5', 37, '0301-2584332', 'azkakhurram661@yahoo.com', '023676485', 3);
 
-insert into customer(cust_id, name, cnic, age, phone_no, email, account_number, priority_status)
+insert into customer(cust_id, name,  age, phone_no, email, account_number, priority_status)
 values('10012', 'Cherry NU', '32344-675629-5', 23, '0301-2584332', 'i180411@nu.edu.pk', '023676485', 3);
 
-insert into customer(cust_id, name, cnic, age, phone_no, email, account_number, priority_status)
+insert into customer(cust_id, name,  age, phone_no, email, account_number, priority_status)
 values('10013', 'Azka NU', '32344-675629-5', 20, '0301-2584332', 'i180461@nu.edu.pk', '023676485', 3);
 
-insert into customer(cust_id, name, cnic, age, phone_no, email, account_number, priority_status)
+insert into customer(cust_id, name,  age, phone_no, email, account_number, priority_status)
 values('10014', 'Sana NU', '32344-675629-5', 18, '0301-2584332', 'i180439@nu.edu.pk', '023676485', 3);
 
 create table customerPass (
@@ -143,28 +143,24 @@ name varchar(30),
 dob date,
 email varchar(30),
 phone_no varchar(30),
-cnic varchar(20),
 account_number varchar(20),
 wage_type varchar(10),
 wage_rate numeric(10),
 points numeric(10),
-mgr_id char(5) REFERENCES employee(emp_id)
+adm_Id char(5) REFERENCES employee(emp_id)
 );
 
-insert into employee(emp_id, name, dob, email, phone_no, cnic, account_number, wage_type, wage_rate, points, mgr_id)
-values('20001', 'Dummy Manager', STR_TO_DATE('16/3/00', '%d/%m/%y'), 'dummy@yahoo.com', '0330-33643257', '1242-532450', 934545, 'Monthly', 1000, 800, NULL);
+insert into employee(emp_id, name, dob, email, phone_no, account_number, wage_type, wage_rate,  adm_Id)
+values('20001', 'Mohamed Daif', STR_TO_DATE('16/3/00', '%d/%m/%y'), 'Mohameddeaf65@gmail.com', '0330-33643257', 934545, 'Monthly', 1000, '20001');
 
-insert into employee(emp_id, name, dob, email, phone_no, cnic, account_number, wage_type, wage_rate, points, mgr_id)
-values('20002', 'Ahmed Khan', STR_TO_DATE('12/4/01', '%d/%m/%y'), 'ahmed@gmail.com', '0300-67534567', '3323-322938475', 765434567, 'Hourly', 2000, 600, '20001');
+insert into employee(emp_id, name, dob, email, phone_no, account_number, wage_type, wage_rate,  adm_Id)
+values('20003', 'Ali Arshad', STR_TO_DATE('03/3/02', '%d/%m/%y'), 'doublea@gmail.com', '0300-4446357', 456945543, 'Monthly', 1000,'20002');
 
-insert into employee(emp_id, name, dob, email, phone_no, cnic, account_number, wage_type, wage_rate, points, mgr_id)
-values('20003', 'Ali Arshad', STR_TO_DATE('03/3/02', '%d/%m/%y'), 'doublea@gmail.com', '0300-4446357', '42201-499398', 456945543, 'Monthly', 1000, 0, '20002');
+insert into employee(emp_id, name, dob, email, phone_no,  account_number, wage_type, wage_rate,  adm_Id)
+values('20004', 'Queen Elizabeth', STR_TO_DATE('22/5/04', '%d/%m/%y'), 'hermajesty@royals.edu', 'Unavailable', 65434654, 'Daily', 100,'20002');
 
-insert into employee(emp_id, name, dob, email, phone_no, cnic, account_number, wage_type, wage_rate, points, mgr_id)
-values('20004', 'Queen Elizabeth', STR_TO_DATE('22/5/04', '%d/%m/%y'), 'hermajesty@royals.edu', 'Unavailable', 'Nothing', 65434654, 'Daily', 100, 150, '20002');
-
-insert into employee(emp_id, name, dob, email, phone_no, cnic, account_number, wage_type, wage_rate, points, mgr_id)
-values('20005', 'Garbage Man', STR_TO_DATE('17/5/01', '%d/%m/%y'), 'IamTrash@gmail.com', '0300-6684727', '144-2948820', '794-3553', 'Daily', 1000, 475, '20002');
+insert into employee(emp_id, name, dob, email, phone_no,  account_number, wage_type, wage_rate,  adm_Id)
+values('20005', 'Garbage Man', STR_TO_DATE('17/5/01', '%d/%m/%y'), 'IamTrash@gmail.com', '0300-6684727', '794-3553', 'Daily', 1000,'20002');
 
 create table employeePass (
 emp_id char(5) PRIMARY KEY,
