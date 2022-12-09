@@ -20,7 +20,7 @@
          <children>
             <ImageView fitHeight="600.0" fitWidth="900.0" layoutX="-1.0" opacity="0.56" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <image>
-                  <Image url="@images/Manager_Desktop.jpg" />
+                  <Image url="@images/Admin_Desktop.jpg" />
                </image></ImageView>
             <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: transparent;">
                <effect>

@@ -75,7 +75,7 @@ public class Admin_menu_Controller {
     /////////////// SCENE SWITCHING /////////////////////
 
     public void goToAdminSignIn() throws IOException {
-        System.out.println("Loading manager sign in window");
+        System.out.println("Loading Admin sign in window");
 
         //Load next
         FXMLLoader loader = new FXMLLoader(getClass().getResource("adm_signin.fxml"));
@@ -107,11 +107,11 @@ public class Admin_menu_Controller {
         System.out.println("Loading event options window");
 
         //Load next
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("mgr_view_events.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin_view_events.fxml"));
         Parent root = loader.load();
 
-        //Get controller of event scene
-        // mgr_view_events_Controller controller = loader.getController();
+       // Get controller of event scene
+       // Admin_view_events_Controller controller = loader.getController();
 
         // close current window
         Stage window = (Stage) event_btn.getScene().getWindow();
@@ -224,11 +224,11 @@ public class Admin_menu_Controller {
         System.out.println("Loading employee options window");
 
         //Load next
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("mgr_view_emp.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin_view_emp.fxml"));
         Parent root = loader.load();
 
         //Get controller of edit studios scene
-        // mgr_view_emp_Controller controller = loader.getController();
+        Admin_view_emp_Controller controller = loader.getController();
 
         // close current window
         Stage window = (Stage) emp_btn.getScene().getWindow();

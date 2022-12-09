@@ -63,14 +63,6 @@
                                 <DropShadow />
                             </effect>
                         </JFXButton>
-                        <Hyperlink layoutX="119.0" layoutY="381.0" text="Forgot Password ?" textFill="WHITE">
-                            <font>
-                                <Font size="17.0" />
-                            </font>
-                            <effect>
-                                <DropShadow />
-                            </effect>
-                        </Hyperlink>
                         <JFXRadioButton fx:id="admin_btn" layoutX="40.0" layoutY="241.0" style="-jfx-unselected-color: White; -jfx-selected-color: MediumSpringGreen;" text="Admin" textFill="WHITE">
                             <font>
                                 <Font size="14.0" />

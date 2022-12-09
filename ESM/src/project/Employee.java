@@ -21,13 +21,13 @@ public class Employee
     protected String account_number;          //Bank Details
     protected String wage_type;               //Hourly/Daily/Monthly
     protected int wage_rate;
-    protected String adm_Id;
+    protected String admin_id;
 
     String fname, lname;
 
     public Employee()
     {
-        emp_id = name = dob = phone_no = email = account_number = wage_type = adm_Id = "";
+        emp_id = name = dob = phone_no = email = account_number = wage_type = admin_id = "";
         this.wage_rate = 0;
         fname = lname = "";
     }
@@ -35,13 +35,13 @@ public class Employee
     public Employee(String id)
     {
         emp_id = id;
-        name = dob = phone_no = email = account_number = wage_type = adm_Id = fname = lname = "";
+        name = dob = phone_no = email = account_number = wage_type = admin_id = fname = lname = "";
         this.wage_rate = 0;
     }
 
 
-    public Employee(String employee_id, String name, String dob, String phone_no, String email, String account_number, String wage_type, int wage_rate, String admId) {
-        this.emp_id = employee_id;
+    public Employee(String emp_id, String name, String dob, String phone_no, String email, String account_number, String wage_type, int wage_rate, String admin_id) {
+        this.emp_id = emp_id;
         this.name = name;
         this.dob = dob;
         this.phone_no = phone_no;
@@ -49,13 +49,13 @@ public class Employee
         this.account_number = account_number;
         this.wage_type = wage_type;
         this.wage_rate = wage_rate;
-        adm_Id = admId;
+        this.admin_id = admin_id;
 
         fname = name.contains(" ") ? name.split(" ")[0] : name;
         lname = name.contains(" ") ? name.split(" ")[1] : "";
     }
 
-    public Employee(String name, String dob, String phone_no, String email, String account_number, String wage_type, int wage_rate, String admId) {
+    public Employee(String name, String dob, String phone_no, String email, String account_number, String wage_type, int wage_rate, String admin_id) {
         this.emp_id = "";
         this.name = name;
         this.dob = dob;
@@ -64,7 +64,7 @@ public class Employee
         this.account_number = account_number;
         this.wage_type = wage_type;
         this.wage_rate = wage_rate;
-        adm_Id = admId;
+        this.admin_id = admin_id;
 
         fname = name.contains(" ") ? name.split(" ")[0] : name;
         lname = name.contains(" ") ? name.split(" ")[1] : "";
@@ -79,7 +79,7 @@ public class Employee
         this.account_number = emp.getAccount_number();
         this.wage_type = emp.getWage_type();
         this.wage_rate = emp.getWage_rate();
-        adm_Id = emp.getadm_Id();
+        this.admin_id = emp.getAdmin_id();
 
         fname = name.contains(" ") ? name.split(" ")[0] : name;
         lname = name.contains(" ") ? name.split(" ")[1] : "";
@@ -91,9 +91,9 @@ public class Employee
     {
         return emp_id;
     }
-    public void setEmp_id(String employee_id)
+    public void setEmp_id(String emp_id)
     {
-        this.emp_id = employee_id;
+        this.emp_id = emp_id;
     }
 
     public String getName()
@@ -159,10 +159,11 @@ public class Employee
         this.wage_rate = wage_rate;
     }
 
-    public String getadm_Id() {
-        return adm_Id;
+    public String getAdmin_id() {
+        return admin_id;
     }
-    public void setadm_Id(String admId) {adm_Id = admId;
+    public void setAdmin_id(String admin_id) {
+        this.admin_id = admin_id;
     }
 
     public void setFname(String fname) {
@@ -184,7 +185,7 @@ public class Employee
         System.out.println(emp_id);
 
         System.out.print("Admin ID: ");
-        System.out.println(adm_Id);
+        System.out.println(admin_id);
 
         System.out.print("Name: ");
         System.out.println(name);
@@ -208,7 +209,7 @@ public class Employee
         System.out.println(wage_rate);
 
         System.out.print("Admin ID: ");
-        System.out.println(adm_Id);
+        System.out.println(admin_id);
 
     }
 
@@ -226,7 +227,7 @@ public class Employee
         this.account_number = emp.getAccount_number();
         this.wage_type = emp.getWage_type();
         this.wage_rate = emp.getWage_rate();
-        this.adm_Id = emp.getadm_Id();
+        this.admin_id = emp.getAdmin_id();
     }
 
     public void editEmployee() {
@@ -287,7 +288,7 @@ public class Employee
 
     // reset employee object
     public void clear() {
-        emp_id = name = dob = phone_no = email = account_number = wage_type = adm_Id = "";
+        emp_id = name = dob = phone_no = email = account_number = wage_type = admin_id = "";
         this.wage_rate = 0;
     }
 

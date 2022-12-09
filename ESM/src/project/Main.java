@@ -11,6 +11,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 import java.util.Objects;
+import java.util.Properties;
 
 public class Main extends Application {
 
@@ -43,7 +44,7 @@ public void start(Stage primaryStage) throws Exception{
         Database.setDb_pass("12345");
     }
     public static void setEmailDetails() {
-        emailClass.init(System.getProperties(), "mohameddeaf65@gmail.com", "securepassword");
+        emailClass.init(System.getProperties(), "fciahtest123@gmail.com", "CGUisback123");
     }
     public static void main(String[] args) {
         setSQL();

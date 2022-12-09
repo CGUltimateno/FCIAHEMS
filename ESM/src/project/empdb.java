@@ -42,9 +42,9 @@ public class empdb
                     String wt = rs.getString("wage_type");
                     String wr = rs.getString("wage_rate");
                     String id = rs.getString("emp_id");
-                    String mid = rs.getString("adm_Id");
+                    String aid = rs.getString("admin_id");
 
-                    Employee emp = new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), mid);
+                    Employee emp = new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), aid);
                     emp.display();
                 }
             }
@@ -86,9 +86,9 @@ public class empdb
                     String acc = rs.getString("account_number");
                     String wt = rs.getString("wage_type");
                     String wr = rs.getString("wage_rate");
-                    String mid = rs.getString("adm_Id");
+                    String aid = rs.getString("admin_id");
 
-                    Employee emp = new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), mid);
+                    Employee emp = new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), aid);
                     return emp;
                 }
             }
@@ -134,9 +134,9 @@ public class empdb
                     String acc = rs.getString("account_number");
                     String wt = rs.getString("wage_type");
                     String wr = rs.getString("wage_rate");
-                    String mid = rs.getString("adm_Id");
+                    String aid = rs.getString("admin_id");
 
-                    Employee emp = new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), mid);
+                    Employee emp = new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), aid);
                     emp.display();
                 }
             }
@@ -161,7 +161,7 @@ public class empdb
         Scanner input = new Scanner(System.in);
 
         System.out.print("Enter Admin ID: ");
-        emp.setadm_Id(input.nextLine());
+        emp.setAdmin_id(input.nextLine());
 
         System.out.print("Enter name: ");
         emp.setName(input.nextLine());
@@ -208,10 +208,10 @@ public class empdb
 
                 emp.setEmp_id(new_id);
 
-                query = "insert into employee(emp_id, name, dob, email, phone_no, account_number, wage_type, wage_rate, adm_Id)" +
+                query = "insert into employee(emp_id, name, dob, email, phone_no, account_number, wage_type, wage_rate, admin_id)" +
                         "values('" + emp.getEmp_id() + "','" + emp.getName() + "'," + "STR_TO_DATE('" + emp.getDob() + "','%d/%m/%y')" + ",'" + emp.getEmail() +
                         "','" + emp.getPhone_no() + "','" +  emp.getAccount_number() + "','" + emp.getWage_type() + "'," +
-                        Integer.toString(emp.getWage_rate()) + "," + emp.getadm_Id() + "')";
+                        Integer.toString(emp.getWage_rate()) + "," + emp.getAdmin_id() + "')";
 
                 //System.out.println(query);
                 stmt.executeUpdate(query);
@@ -247,10 +247,10 @@ public class empdb
 
                 Statement stmt = conn.createStatement();
 
-                String query ="insert into employee(emp_id, name, dob, email, phone_no, account_number, wage_type, wage_rate, adm_Id)" +
+                String query ="insert into employee(emp_id, name, dob, email, phone_no, account_number, wage_type, wage_rate, admin_id)" +
                         "values('" + emp.getEmp_id() + "','" + emp.getName() + "'," + "STR_TO_DATE('" + emp.getDob() + "','%d/%m/%y')" + ",'" + emp.getEmail() +
                         "','" + emp.getPhone_no() + "','" +  emp.getAccount_number() + "','" + emp.getWage_type() + "'," +
-                        Integer.toString(emp.getWage_rate()) + "," + emp.getadm_Id() + "')";
+                        Integer.toString(emp.getWage_rate()) + "," + emp.getAdmin_id() + "')";
 
                 //System.out.println(query);
                 stmt.executeUpdate(query);
@@ -307,7 +307,7 @@ public class empdb
         }
     }
 
-    public void changeManager(String emp_id, String adm_Id) {
+    public void changeManager(String emp_id, String admin_id) {
         try (
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
         )
@@ -315,7 +315,7 @@ public class empdb
             if (conn != null) {
                 System.out.println("Database - changing manager id");
 
-                String query = "UPDATE EMPLOYEE SET adm_Id = " + adm_Id + " WHERE EMP_ID = " + emp_id;
+                String query = "UPDATE EMPLOYEE SET admin_id = " + admin_id + " WHERE EMP_ID = " + emp_id;
 
                 Statement stmt = conn.createStatement();
                 stmt.executeUpdate(query);
@@ -346,7 +346,7 @@ public class empdb
         System.out.println("Enter employee details: ");
 
         System.out.print("Enter Admin ID: ");
-        emp.setadm_Id(input.nextLine());
+        emp.setAdmin_id(input.nextLine());
 
         System.out.print("Enter name: ");
         emp.setName(input.nextLine());
@@ -561,17 +561,17 @@ public class empdb
             {
                 System.out.println("Database - checking if employee is a manager");
 
-                String query = "select adm_Id from employee";  // query to be sent
+                String query = "select admin_id from employee";  // query to be sent
 
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(query);
 
                 while (rs.next())
                 {
-                    String adm_Id = rs.getString("adm_Id");
+                    String admin_id = rs.getString("admin_id");
 
-                    if (adm_Id != null) {
-                        if (adm_Id.equals(id))
+                    if (admin_id != null) {
+                        if (admin_id.equals(id))
                             return true;
                     }
                 }
@@ -620,9 +620,9 @@ public class empdb
                     String wt = rs.getString("wage_type");
                     String wr = rs.getString("wage_rate");
                     String id = rs.getString("emp_id");
-                    String mid = rs.getString("mgr_id");
+                    String aid = rs.getString("admin_id");
 
-                    Employee emp = new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), mid);
+                    Employee emp = new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), aid);
                     employeeList.add(emp);
                 }
             }
@@ -668,10 +668,10 @@ public class empdb
 
                 emp.setEmp_id(new_id);
 
-                query = "insert into employee(emp_id, name, dob, email, phone_no, account_number, wage_type, wage_rate, adm_Id)" +
+                query = "insert into employee(emp_id, name, dob, email, phone_no, account_number, wage_type, wage_rate, admin_id)" +
                         "values('" + emp.getEmp_id() + "','" + emp.getName() + "'," + "STR_TO_DATE('" + emp.getDob() + "','%d/%m/%y')" + ",'" + emp.getEmail() +
                         "','" + emp.getPhone_no() + "','" +  emp.getAccount_number() + "','" + emp.getWage_type() + "'," +
-                        Integer.toString(emp.getWage_rate()) + "," +  emp.getadm_Id() + "')";
+                        Integer.toString(emp.getWage_rate()) + "," +  emp.getAdmin_id() + "')";
 
                 System.out.println(query);
                 stmt.executeUpdate(query);
@@ -722,10 +722,10 @@ public class empdb
                     String wt = rs.getString("wage_type");
                     String wr = rs.getString("wage_rate");
                     int points = rs.getInt("points");
-                    String mid = rs.getString("mgr_id");
+                    String aid = rs.getString("mgr_id");
                     String id = rs.getString("emp_id");
 
-                    Employee emp = new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), mid);
+                    Employee emp = new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), aid);
                     return emp;
                 }
             }
