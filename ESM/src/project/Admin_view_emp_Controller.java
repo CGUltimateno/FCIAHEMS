@@ -148,7 +148,7 @@ public class Admin_view_emp_Controller implements Initializable {
         Text_Account.clear();
         Text_AID.clear();
     }
-
+     //  SQL GIVES smtp error. FIX LATER
     public boolean checkAddInputs() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
 
         // check for null values

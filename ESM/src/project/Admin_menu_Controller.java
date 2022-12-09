@@ -199,8 +199,8 @@ public class Admin_menu_Controller {
         Parent root = loader.load();
 
         //Get controller of edit studios scene
-       // studio_edit_Controller controller = loader.getController();
-       // controller.init();
+        studio_edit_Controller controller = loader.getController();
+        controller.init();
 
         // close current window
         Stage window = (Stage) studio_btn.getScene().getWindow();
@@ -254,7 +254,7 @@ public class Admin_menu_Controller {
         System.out.println("Loading edit options window");
 
         //Load next
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("mgr_edit.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin_edit.fxml"));
         Parent root = loader.load();
 
         //Get controller of edit scene
