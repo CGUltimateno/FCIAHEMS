@@ -111,7 +111,7 @@ public class Admin_menu_Controller {
         Parent root = loader.load();
 
        // Get controller of event scene
-       // Admin_view_events_Controller controller = loader.getController();
+        Admin_view_events_Controller controller = loader.getController();
 
         // close current window
         Stage window = (Stage) event_btn.getScene().getWindow();

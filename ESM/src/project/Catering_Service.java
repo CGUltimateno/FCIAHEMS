@@ -73,16 +73,23 @@ public class Catering_Service
     }
 
     public void display() {
-        System.out.println("Company name = " + company_name);
-        System.out.println("Contact info = " + contact_info);
-        System.out.println("Speciality = " + speciality);
-        System.out.println("Days order needs to be placed before = " + days);
-        System.out.println("Charges = " + charges);
+        System.out.print("Company name = ");
+        System.out.println(company_name);
+        System.out.print("Contact info = ");
+        System.out.println(contact_info);
+        System.out.print("Speciality = ");
+        System.out.println(speciality);
+        System.out.print("Days order needs to be placed before = ");
+        System.out.println(days);
+        System.out.print("Charges = ");
+        System.out.println(charges);
+
+        System.out.println("");
     }
 
-    public Catering_Service getCaterer(String catering_id) {
+    public Catering_Service getCaterer(String cater_id) {
         CateringServicesDB obj = new CateringServicesDB();
-        return obj.getCatering(catering_id);
+        return obj.getCatering(cater_id);
     }
 
     public HashMap<ArrayList<String>, ArrayList<Catering_Service>> getListOfCaterersAndIDs() {

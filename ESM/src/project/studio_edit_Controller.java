@@ -129,6 +129,7 @@ public class studio_edit_Controller {
 
     ////////////////////////////////////////////////////////////
 
+    // exit this screen, go back to Admin menu
     public void handleExitButton(ActionEvent actionEvent) throws IOException {
         System.out.println("Exit button pressed");
         gotoAdminmenu();

@@ -2,7 +2,7 @@ package project;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Database for Employee Class
-// Inherited by Manager Class and Support_Staff class
+// Inherited by Admin Class and Support_Staff class
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -559,7 +559,7 @@ public class empdb
         {
             if (conn != null)
             {
-                System.out.println("Database - checking if employee is a manager");
+                System.out.println("Database - checking if employee is an admin");
 
                 String query = "select admin_id from employee";  // query to be sent
 

@@ -292,7 +292,7 @@ public class Employee
         this.wage_rate = 0;
     }
 
-    // check is an employee is a manager
+    // check is an employee is an admin
     public static boolean isAdmin(String id) {
         empdb obj = new empdb();
         return obj.isAdmin(id);

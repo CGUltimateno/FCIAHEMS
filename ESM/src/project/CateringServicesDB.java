@@ -2,7 +2,7 @@ package project;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Database methods for Catering_Services class
-// Manager/Event -> Catering_Service -> CateringServicesDB
+// Admin/Event -> Catering_Service -> CateringServicesDB
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 import java.sql.*;
@@ -22,7 +22,7 @@ public class CateringServicesDB
             {
                 System.out.println("Database - getting a catering record");
 
-                String query = "select * from CATERING where CATERING_ID = " + id;  // query to be sent
+                String query = "select * from CATERING where catering_id = " + id;  // query to be sent
 
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(query);
@@ -67,7 +67,7 @@ public class CateringServicesDB
             {
                 System.out.println("Database - displaying catering");
 
-                String query = "select * from CATERING where CATERING_ID = " + id;  // query to be sent
+                String query = "select * from CATERING where catering_id = " + id;  // query to be sent
 
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(query);
@@ -147,7 +147,7 @@ public class CateringServicesDB
         }
     }
 
-    public void addCateringVendor()                           //Manager can add catering vendor
+    public void addCateringVendor()                           //Admin can add catering vendor
     {
         Scanner input = new Scanner(System.in);
         String company_name, contact_info, speciality;
@@ -265,7 +265,7 @@ public class CateringServicesDB
             {
                 System.out.println("Database - Removing catering");
 
-                String query = "delete from CATERING where CATERING_ID = " + id;  // query to be sent
+                String query = "delete from CATERING where catering_id = " + id;  // query to be sent
 
                 Statement stmt = conn.createStatement();
                 stmt.executeUpdate(query);
@@ -323,7 +323,7 @@ public class CateringServicesDB
             {
                 System.out.println("Database - getting catering charges");
 
-                String query = "select * from CATERING where CATERING_ID = " + id;  // query to be sent
+                String query = "select * from CATERING where catering_id = " + id;  // query to be sent
 
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(query);

@@ -14,10 +14,10 @@
          <children>
             <ImageView fitHeight="600.0" fitWidth="900.0" layoutX="132.0" layoutY="897.0" opacity="0.44" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <image>
-                  <Image url="@images/Admin_edit_Caterers.jpg" />
+                  <Image url="@images/Admin_edit_caterers.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="270.0" layoutY="-7.0" style="-fx-font-size: 120; -fx-effect: DropShadow;" styleClass="Honey" stylesheets="@css/Text_Style.css" text="EditCaterers" textFill="WHITE" AnchorPane.topAnchor="-7.0">
+            <Label layoutX="270.0" layoutY="-7.0" style="-fx-font-size: 120; -fx-effect: DropShadow;" styleClass="Honey" stylesheets="@css/Text_Style.css" text="Editcaters" textFill="WHITE" AnchorPane.topAnchor="-7.0">
                <effect>
                   <DropShadow />
                </effect>
@@ -33,7 +33,7 @@
             <AnchorPane layoutX="72.0" layoutY="143.0" prefHeight="364.0" prefWidth="181.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="70.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" height="364.0" layoutX="2.0" layoutY="3.0" opacity="0.58" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="210.0" AnchorPane.leftAnchor="2.0" />
-                  <Label alignment="CENTER" layoutX="62.0" layoutY="14.0" opacity="0.72" prefHeight="17.0" prefWidth="91.0" style="-fx-background-color: white;" text="Caterer" textFill="#430000">
+                  <Label alignment="CENTER" layoutX="62.0" layoutY="14.0" opacity="0.72" prefHeight="17.0" prefWidth="91.0" style="-fx-background-color: white;" text="cater" textFill="#430000">
                      <effect>
                         <DropShadow />
                      </effect>
@@ -58,7 +58,7 @@
                         <DropShadow />
                      </effect>
                   </Label>
-                  <JFXTextField fx:id="caterer1_name" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="87.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Name" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="cater1_name" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="87.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Name" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                      <effect>
                         <DropShadow height="121.81" radius="58.182500000000005" width="112.92" />
                      </effect>
@@ -66,7 +66,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="caterer1_specialty" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="148.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Speciality" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="cater1_specialty" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="148.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Speciality" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                      <effect>
                         <DropShadow height="121.81" radius="58.182500000000005" width="112.92" />
                      </effect>
@@ -74,7 +74,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="caterer1_contact" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="210.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Contact" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="cater1_contact" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="210.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Contact" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                      <effect>
                         <DropShadow height="121.81" radius="58.182500000000005" width="112.92" />
                      </effect>
@@ -82,7 +82,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="caterer1_price" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="266.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Cost" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="cater1_price" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="266.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Cost" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                      <effect>
                         <DropShadow height="121.81" radius="58.182500000000005" width="112.92" />
                      </effect>
@@ -95,7 +95,7 @@
                         <DropShadow />
                      </effect>
                   </Label>
-                  <JFXTextField fx:id="caterer1_days" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="328.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Pre-Booking Days" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="cater1_days" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="328.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Pre-Booking Days" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                      <effect>
                         <DropShadow height="121.81" radius="58.182500000000005" width="112.92" />
                      </effect>
@@ -108,7 +108,7 @@
             <AnchorPane layoutX="340.0" layoutY="143.0" prefHeight="364.0" prefWidth="181.0" style="-fx-background-color: transparent;">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" height="364.0" layoutX="2.0" layoutY="3.0" opacity="0.58" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="210.0" AnchorPane.leftAnchor="2.0" />
-                  <Label alignment="CENTER" layoutX="62.0" layoutY="14.0" opacity="0.72" prefHeight="17.0" prefWidth="91.0" style="-fx-background-color: white;" text="Caterer" textFill="#430000">
+                  <Label alignment="CENTER" layoutX="62.0" layoutY="14.0" opacity="0.72" prefHeight="17.0" prefWidth="91.0" style="-fx-background-color: white;" text="cater" textFill="#430000">
                      <effect>
                         <DropShadow />
                      </effect>
@@ -133,7 +133,7 @@
                         <DropShadow />
                      </effect>
                   </Label>
-                  <JFXTextField fx:id="caterer2_name" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="87.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Name" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="cater2_name" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="87.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Name" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                      <effect>
                         <DropShadow height="121.81" radius="58.182500000000005" width="112.92" />
                      </effect>
@@ -141,7 +141,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="caterer2_specialty" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="148.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Speciality" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="cater2_specialty" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="148.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Speciality" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                      <effect>
                         <DropShadow height="121.81" radius="58.182500000000005" width="112.92" />
                      </effect>
@@ -149,7 +149,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="caterer2_contact" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="210.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Contact" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="cater2_contact" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="210.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Contact" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                      <effect>
                         <DropShadow height="121.81" radius="58.182500000000005" width="112.92" />
                      </effect>
@@ -157,7 +157,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="caterer2_price" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="266.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Cost" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="cater2_price" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="266.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Cost" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                      <effect>
                         <DropShadow height="121.81" radius="58.182500000000005" width="112.92" />
                      </effect>
@@ -170,7 +170,7 @@
                         <DropShadow />
                      </effect>
                   </Label>
-                  <JFXTextField fx:id="caterer2_days" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="328.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Pre-Booking Days" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="cater2_days" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="328.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Pre-Booking Days" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                      <effect>
                         <DropShadow height="121.81" radius="58.182500000000005" width="112.92" />
                      </effect>
@@ -183,7 +183,7 @@
             <AnchorPane layoutX="344.0" layoutY="143.0" prefHeight="364.0" prefWidth="181.0" style="-fx-background-color: transparent;" AnchorPane.rightAnchor="70.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" height="364.0" layoutX="2.0" layoutY="3.0" opacity="0.58" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="210.0" AnchorPane.leftAnchor="2.0" />
-                  <Label alignment="CENTER" layoutX="62.0" layoutY="14.0" opacity="0.72" prefHeight="17.0" prefWidth="91.0" style="-fx-background-color: white;" text="Caterer" textFill="#430000">
+                  <Label alignment="CENTER" layoutX="62.0" layoutY="14.0" opacity="0.72" prefHeight="17.0" prefWidth="91.0" style="-fx-background-color: white;" text="cater" textFill="#430000">
                      <effect>
                         <DropShadow />
                      </effect>
@@ -208,7 +208,7 @@
                         <DropShadow />
                      </effect>
                   </Label>
-                  <JFXTextField fx:id="caterer3_name" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="87.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Name" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="cater3_name" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="87.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Name" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                      <effect>
                         <DropShadow height="121.81" radius="58.182500000000005" width="112.92" />
                      </effect>
@@ -216,7 +216,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="caterer3_specialty" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="148.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Speciality" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="cater3_specialty" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="148.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Speciality" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                      <effect>
                         <DropShadow height="121.81" radius="58.182500000000005" width="112.92" />
                      </effect>
@@ -224,7 +224,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="caterer3_contact" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="210.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Contact" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="cater3_contact" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="210.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Contact" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                      <effect>
                         <DropShadow height="121.81" radius="58.182500000000005" width="112.92" />
                      </effect>
@@ -232,7 +232,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="caterer3_price" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="266.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Cost" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="cater3_price" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="266.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Cost" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                      <effect>
                         <DropShadow height="121.81" radius="58.182500000000005" width="112.92" />
                      </effect>
@@ -245,7 +245,7 @@
                         <DropShadow />
                      </effect>
                   </Label>
-                  <JFXTextField fx:id="caterer3_days" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="328.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Pre-Booking Days" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                  <JFXTextField fx:id="cater3_days" focusColor="MEDIUMSPRINGGREEN" layoutX="27.0" layoutY="328.0" pickOnBounds="false" prefHeight="25.0" prefWidth="170.0" promptText="Pre-Booking Days" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                      <effect>
                         <DropShadow height="121.81" radius="58.182500000000005" width="112.92" />
                      </effect>
