@@ -37,7 +37,6 @@ values('75003', 'Zee Caterers', '0701-3999124', 'Desi', 10, 20000);
 create table customer (
 cust_id char(5) PRIMARY KEY,
 name varchar(30),
-cnic varchar(20),
 age double,
 phone_no varchar(30),
 email varchar(30),
@@ -146,8 +145,7 @@ phone_no varchar(30),
 account_number varchar(20),
 wage_type varchar(10),
 wage_rate numeric(10),
-points numeric(10),
-adm_Id char(5) REFERENCES employee(emp_id)
+admin_id char(5) REFERENCES employee(emp_id)
 );
 
 insert into employee(emp_id, name, dob, email, phone_no, account_number, wage_type, wage_rate,  adm_Id)
