@@ -103,7 +103,7 @@ public class Admin extends Employee
     public void editCustomerAccount()                     //Admin can edit customer's account details
     {
      //   CustomerDB obj = new CustomerDB();
-        String id = new String();
+        String id = "";
         System.out.print("Editing a customer. Enter ID: ");
         Scanner input = new Scanner(System.in);
         id = input.nextLine();
@@ -242,7 +242,7 @@ public class Admin extends Employee
     public void viewCateringService()
     {
         CateringServicesDB obj = new CateringServicesDB();
-        String id = new String();
+        String id = "";
         System.out.print("Viewing a catering service. Enter it's ID: ");
         Scanner input = new Scanner(System.in);
         id = input.nextLine();
@@ -259,7 +259,7 @@ public class Admin extends Employee
     public void deleteCateringService()
     {
         CateringServicesDB obj = new CateringServicesDB();
-        String id = new String();
+        String id = "";
         System.out.print("Deleting a catering service. Enter it's ID: ");
         Scanner input = new Scanner(System.in);
         id = input.nextLine();
@@ -269,7 +269,7 @@ public class Admin extends Employee
 
     public void editCateringService() {
         CateringServicesDB obj = new CateringServicesDB();
-        String id = new String();
+        String id = "";
         System.out.print("Editing a catering service. Enter it's ID: ");
         Scanner input = new Scanner(System.in);
         id = input.nextLine();
@@ -303,7 +303,7 @@ public class Admin extends Employee
     public void editMediaRequirement()
     {
         Media_RequirementsDB obj = new Media_RequirementsDB();
-        String id = new String();
+        String id = "";
         System.out.print("Editing a media requirement record. Enter it's ID: ");
         Scanner input = new Scanner(System.in);
         id = input.nextLine();

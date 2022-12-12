@@ -15,7 +15,7 @@ public class StudioDB {
 
     public void displayAllStudios() {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -61,7 +61,7 @@ public class StudioDB {
 
     public void displayStudio(String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -121,7 +121,7 @@ public class StudioDB {
         cost = input.nextInt();
 
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -167,7 +167,7 @@ public class StudioDB {
     public void addStudio(Studio std, String id) {        //Adds a new studio -> Manager
 
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -199,7 +199,7 @@ public class StudioDB {
 
     public void removeStudio(String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -231,7 +231,7 @@ public class StudioDB {
 
     public Studio getStudio(String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -305,7 +305,7 @@ public class StudioDB {
 
     public int getStudioCost(String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -350,7 +350,7 @@ public class StudioDB {
         HashMap<ArrayList<String>, ArrayList<Studio>> studiosAndIDs = null;
 
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -404,13 +404,13 @@ public class StudioDB {
 
     public void updateField(String id, String field, String new_value, boolean isNumeric) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
                 System.out.println("Database - updating studio field");
 
-                String query = new String();
+                String query = "";
 
                 if (isNumeric)
                     query = "update studio set " + field + " = " + new_value + " where studio_id = " + id;

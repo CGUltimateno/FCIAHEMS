@@ -25,14 +25,14 @@ days numeric(38,0),
 charges numeric(38,0)
 );
 
-insert into catering(catering_id, name, contact, specialty, days, charges)
-values('75001', 'Rashi Cooks', '0316-7884565', 'Desi', 30, 20000);
+insert into catering(caterer_id, name, contact, specialty, days, charges)
+values('75001', 'Cookies N Pies', '01200001082', 'Sweets', 30, 2000);
 
-insert into catering(catering_id, name, contact, specialty, days, charges)
-values('75002', 'El Pacho Caterers', '0306-7978565', 'Continental', 20, 45000);
+insert into catering(caterer_id, name, contact, specialty, days, charges)
+values('75002', 'Kozbara Catering', '01010002489', 'International', 20, 5000);
 
-insert into catering(catering_id, name, contact, specialty, days, charges)
-values('75003', 'Zee Caterers', '0701-3999124', 'Desi', 10, 20000);
+insert into catering(caterer_id, name, contact, specialty, days, charges)
+values('75003', 'Catering Co. Kitchen', '01000002391', 'International', 10, 20000);
 
 create table customer (
 cust_id char(5) PRIMARY KEY,

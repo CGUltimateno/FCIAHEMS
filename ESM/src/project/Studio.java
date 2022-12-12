@@ -59,7 +59,7 @@ public class Studio
         System.out.print("Cost: ");
         System.out.println(cost);
 
-        System.out.println("");
+        System.out.println();
     }
 
     public Studio getStudio(String studio_id) {

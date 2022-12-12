@@ -83,11 +83,6 @@
                   <DropShadow />
                </effect>
             </JFXButton>
-            <JFXButton fx:id="approve_btn" buttonType="RAISED" layoutX="462.0" layoutY="518.0" onAction="#handleApproveButton" opacity="0.72" prefWidth="150.0" ripplerFill="#a4a4a4" style="-fx-background-color: #00ffa2;" text="Approve Event" textFill="#2c0000">
-               <effect>
-                  <DropShadow />
-               </effect>
-            </JFXButton>
             <Label layoutX="270.0" layoutY="20.0" style="-fx-font-size: 100; -fx-effect: DropShadow;" styleClass="Honey" stylesheets="@css/Text_Style.css" text="View Events" textFill="WHITE" AnchorPane.topAnchor="20.0">
                <effect>
                   <DropShadow />

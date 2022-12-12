@@ -167,7 +167,7 @@ public class Menu
 
         System.out.println("Net cost = " + cost);
 
-        System.out.println("");
+        System.out.println();
     }
 
     public Menu getMenu(String menu_id) {

@@ -108,13 +108,11 @@ public class Admin_view_emp_Controller implements Initializable {
                     return true; // Filter matches first name.
                 } else if (employee.getEmp_id().toLowerCase().indexOf(lowerCaseFilter) != -1) {
                     return true; // Filter matches last name.
-                } else if (employee.getLname().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                } else // Does not match.
+                    if (employee.getLname().toLowerCase().indexOf(lowerCaseFilter) != -1) {
                     return true; // Filter matches last name.
                 }
-                else if (String.valueOf(employee.getWage_rate()).indexOf(lowerCaseFilter)!=-1)
-                    return true;
-                else
-                    return false; // Does not match.
+                else return String.valueOf(employee.getWage_rate()).indexOf(lowerCaseFilter) != -1;
             });
         });
     }
@@ -220,7 +218,7 @@ public class Admin_view_emp_Controller implements Initializable {
     public void handleDeleteButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("Delete button pressed");
 
-        if (checkID() == false) {
+        if (!checkID()) {
             System.out.println("Input check failed");
             return;
         }
@@ -270,7 +268,7 @@ public class Admin_view_emp_Controller implements Initializable {
     public void handleEditButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("Edit button pressed");
 
-        if (checkID() == false) {
+        if (!checkID()) {
             System.out.println("Input check failed");
             return;
         }
@@ -289,7 +287,6 @@ public class Admin_view_emp_Controller implements Initializable {
         // invalid emp ID
         if (index == -1) {
             openPopup("Invalid Input", "Entered Employee ID does not exist.");
-            return;
         }
 
         else {
@@ -302,7 +299,7 @@ public class Admin_view_emp_Controller implements Initializable {
     public void handleAddButtonAction(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("Add button pressed");
 
-        if (checkAddInputs() == false) {
+        if (!checkAddInputs()) {
             System.out.println("Input check failed");
             return;
         }
@@ -422,7 +419,7 @@ public class Admin_view_emp_Controller implements Initializable {
     }
 
     // open popup
-    public void openPopup(String heading, String text) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void openPopup(String heading, String text) throws IOException{
         //Load next
         FXMLLoader loader = new FXMLLoader(getClass().getResource("popup.fxml"));
         Parent root = loader.load();

@@ -13,9 +13,9 @@ import javax.mail.internet.MimeMessage;
 
 public class emailClass {
 
-    private static String start = "<body style=\"background-color:mintcream;\"> <h1 style = \"color:firebrick;text-align:center\">A.S.H Event Planners </h1><p style = \"color:black;font-family:calibri;font-size:120%\">Dear User,</p> <p style = \"color:black;font-family:calibri;font-size:120%\"> ";
+    private static final String start = "<body style=\"background-color:mintcream;\"> <h1 style = \"color:firebrick;text-align:center\">FCAIH Event Planners </h1><p style = \"color:black;font-family:calibri;font-size:120%\">Dear User,</p> <p style = \"color:black;font-family:calibri;font-size:120%\"> ";
     private static String temp;
-    private static String temp2 = "</p> <p style = \"color:black;font-family:calibri;font-size:120%\">Thank you for using A.S.H Planners.</p> <h1 style = \"color:firebrick;font-family:calibri;text-align:center\">Have a great day. :) </h1> </body>";
+    private static final String temp2 = "</p> <p style = \"color:black;font-family:calibri;font-size:120%\">Thank you for using FCAIH Planners.</p> <h1 style = \"color:firebrick;font-family:calibri;text-align:center\">Have a great day. :) </h1> </body>";
     private static String finalstring;
 
     private static Properties props;
@@ -50,11 +50,13 @@ public class emailClass {
 
         final String SSL_FACTORY = "javax.net.ssl.SSLSocketFactory";
         // Get a Properties object
-        props.setProperty("mail.smtp.host", "smtp.gmail.com");
+        props.setProperty("mail.smtp.host", "smtp.googlemail.com");
         props.setProperty("mail.smtp.socketFactory.class", SSL_FACTORY);
+        props.setProperty("mail.smtp.ssl.enable", "true");
+        props.setProperty("mail.smtp.ssl.protocols", "TLSv1.2");
         props.setProperty("mail.smtp.socketFactory.fallback", "false");
         props.setProperty("mail.smtp.port", "465");
-        props.setProperty("mail.smtp.socketFactory.port", "587");
+        props.setProperty("mail.smtp.socketFactory.port", "javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.auth", "true");
         props.put("mail.debug", "true");
         props.put("mail.store.protocol", "pop3");

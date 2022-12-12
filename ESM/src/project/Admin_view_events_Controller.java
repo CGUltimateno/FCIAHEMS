@@ -38,7 +38,6 @@ public class Admin_view_events_Controller implements Initializable {
     @FXML private TableColumn<Event, String> event_price;
     @FXML private TableColumn<Event, String> event_start;
     @FXML private TableColumn<Event, String> event_end;
-    @FXML private TableColumn<Event, String> event_approved;
 
     ////////////// TEXT VARIABLES ////////////////////
 
@@ -50,7 +49,6 @@ public class Admin_view_events_Controller implements Initializable {
     @FXML private JFXButton exit_btn;
     @FXML private JFXButton delete_btn;
     @FXML private JFXButton view_btn;
-    @FXML private JFXButton approve_btn;
 
     // list to store data from DB
     private final ObservableList<Event> dataList = FXCollections.observableArrayList();
@@ -68,7 +66,6 @@ public class Admin_view_events_Controller implements Initializable {
         event_price.setCellValueFactory(new PropertyValueFactory<Event, String>("price"));
         event_start.setCellValueFactory(new PropertyValueFactory<Event, String>("starting_time"));
         event_end.setCellValueFactory(new PropertyValueFactory<Event, String>("ending_time"));
-        event_approved.setCellValueFactory(new PropertyValueFactory<Event, String>("approved"));
 
         Event event = new Event();
         ArrayList<Event> EventList = event.getListOfEvents();
@@ -93,13 +90,10 @@ public class Admin_view_events_Controller implements Initializable {
 
                 if (employee.getEvent_id().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
                     return true; // Filter matches id
-                } else if (employee.getName().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                } else // Does not match.
+                    if (employee.getName().toLowerCase().indexOf(lowerCaseFilter) != -1) {
                     return true; // Filter matches name
-                } else if (employee.getType().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                    return true; // Filter matches last type
-                }
-                else
-                    return false; // Does not match.
+                } else return employee.getType().toLowerCase().indexOf(lowerCaseFilter) != -1; // Filter matches last type
             });
         });
     }
@@ -136,13 +130,13 @@ public class Admin_view_events_Controller implements Initializable {
     // called when exit X button pressed
     public void handleExitButton(ActionEvent actionEvent) throws IOException {
         System.out.println("Exit button pressed");
-        goToMgrMenu();
+        goToAdminMenu();
     }
 
     public void handleDeleteButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("Delete button pressed");
 
-        if (checkID() == false) {
+        if (!checkID()) {
             System.out.println("Input check failed");
             return;
         }
@@ -176,7 +170,7 @@ public class Admin_view_events_Controller implements Initializable {
     public void handleViewButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("View button pressed");
 
-        if (checkID() == false) {
+        if (!checkID()) {
             System.out.println("Input check failed");
             return;
         }
@@ -184,38 +178,9 @@ public class Admin_view_events_Controller implements Initializable {
         goToViewEvent(selectedEventID.getText());
     }
 
-    public void handleApproveButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
-        System.out.println("Aprrove button pressed");
-
-        if (checkID() == false) {
-            System.out.println("Input check failed");
-            return;
-        }
-
-        // event is approved
-        String eventID = selectedEventID.getText();
-        Admin adm = new Admin();
-        adm.approveEvent(eventID);
-
-        // send email to customer
-        Event event = new Event();
-        String custEmail = event.getCustomerEmailByEventID(eventID);
-
-        emailClass.sendEmail("Event Approved", "Congratulations! The event you booked has been approved.", custEmail);
-
-        dataList.clear();
-
-        ArrayList<Event> EventList = event.getListOfEvents();
-
-        for (int i = 0; i < EventList.size(); i++)
-            dataList.add(EventList.get(i));
-
-        loadTable();
-    }
-
     ///////////////// SCENE SWITCHING ////////////////
 
-    public void goToMgrMenu() throws IOException {
+    public void goToAdminMenu() throws IOException {
         System.out.println("Loading Admin menu window");
 
         //Load next

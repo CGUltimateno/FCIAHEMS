@@ -249,7 +249,7 @@ public class empdb
                 String query ="insert into employee(emp_id, name, dob, email, phone_no, account_number, wage_type, wage_rate, admin_id)" +
                         "values('" + emp.getEmp_id() + "','" + emp.getName() + "'," + "STR_TO_DATE('" + emp.getDob() + "','%d/%m/%y')" + ",'" + emp.getEmail() +
                         "','" + emp.getPhone_no() + "','" +   emp.getAccount_number() + "','" + emp.getWage_type() + "'," +
-                        Integer.toString(emp.getWage_rate()) + "," + emp.getAdmin_id() + "')";
+                        emp.getWage_rate() + "," + emp.getAdmin_id() + "')";
 
                 //System.out.println(query);
                 stmt.executeUpdate(query);
@@ -667,8 +667,8 @@ public class empdb
 
                 query = "insert into employee(emp_id, name, dob, email, phone_no, account_number, wage_type, wage_rate, admin_id)" +
                         "values('" + emp.getEmp_id() + "','" + emp.getName() + "'," + "STR_TO_DATE('" + emp.getDob() + "','%d/%m/%y')" + ",'" + emp.getEmail() +
-                        "','" + emp.getPhone_no() + "','" + emp.getAccount_number() + "','" + emp.getWage_type() + "'," +
-                        Integer.toString(emp.getWage_rate()) + "," +  emp.getAdmin_id() + "')'";
+                        "','" + emp.getPhone_no() + "','" +  emp.getAccount_number() + "','" + emp.getWage_type() + "'," +
+                        Integer.toString(emp.getWage_rate()) + ",'" + emp.getAdmin_id() + "')";
 
 
                 System.out.println(query);

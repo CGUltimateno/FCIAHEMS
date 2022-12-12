@@ -14,7 +14,7 @@ public class Media_RequirementsDB
     public void displayAllMediaRequirements()                                                //Displays all requirement records
     {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -86,7 +86,7 @@ public class Media_RequirementsDB
         ////////// DB IMPLEMENTATION ///////////////
 
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -108,8 +108,8 @@ public class Media_RequirementsDB
                 String new_id = Integer.toString(temp);
 
                 query = "insert into MEDIA_REQUIREMENTS(media_id, photography, videography, album, drone, crane)" +
-                        "values('" + new_id + "'," + Integer.toString(mr.getPhotography()) + "," + Integer.toString(mr.getVideography()) + "," + Integer.toString(mr.getAlbum_printing()) +
-                         "," + Integer.toString(mr.getDrone()) + "," + Integer.toString(mr.getCrane()) + ")";
+                        "values('" + new_id + "'," + mr.getPhotography() + "," + mr.getVideography() + "," + mr.getAlbum_printing() +
+                         "," + mr.getDrone() + "," + mr.getCrane() + ")";
 
                 // System.out.println(query);
 
@@ -137,7 +137,7 @@ public class Media_RequirementsDB
 
     public void addMediaRequirement(Media_Requirements mr, String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         ) {
             if (conn != null) {
                 System.out.println("Database - adding media requirement object + id");
@@ -145,8 +145,8 @@ public class Media_RequirementsDB
                 Statement stmt = conn.createStatement();
 
                 String query = "insert into MEDIA_REQUIREMENTS(media_id, photography, videography, album, drone, crane)" +
-                                "values('" + id + "'," + Integer.toString(mr.getPhotography()) + "," + Integer.toString(mr.getVideography()) + "," +
-                                Integer.toString(mr.getAlbum_printing()) + "," + Integer.toString(mr.getDrone()) + "," + Integer.toString(mr.getCrane()) + ")";
+                                "values('" + id + "'," + mr.getPhotography() + "," + mr.getVideography() + "," +
+                        mr.getAlbum_printing() + "," + mr.getDrone() + "," + mr.getCrane() + ")";
 
                 // System.out.println(query);
 
@@ -165,7 +165,7 @@ public class Media_RequirementsDB
 
     public String addMediaRequirement(Media_Requirements mr) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         ) {
             if (conn != null) {
                 System.out.println("Database - adding media requirement object");
@@ -186,8 +186,8 @@ public class Media_RequirementsDB
                 String new_id = Integer.toString(temp);
 
                 query = "insert into MEDIA_REQUIREMENTS(media_id, photography, videography, album, drone, crane)" +
-                        "values('" + new_id + "'," + Integer.toString(mr.getPhotography()) + "," + Integer.toString(mr.getVideography()) + "," +
-                        Integer.toString(mr.getAlbum_printing()) + "," + Integer.toString(mr.getDrone()) + "," + Integer.toString(mr.getCrane()) + ")";
+                        "values('" + new_id + "'," + mr.getPhotography() + "," + mr.getVideography() + "," +
+                        mr.getAlbum_printing() + "," + mr.getDrone() + "," + mr.getCrane() + ")";
 
                 // System.out.println(query);
 
@@ -212,7 +212,7 @@ public class Media_RequirementsDB
     public void removeMediaRequirement(String id)
     {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -245,7 +245,7 @@ public class Media_RequirementsDB
     public void displayMediaRequirement(String id)                    //Display a specific media requirement record
     {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -292,7 +292,7 @@ public class Media_RequirementsDB
 
     public Media_Requirements getMediaRequirement(String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)

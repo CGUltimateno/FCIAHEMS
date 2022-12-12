@@ -53,14 +53,9 @@ public class Admin_Signin_Controller {
         // Login successful - go to welcome screen
         else {
             // check if employee is an admin
-            if (emp.isAdmin(id)) {
+            if (Employee.isAdmin(id)) {
                 System.out.println("Login successful");
                 LoggedInUsers.initEmp(id);
-
-                // send email
-                String msg = "You have just signed in to our system.";
-                emailClass.sendEmail("Successful Login", msg, LoggedInUsers.getEmp().getEmail());
-
                 goToAdminMenu();
             }
 

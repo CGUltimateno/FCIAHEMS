@@ -144,7 +144,7 @@
                   <Font size="19.0" />
                </font>
             </Label>
-            <JFXButton fx:id="Button_Refresh" buttonType="RAISED" layoutX="447.0" layoutY="497.0" onAction="#handleRefreshButton" opacity="0.73" pickOnBounds="false" prefHeight="36.0" prefWidth="156.0" ripplerFill="BLACK" style="-fx-background-color: #EE7600;" text="Refresh" textFill="WHITE">
+            <JFXButton fx:id="Button_Refresh" buttonType="RAISED" layoutX="436.0" layoutY="522.0" onAction="#handleRefreshButton" opacity="0.73" pickOnBounds="false" prefHeight="36.0" prefWidth="156.0" ripplerFill="BLACK" style="-fx-background-color: #EE7600;" text="Refresh" textFill="WHITE">
                <effect>
                   <DropShadow />
                </effect>

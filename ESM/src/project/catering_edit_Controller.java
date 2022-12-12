@@ -161,7 +161,7 @@ public class catering_edit_Controller {
     public void handleSaveButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("Save button pressed");
 
-        if (checkInputs() == false) {
+        if (!checkInputs()) {
             System.out.println("Input check failed");
             return;
         }

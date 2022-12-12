@@ -61,7 +61,7 @@ public class Admin_edit_emp_Controller {
         dob.setEditable(false);
     }
 
-    public boolean checkInputs() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public boolean checkInputs() throws IOException{
         // check for null values
         if (email == null || accountno == null) {
             openPopup("Missing Input", "Please fill all the fields.");
@@ -100,7 +100,7 @@ public class Admin_edit_emp_Controller {
     public void handleSaveButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("Save button pressed");
 
-        if (checkInputs() == false) {
+        if (!checkInputs()) {
             System.out.println("Input check failed");
             return;
         }
@@ -169,7 +169,7 @@ public class Admin_edit_emp_Controller {
     }
 
     // open popup
-    public void openPopup(String heading, String text) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void openPopup(String heading, String text) throws IOException {
         //Load next
         FXMLLoader loader = new FXMLLoader(getClass().getResource("popup.fxml"));
         Parent root = loader.load();

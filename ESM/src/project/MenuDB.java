@@ -314,7 +314,7 @@ public class MenuDB {
         cake = obj.isCake() ? 1 : 0;
 
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {

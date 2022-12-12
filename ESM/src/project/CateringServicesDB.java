@@ -15,7 +15,7 @@ public class CateringServicesDB
     // Finds a specified Catering_Service object in DB and returns it
     public Catering_Service getCatering(String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -60,7 +60,7 @@ public class CateringServicesDB
     // displays one caterer
     public void displayCatering(String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -102,7 +102,7 @@ public class CateringServicesDB
     // displays all caterers
     public void displayAllCatering() {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -129,7 +129,7 @@ public class CateringServicesDB
                     Catering_Service caterer = new Catering_Service(name, contact, specialty, days, charges);
                     caterer.display();
 
-                    System.out.println("");
+                    System.out.println();
                 }
             }
 
@@ -173,7 +173,7 @@ public class CateringServicesDB
         //////ADD TO DB//////
 
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -196,7 +196,7 @@ public class CateringServicesDB
 
                 query = "insert into CATERING(caterer_id, name, contact, specialty, days, charges)" +
                         "values('" + new_id + "','" + obj.getCompany_name() + "','" + obj.getContact_info() + "','"
-                        + obj.getSpeciality()  + "'," + Integer.toString(obj.getDays()) + "," + Integer.toString(obj.getCharges()) + ")";
+                        + obj.getSpeciality()  + "'," + obj.getDays() + "," + obj.getCharges() + ")";
 
                 //System.out.println(query);
                 stmt.executeUpdate(query);
@@ -221,7 +221,7 @@ public class CateringServicesDB
     public void addCateringVendor(Catering_Service obj, String id)
     {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -231,13 +231,12 @@ public class CateringServicesDB
 
                 String query = "insert into CATERING(caterer_id, name, contact, specialty, days, charges)" +
                         "values('" + id + "','" + obj.getCompany_name() + "','" + obj.getContact_info() + "','" + obj.getSpeciality()
-                        + "'," + Integer.toString(obj.getDays()) + "," + Integer.toString(obj.getCharges()) + ")";
+                        + "'," + obj.getDays() + "," + obj.getCharges() + ")";
 
                 //System.out.println(query);
                 stmt.executeUpdate(query);
                 stmt.executeUpdate("commit");
 
-                return;
             }
 
             else {
@@ -258,7 +257,7 @@ public class CateringServicesDB
     public void removeCatering(String id)
     {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -316,7 +315,7 @@ public class CateringServicesDB
     // return charges of the caterer
     public int getCateringCharges(String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -357,7 +356,7 @@ public class CateringServicesDB
         HashMap<ArrayList<String>, ArrayList<Catering_Service>> caterersAndIDs = null;
 
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -413,13 +412,13 @@ public class CateringServicesDB
 
     public void updateField(String id, String field, String new_value, boolean isNumeric) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
                 System.out.println("Database - updating a catering field");
 
-                String query = new String();
+                String query = "";
 
                 if (isNumeric)
                     query = "update catering set " + field + " = " + new_value + " where catering_id = " + id;

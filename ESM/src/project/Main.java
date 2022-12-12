@@ -44,7 +44,7 @@ public void start(Stage primaryStage) throws Exception{
         Database.setDb_pass("12345");
     }
     public static void setEmailDetails() {
-        emailClass.init(System.getProperties(), "fciahtest123@gmail.com", "CGUisback123");
+        emailClass.init(System.getProperties(), "fciahtest123@gmail.com", "sjoj qkrd yjop dqsl");
     }
     public static void main(String[] args) {
         setSQL();

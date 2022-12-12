@@ -41,7 +41,7 @@ public class payment_Controller {
     }
 
     public void handleSaveButton(ActionEvent actionEvent) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-        if (checkInputs() == false) {
+        if (!checkInputs()) {
             return;
         }
 

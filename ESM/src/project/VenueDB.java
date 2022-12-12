@@ -66,7 +66,7 @@ public class VenueDB {
                     System.out.print("Cost: ");
                     System.out.println(cost);
 
-                    System.out.println("");
+                    System.out.println();
                 }
             }
 
@@ -139,7 +139,7 @@ public class VenueDB {
                     System.out.print("Cost: ");
                     System.out.println(cost);
 
-                    System.out.println("");
+                    System.out.println();
                 }
             }
 
@@ -243,7 +243,7 @@ public class VenueDB {
         Venue obj = new Venue(name, location, address, max_capacity, desc, category, contact_info, cost);
 
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -265,8 +265,8 @@ public class VenueDB {
                 String new_id = Integer.toString(temp);
 
                 query = "insert into VENUE(VENUE_ID, NAME, LOCATION, ADDRESS, MAX_CAPACITY, DESCRIPTION, CATEGORY, CONTACT_INFO, COST)" +
-                        "values('" + new_id + "','" + obj.getName() + "','" + obj.getLocation() + "','" + obj.getVenue_address() + "'," + Integer.toString(obj.getMax_capacity()) +
-                        ",'" + obj.getDescription() + "','" + obj.getCategory() + "','" + obj.getContact_info() + "'," + Integer.toString(obj.getCost()) + ")";
+                        "values('" + new_id + "','" + obj.getName() + "','" + obj.getLocation() + "','" + obj.getVenue_address() + "'," + obj.getMax_capacity() +
+                        ",'" + obj.getDescription() + "','" + obj.getCategory() + "','" + obj.getContact_info() + "'," + obj.getCost() + ")";
 
                 // System.out.println(query);
 
@@ -291,7 +291,7 @@ public class VenueDB {
 
     public void addVenue(Venue obj, String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -301,8 +301,8 @@ public class VenueDB {
                 Statement stmt = conn.createStatement();
 
                 String query = "insert into VENUE(VENUE_ID, NAME, LOCATION, ADDRESS, MAX_CAPACITY, DESCRIPTION, CATEGORY, CONTACT_INFO, COST)" +
-                        "values('" + id + "','" + obj.getName() + "','" + obj.getLocation() + "','" + obj.getVenue_address() + "'," + Integer.toString(obj.getMax_capacity()) +
-                        ",'" + obj.getDescription() + "','" + obj.getCategory() + "','" + obj.getContact_info() + "'," + Integer.toString(obj.getCost()) + ")";
+                        "values('" + id + "','" + obj.getName() + "','" + obj.getLocation() + "','" + obj.getVenue_address() + "'," + obj.getMax_capacity() +
+                        ",'" + obj.getDescription() + "','" + obj.getCategory() + "','" + obj.getContact_info() + "'," + obj.getCost() + ")";
 
                 //System.out.println(query);
                 stmt.executeUpdate(query);
@@ -325,7 +325,7 @@ public class VenueDB {
 
     public void deleteVenue(String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -389,7 +389,7 @@ public class VenueDB {
 
     public int getVenueCost(String id)  {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -429,13 +429,13 @@ public class VenueDB {
 
     public void updateField(String id, String field, String new_value, boolean isNumeric) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
                 System.out.println("Database - updating venue field");
 
-                String query = new String();
+                String query = "";
 
                 if (isNumeric)
                     query = "update venue set " + field + " = " + new_value + " where venue_id = " + id;
@@ -470,7 +470,7 @@ public class VenueDB {
         HashMap<ArrayList<String>, ArrayList<Venue>> venuesAndIDs = null;
 
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
