@@ -216,10 +216,10 @@ public class Admin_view_events_Controller implements Initializable {
     ///////////////// SCENE SWITCHING ////////////////
 
     public void goToMgrMenu() throws IOException {
-        System.out.println("Loading Manager menu window");
+        System.out.println("Loading Admin menu window");
 
         //Load next
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("mgr_menu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin_menu.fxml"));
         Parent root = loader.load();
 
         //Get controller of main menu scene

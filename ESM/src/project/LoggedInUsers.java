@@ -1,10 +1,8 @@
-// A class for maintaining info of customer/employee logged in
-
 package project;
 
 public class LoggedInUsers {
     private static String cust_id;
-    // private static Customer cust = new Customer();
+  //  private static Customer cust = new Customer();
 
     private static String emp_id;
     private static Employee emp = new Employee();
@@ -12,34 +10,34 @@ public class LoggedInUsers {
     ////////////// CUST METHODS ////////////////////
 
   //  public static String getCust_id() {
-  //      return cust_id;
- //   }
-    // public static void setCust_id(String cust_id) {
-     //   LoggedInUsers.cust_id = cust_id;
+    //    return cust_id;
+   // }
+   // public static void setCust_id(String cust_id) {
+    //    LoggedInUsers.cust_id = cust_id;
    // }
 
    // public static void initCust(String idOrEmail) {
-  //      if (idOrEmail.indexOf('@') == -1)
-  //          cust_id = idOrEmail;
+     //   if (idOrEmail.indexOf('@') == -1)
+    //        cust_id = idOrEmail;
 
-   //     else {
-       //     cust_id = cust.getCustomerIDbyEmail(idOrEmail);
-     //   }
+    //    else {
+    //        cust_id = cust.getCustomerIDbyEmail(idOrEmail);
+   //     }
 
-      //  cust.getCustomerDetails(cust_id);
-  //  }
+    //    cust.getCustomerDetails(cust_id);
+   // }
 
-  //  public static void clearCust() {
- //       cust_id = "";
-      //  cust.clear();
- //   }
+   // public static void clearCust() {
+   //     cust_id = "";
+    //    cust.clear();
+   // }
 
    // public static Customer getCust() {
-    //    return cust;
+  //      return cust;
+  //  }
+  //  public static void setCust(Customer cust) {
+   //     LoggedInUsers.cust = cust;
    // }
- //   public static void setCust(Customer cust) {
- //       LoggedInUsers.cust = cust;
- //   }
 
     ///////////// EMP METHODS //////////////////
 

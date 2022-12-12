@@ -2,7 +2,7 @@ package project;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Database to store each pre-defined menus or customer's customized menu
-// Admin also has access to this class.
+// MANAGER also has access to this class.
 // Admin/Event -> MenuDB
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -13,8 +13,7 @@ public class MenuDB {
 
     public void displayAllMenus() {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
-        )
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass()))
         {
             if (conn != null)
             {
@@ -73,7 +72,7 @@ public class MenuDB {
 
     public void displayMenu(String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -131,7 +130,7 @@ public class MenuDB {
 
     public Menu getMenu(String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -165,8 +164,7 @@ public class MenuDB {
                     System.out.print("ID: ");
                     System.out.println(id);
 
-                    Menu obj = new Menu(rice, bread, protein, coke, miranda, sprite, water, dryfruit, sugarfree, icecream, cake, cost);
-                    return obj;
+                    return new Menu(rice, bread, protein, coke, miranda, sprite, water, dryfruit, sugarfree, icecream, cake, cost);
                 }
             }
 
@@ -186,8 +184,7 @@ public class MenuDB {
             e.printStackTrace();
         }
 
-        Menu emptyObj = new Menu();
-        return emptyObj;
+        return new Menu();
     }
 
     public String addMenu()                           //Manager can add menu
@@ -253,7 +250,7 @@ public class MenuDB {
         Menu obj = new Menu(rice, bread, protein, coke, miranda, sprite, water, dryfruit, sugarfree, icecream, cake, net_sum);
 
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -364,7 +361,7 @@ public class MenuDB {
         cake = obj.isCake() ? 1 : 0;
 
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -415,7 +412,7 @@ public class MenuDB {
     public void removeMenu(String id)                         //Manager can delete a menu
     {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -502,7 +499,7 @@ public class MenuDB {
 
     public int getMenuCost(String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)

@@ -1,10 +1,8 @@
 package project;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -37,7 +35,7 @@ public class Admin_Signin_Controller {
 
     ///////////////////////////////////////////////////
 
-    public void handleSignInButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void handleSignInButton() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("Sign in button pressed (Admin)");
 
         String id = emp_id.getText();
@@ -47,7 +45,7 @@ public class Admin_Signin_Controller {
         boolean login = emp.employeeLogin(id, password);
 
         //close login window if login unsuccessful - to be changed
-        if (login == false) {
+        if (!login) {
             openPopup("Login Failed", "Invalid email/ID and password combination.");
             System.out.println("Login unsuccessful");
         }
@@ -67,12 +65,12 @@ public class Admin_Signin_Controller {
             }
 
             else {
-                openPopup("Warning", "No manager exists against the provided ID.");
+                openPopup("Warning", "No Admin exists against the provided ID.");
             }
         }
     }
 
-    public void handleExitButton(ActionEvent actionEvent) throws IOException {
+    public void handleExitButton() throws IOException {
         System.out.println("Exit button pressed");
         goToMainMenu();
     }
@@ -80,14 +78,11 @@ public class Admin_Signin_Controller {
     ///////////////////// SCENE SWITCHING //////////////////
 
     public void goToMainMenu() throws IOException {
-        System.out.println("Loading menu window");
+        System.out.println("Loading Main menu window");
 
         //Load next
         FXMLLoader loader = new FXMLLoader(getClass().getResource("main_menu.fxml"));
         Parent root = loader.load();
-
-        //Get controller of menu scene
-        mainmenucont controller = loader.getController();
 
         // close current window
         Stage window = (Stage) exit_btn.getScene().getWindow();
@@ -108,13 +103,13 @@ public class Admin_Signin_Controller {
     }
 
    public void goToAdminMenu() throws IOException {
-        System.out.println("Loading manager menu window");
+        System.out.println("Loading Admin menu window");
 
       //  Load next
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin_menu.fxml"));
        Parent root = loader.load();
 
-        // Get controller of manager menu scene
+        // Get controller of Admin menu scene
         Admin_menu_Controller controller = loader.getController();
         controller.setName(LoggedInUsers.getEmp().getName());
 
@@ -137,7 +132,7 @@ public class Admin_Signin_Controller {
   }
 
     // open popup
-    public void openPopup(String heading, String text) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void openPopup(String heading, String text) throws IOException {
         //Load next
         FXMLLoader loader = new FXMLLoader(getClass().getResource("popup.fxml"));
         Parent root = loader.load();

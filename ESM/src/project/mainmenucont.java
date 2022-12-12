@@ -20,17 +20,17 @@ public class mainmenucont {
     @FXML private JFXButton SP_btn;
 
 
-    public void handleManagerButton(ActionEvent actionEvent) throws IOException {
+    public void handleManagerButton() throws IOException {
         System.out.println("Employee button pressed");
         goToMgrSignIn();
     }
 
-    public void handleAdminButton(ActionEvent actionEvent) throws IOException {
+    public void handleAdminButton() throws IOException {
         System.out.println("Admin button pressed");
         goToAdminSignIn();
     }
 
-    public void handleSPButton(ActionEvent actionEvent) throws IOException {
+    public void handleSPButton() throws IOException {
         System.out.println("SP button pressed");
         gotoSPSignIn();
     }

@@ -5,8 +5,6 @@ package project;
 // Inherited by Admin Class and Support_Staff class
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-import javax.xml.crypto.Data;
 import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,7 +18,7 @@ public class empdb
     public void displayAllEmployees()
     {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -42,9 +40,9 @@ public class empdb
                     String wt = rs.getString("wage_type");
                     String wr = rs.getString("wage_rate");
                     String id = rs.getString("emp_id");
-                    String aid = rs.getString("admin_id");
+                    String admin_id = rs.getString("admin_id");
 
-                    Employee emp = new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), aid);
+                    Employee emp = new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), admin_id);
                     emp.display();
                 }
             }
@@ -65,7 +63,7 @@ public class empdb
 
     public Employee getEmployee(String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -86,9 +84,9 @@ public class empdb
                     String acc = rs.getString("account_number");
                     String wt = rs.getString("wage_type");
                     String wr = rs.getString("wage_rate");
-                    String aid = rs.getString("admin_id");
+                    String admin_id = rs.getString("admin_id");
 
-                    Employee emp = new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), aid);
+                    Employee emp = new Employee(id, name, dob, phone, email, acc , wt, Integer.parseInt(wr), admin_id);
                     return emp;
                 }
             }
@@ -113,7 +111,7 @@ public class empdb
     public void displayEmployee(String id)
     {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -134,9 +132,9 @@ public class empdb
                     String acc = rs.getString("account_number");
                     String wt = rs.getString("wage_type");
                     String wr = rs.getString("wage_rate");
-                    String aid = rs.getString("admin_id");
+                    String admin_id = rs.getString("admin_id");
 
-                    Employee emp = new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), aid);
+                    Employee emp = new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), admin_id);
                     emp.display();
                 }
             }
@@ -183,9 +181,10 @@ public class empdb
 
         System.out.print("Enter wage rate: ");
         emp.setWage_rate(input.nextInt());
+        
 
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -211,7 +210,7 @@ public class empdb
                 query = "insert into employee(emp_id, name, dob, email, phone_no, account_number, wage_type, wage_rate, admin_id)" +
                         "values('" + emp.getEmp_id() + "','" + emp.getName() + "'," + "STR_TO_DATE('" + emp.getDob() + "','%d/%m/%y')" + ",'" + emp.getEmail() +
                         "','" + emp.getPhone_no() + "','" +  emp.getAccount_number() + "','" + emp.getWage_type() + "'," +
-                        Integer.toString(emp.getWage_rate()) + "," + emp.getAdmin_id() + "')";
+                        Integer.toString(emp.getWage_rate()) + ",'" + emp.getAdmin_id() + "')";
 
                 //System.out.println(query);
                 stmt.executeUpdate(query);
@@ -239,7 +238,7 @@ public class empdb
         emp.setEmp_id(id);
 
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -249,7 +248,7 @@ public class empdb
 
                 String query ="insert into employee(emp_id, name, dob, email, phone_no, account_number, wage_type, wage_rate, admin_id)" +
                         "values('" + emp.getEmp_id() + "','" + emp.getName() + "'," + "STR_TO_DATE('" + emp.getDob() + "','%d/%m/%y')" + ",'" + emp.getEmail() +
-                        "','" + emp.getPhone_no() + "','" +  emp.getAccount_number() + "','" + emp.getWage_type() + "'," +
+                        "','" + emp.getPhone_no() + "','" +   emp.getAccount_number() + "','" + emp.getWage_type() + "'," +
                         Integer.toString(emp.getWage_rate()) + "," + emp.getAdmin_id() + "')";
 
                 //System.out.println(query);
@@ -276,7 +275,7 @@ public class empdb
     public void removeEmployee(String id)
     {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -307,13 +306,13 @@ public class empdb
         }
     }
 
-    public void changeManager(String emp_id, String admin_id) {
+    public void changeAdmin(String emp_id, String admin_id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
-                System.out.println("Database - changing manager id");
+                System.out.println("Database - changing Admin id");
 
                 String query = "UPDATE EMPLOYEE SET admin_id = " + admin_id + " WHERE EMP_ID = " + emp_id;
 
@@ -375,13 +374,13 @@ public class empdb
 
     public void updateField(String id, String field, String new_value, boolean isNumeric) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/database" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
                 System.out.println("Database - updating employee field");
 
-                String query = new String();
+                String query;
 
                 if (!isNumeric)
                     query = "update EMPLOYEE set " + field + " = '" + new_value + "' where EMP_ID = " + id;
@@ -412,7 +411,7 @@ public class empdb
     // Returns true if password correct against that id, false otherwise
     public boolean employeeLogin(String id, String pass) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -456,7 +455,7 @@ public class empdb
     // Returns true if password changed successfully, false otherwise
     public boolean changeEmployeePassword(String id, String old_pass, String new_pass) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/database" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -491,7 +490,7 @@ public class empdb
 
     public void deletePasswordRecord(String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/database" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -523,7 +522,7 @@ public class empdb
     // Default password is same as emp_id when employee is created
     public void addPasswordRecord(String id, String pass) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/database" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -551,15 +550,14 @@ public class empdb
         }
     }
 
-
     public boolean isAdmin(String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
             {
-                System.out.println("Database - checking if employee is an admin");
+                System.out.println("Database - checking if employee is a Admin");
 
                 String query = "select admin_id from employee";  // query to be sent
 
@@ -595,11 +593,10 @@ public class empdb
 
     public ArrayList<Employee> getAllEmployees()
     {
-        ArrayList<Employee> employeeList = new ArrayList<Employee>();
+        ArrayList<Employee> employeeList = new ArrayList<>();
 
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
-        )
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass()))
         {
             if (conn != null)
             {
@@ -622,7 +619,7 @@ public class empdb
                     String id = rs.getString("emp_id");
                     String aid = rs.getString("admin_id");
 
-                    Employee emp = new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), aid);
+                    Employee emp = new Employee(id, name, dob, phone, email,acc, wt, Integer.parseInt(wr), aid);
                     employeeList.add(emp);
                 }
             }
@@ -645,7 +642,7 @@ public class empdb
 
     public String insertEmployee(Employee emp) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -670,8 +667,9 @@ public class empdb
 
                 query = "insert into employee(emp_id, name, dob, email, phone_no, account_number, wage_type, wage_rate, admin_id)" +
                         "values('" + emp.getEmp_id() + "','" + emp.getName() + "'," + "STR_TO_DATE('" + emp.getDob() + "','%d/%m/%y')" + ",'" + emp.getEmail() +
-                        "','" + emp.getPhone_no() + "','" +  emp.getAccount_number() + "','" + emp.getWage_type() + "'," +
-                        Integer.toString(emp.getWage_rate()) + "," +  emp.getAdmin_id() + "')";
+                        "','" + emp.getPhone_no() + "','" + emp.getAccount_number() + "','" + emp.getWage_type() + "'," +
+                        Integer.toString(emp.getWage_rate()) + "," +  emp.getAdmin_id() + "')'";
+
 
                 System.out.println(query);
                 stmt.executeUpdate(query);
@@ -700,7 +698,7 @@ public class empdb
 
     public Employee getEmployeeByEmail(String email) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -717,16 +715,13 @@ public class empdb
                     String name = rs.getString("name");             // finds a column in the row
                     String dob = rs.getString("dob");
                     String phone = rs.getString("phone_no");
-                    String cnic = rs.getString("cnic");
                     String acc = rs.getString("account_number");
                     String wt = rs.getString("wage_type");
                     String wr = rs.getString("wage_rate");
-                    int points = rs.getInt("points");
-                    String aid = rs.getString("mgr_id");
+                    String aid = rs.getString("admin_id");
                     String id = rs.getString("emp_id");
 
-                    Employee emp = new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), aid);
-                    return emp;
+                    return new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), aid);
                 }
             }
 
@@ -746,7 +741,6 @@ public class empdb
             e.printStackTrace();
         }
 
-        Employee emptyObj = new Employee();
-        return emptyObj;
+        return new Employee();
     }
 }

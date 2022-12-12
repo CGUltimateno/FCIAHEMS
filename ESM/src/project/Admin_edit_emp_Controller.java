@@ -143,7 +143,7 @@ public class Admin_edit_emp_Controller {
         System.out.println("Loading employee edit window");
 
         //Load next
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("mgr_edit_emp.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin_edit_emp.fxml"));
         Parent root = loader.load();
 
         //Get controller of main menu scene

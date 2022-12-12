@@ -20,6 +20,9 @@
 .LatoLight{
      -fx-font-family:"Lato Light";
 }
+.Raleway{
+     -fx-font-family: "Raleway";
+}
 /*Design the Date Picker*/
 
 .date-picker-popup:editable .arrow-button .arrow{

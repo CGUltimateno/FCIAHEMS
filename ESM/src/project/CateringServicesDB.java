@@ -22,7 +22,7 @@ public class CateringServicesDB
             {
                 System.out.println("Database - getting a catering record");
 
-                String query = "select * from CATERING where catering_id = " + id;  // query to be sent
+                String query = "select * from CATERING where CATERING_ID = " + id;  // query to be sent
 
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(query);
@@ -67,7 +67,7 @@ public class CateringServicesDB
             {
                 System.out.println("Database - displaying catering");
 
-                String query = "select * from CATERING where catering_id = " + id;  // query to be sent
+                String query = "select * from CATERING where CATERING_ID = " + id;  // query to be sent
 
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(query);
@@ -116,7 +116,7 @@ public class CateringServicesDB
 
                 while (rs.next())
                 {                                            // reads a row
-                    String id = rs.getString("catering_id");
+                    String id = rs.getString("caterer_id");
                     String name = rs.getString("name");
                     String contact = rs.getString("contact");
                     String specialty = rs.getString("specialty");
@@ -187,14 +187,14 @@ public class CateringServicesDB
                 String last_id = "10000";
 
                 while (rs.next()) {                                            // reads a row
-                    last_id = rs.getString("catering_id");             // reads an id
+                    last_id = rs.getString("caterer_id");             // reads an id
                 }
 
                 int temp = Integer.parseInt(last_id);
                 temp++;
                 String new_id = Integer.toString(temp);
 
-                query = "insert into CATERING(catering_id, name, contact, specialty, days, charges)" +
+                query = "insert into CATERING(caterer_id, name, contact, specialty, days, charges)" +
                         "values('" + new_id + "','" + obj.getCompany_name() + "','" + obj.getContact_info() + "','"
                         + obj.getSpeciality()  + "'," + Integer.toString(obj.getDays()) + "," + Integer.toString(obj.getCharges()) + ")";
 
@@ -225,13 +225,13 @@ public class CateringServicesDB
         )
         {
             if (conn != null) {
-                 System.out.println("Database - Adding catering service");
+                System.out.println("Database - Adding catering service");
 
                 Statement stmt = conn.createStatement();
 
-                String query = "insert into CATERING(catering_id, name, contact, specialty, days, charges)" +
+                String query = "insert into CATERING(caterer_id, name, contact, specialty, days, charges)" +
                         "values('" + id + "','" + obj.getCompany_name() + "','" + obj.getContact_info() + "','" + obj.getSpeciality()
-                         + "'," + Integer.toString(obj.getDays()) + "," + Integer.toString(obj.getCharges()) + ")";
+                        + "'," + Integer.toString(obj.getDays()) + "," + Integer.toString(obj.getCharges()) + ")";
 
                 //System.out.println(query);
                 stmt.executeUpdate(query);
@@ -265,7 +265,7 @@ public class CateringServicesDB
             {
                 System.out.println("Database - Removing catering");
 
-                String query = "delete from CATERING where catering_id = " + id;  // query to be sent
+                String query = "delete from CATERING where CATERING_ID = " + id;  // query to be sent
 
                 Statement stmt = conn.createStatement();
                 stmt.executeUpdate(query);
@@ -323,7 +323,7 @@ public class CateringServicesDB
             {
                 System.out.println("Database - getting catering charges");
 
-                String query = "select * from CATERING where catering_id = " + id;  // query to be sent
+                String query = "select * from CATERING where CATERING_ID = " + id;  // query to be sent
 
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(query);
@@ -375,7 +375,7 @@ public class CateringServicesDB
 
                 while (rs.next())
                 {
-                    String id = rs.getString("catering_id");
+                    String id = rs.getString("caterer_id");
                     String name = rs.getString("name");
                     String contact = rs.getString("contact");
                     String specialty = rs.getString("specialty");

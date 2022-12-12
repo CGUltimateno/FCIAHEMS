@@ -8,7 +8,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -35,38 +34,38 @@ public class Admin_menu_Controller {
 
     ///////////////////////////////////////////////////////
 
-    public void handleEventButton(ActionEvent actionEvent) throws IOException {
+    public void handleEventButton() throws IOException {
         System.out.println("Event button pressed");
         goToEventOptions();
     }
 
 
-    public void handleVenueButton(ActionEvent actionEvent) throws IOException {
+    public void handleVenueButton() throws IOException {
         System.out.println("Venue button pressed");
         goToVenueOptions();
     }
 
-    public void handleCateringButton(ActionEvent actionEvent) throws IOException {
+    public void handleCateringButton() throws IOException {
         System.out.println("Catering button pressed");
         goToCateringOptions();
     }
 
-    public void handleStudioButton(ActionEvent actionEvent) throws IOException {
+    public void handleStudioButton() throws IOException {
         System.out.println("Studio button pressed");
         goToStudioOptions();
     }
 
-    public void handleEmpButton(ActionEvent actionEvent) throws IOException {
+    public void handleEmpButton() throws IOException {
         System.out.println("Employee button pressed");
         goToEmpOptions();
     }
 
-    public void handleEditButton(ActionEvent actionEvent) throws IOException {
+    public void handleEditButton() throws IOException {
         System.out.println("Edit button pressed");
         goToEditOptions();
     }
 
-    public void handleExitButton(ActionEvent actionEvent) throws IOException {
+    public void handleExitButton() throws IOException {
         System.out.println("Exit button pressed");
         LoggedInUsers.clearEmp();
         goToAdminSignIn();
@@ -110,9 +109,6 @@ public class Admin_menu_Controller {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin_view_events.fxml"));
         Parent root = loader.load();
 
-       // Get controller of event scene
-        Admin_view_events_Controller controller = loader.getController();
-
         // close current window
         Stage window = (Stage) event_btn.getScene().getWindow();
         window.close();
@@ -141,8 +137,8 @@ public class Admin_menu_Controller {
         Parent root = loader.load();
 
         //Get controller of venue scene
-       // venue_edit_Controller controller = loader.getController();
-       // controller.init();
+        venue_edit_Controller controller = loader.getController();
+        controller.init();
 
         // close current window
         Stage window = (Stage) venue_btn.getScene().getWindow();
@@ -170,8 +166,8 @@ public class Admin_menu_Controller {
         Parent root = loader.load();
 
         //Get controller of catering scene
-       // catering_edit_Controller controller = loader.getController();
-       // controller.init();
+        catering_edit_Controller controller = loader.getController();
+        controller.init();
 
         // close current window
         Stage window = (Stage) catering_btn.getScene().getWindow();
@@ -227,9 +223,6 @@ public class Admin_menu_Controller {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin_view_emp.fxml"));
         Parent root = loader.load();
 
-        //Get controller of edit studios scene
-        Admin_view_emp_Controller controller = loader.getController();
-
         // close current window
         Stage window = (Stage) emp_btn.getScene().getWindow();
         window.close();
@@ -258,8 +251,8 @@ public class Admin_menu_Controller {
         Parent root = loader.load();
 
         //Get controller of edit scene
-     //  mgr_edit_Controller controller = loader.getController();
-      //  controller.init();
+        Admin_edit_Controller controller = loader.getController();
+        controller.init();
 
         // close current window
         Stage window = (Stage) exit_btn.getScene().getWindow();

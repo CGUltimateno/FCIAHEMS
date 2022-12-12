@@ -3,7 +3,7 @@ package project;
 import java.util.*;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This class will store/edit/remove the manager's information The information will be stored in ManagerDB
+// This class will store/edit/remove the Admin's information The information will be stored in AdminDB
 // It is inherited from Employee
 // Admin -> AdminDB
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -27,7 +27,7 @@ public class Admin extends Employee
     public void viewEmployee()
     {
         empdb obj = new empdb();
-        String id = new String();
+        String id;
         System.out.print("Viewing employee details. Enter employee ID: ");
         Scanner input = new Scanner(System.in);
         id = input.nextLine();
@@ -44,7 +44,7 @@ public class Admin extends Employee
     public void deleteEmployee()                            //Delete an existing Employee
     {
         empdb obj = new empdb();
-        String id = new String();
+        String id;
         System.out.print("Removing an employee. Enter employee ID: ");
         Scanner input = new Scanner(System.in);
         id = input.nextLine();
@@ -55,7 +55,7 @@ public class Admin extends Employee
     @Override
     public void editEmployee() {
         empdb obj = new empdb();
-        String id = new String();
+        String id;
         System.out.print("Editing an employee. Enter employee ID: ");
         Scanner input = new Scanner(System.in);
         id = input.nextLine();
@@ -63,18 +63,18 @@ public class Admin extends Employee
         obj.editEmployee(id);
     }
 
-    void changeEmployeeManager() {
+    void changeEmployeeAdmin() {
         empdb obj = new empdb();
-        String mid, eid;
+        String aid, eid;
 
         System.out.print("Enter employee ID: ");
         Scanner input = new Scanner(System.in);
         eid = input.nextLine();
 
-        System.out.print("Enter manager ID: ");
-        mid = input.nextLine();
+        System.out.print("Enter Admin ID: ");
+        aid = input.nextLine();
 
-        obj.changeManager(eid, mid);
+        obj.changeAdmin(eid, aid);
     }
 
     /////////////// CALLING CUSTOMER DATABASE METHODS ///////////////
@@ -94,13 +94,13 @@ public class Admin extends Employee
      //   obj.displayCustomer(id);
     }
 
-    public void createCustomerAccount()                     //Manager can create customer's account
+    public void createCustomerAccount()                     //Admin can create customer's account
     {
       //  CustomerDB obj = new CustomerDB();
       //  obj.insertCustomer();
     }
 
-    public void editCustomerAccount()                     //Manager can edit customer's account details
+    public void editCustomerAccount()                     //Admin can edit customer's account details
     {
      //   CustomerDB obj = new CustomerDB();
         String id = new String();
@@ -111,7 +111,7 @@ public class Admin extends Employee
      //   obj.editCustomer(id);
     }
 
-    public void deleteCustomerAccount()                     //Manager can delete customer's account
+    public void deleteCustomerAccount()                     //Admin can delete customer's account
     {
     //    CustomerDB obj = new CustomerDB();
         String id = "";

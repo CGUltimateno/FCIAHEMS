@@ -142,7 +142,7 @@
                   <Font name="Arial Black" size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="mgrid" focusColor="MEDIUMSPRINGGREEN" layoutX="40.0" layoutY="379.0" prefHeight="42.0" prefWidth="250.0" promptText="Admin ID" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+            <JFXTextField fx:id="admin_id" focusColor="MEDIUMSPRINGGREEN" layoutX="40.0" layoutY="379.0" prefHeight="42.0" prefWidth="250.0" promptText="Admin ID" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                <font>
                   <Font size="19.0" />
                </font>

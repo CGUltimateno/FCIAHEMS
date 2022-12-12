@@ -253,7 +253,7 @@ public class event_view_Controller {
 
         //setting information
       //  controller.setWelcome(LoggedInUsers.getCust().getName());
-       // controller.setEventBookedStatus(LoggedInUsers.getCust_id());
+       //  controller.setEventBookedStatus(LoggedInUsers.getCust_id());
 
         // close current window
         Stage stage = (Stage) exit_btn.getScene().getWindow();

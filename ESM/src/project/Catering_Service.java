@@ -4,7 +4,7 @@ package project;
 // This class has a list of catering vendors that we have contracts with. Each has its own speciality. Customer will be
 // displayed
 // a list of these vendors and he/she will select the vendor they wanna go with
-// Only MANAGER will be able to Add/Remove/Edit this class.
+// Only Admin will be able to Add/Remove/Edit this class.
 // Has it's own table in database
 // This customer will choose their preferred catering vendor in the EVENT CLASS.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -73,23 +73,16 @@ public class Catering_Service
     }
 
     public void display() {
-        System.out.print("Company name = ");
-        System.out.println(company_name);
-        System.out.print("Contact info = ");
-        System.out.println(contact_info);
-        System.out.print("Speciality = ");
-        System.out.println(speciality);
-        System.out.print("Days order needs to be placed before = ");
-        System.out.println(days);
-        System.out.print("Charges = ");
-        System.out.println(charges);
-
-        System.out.println("");
+        System.out.println("Company name = " + company_name);
+        System.out.println("Contact info = " + contact_info);
+        System.out.println("Speciality = " + speciality);
+        System.out.println("Days order needs to be placed before = " + days);
+        System.out.println("Charges = " + charges);
     }
 
-    public Catering_Service getCaterer(String cater_id) {
+    public Catering_Service getCaterer(String catering_id) {
         CateringServicesDB obj = new CateringServicesDB();
-        return obj.getCatering(cater_id);
+        return obj.getCatering(catering_id);
     }
 
     public HashMap<ArrayList<String>, ArrayList<Catering_Service>> getListOfCaterersAndIDs() {

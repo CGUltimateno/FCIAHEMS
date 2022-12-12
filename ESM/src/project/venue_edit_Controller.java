@@ -58,7 +58,7 @@ public class venue_edit_Controller {
     ////////////////////////////////////////////////////////////
 
     public void init() {
-        System.out.println("Initialising venues");
+        System.out.println("Initialising venues edit window");
 
         // get list of all venues
         Venue venue_obj = new Venue();

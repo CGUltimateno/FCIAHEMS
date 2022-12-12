@@ -159,9 +159,7 @@ public class Employee
         this.wage_rate = wage_rate;
     }
 
-    public String getAdmin_id() {
-        return admin_id;
-    }
+    public String getAdmin_id() { return admin_id; }
     public void setAdmin_id(String admin_id) {
         this.admin_id = admin_id;
     }
@@ -207,9 +205,6 @@ public class Employee
 
         System.out.print("Wage Rate: ");
         System.out.println(wage_rate);
-
-        System.out.print("Admin ID: ");
-        System.out.println(admin_id);
 
     }
 

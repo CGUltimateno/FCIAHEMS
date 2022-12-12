@@ -28,7 +28,7 @@ public class Admin_edit_Controller {
     @FXML private JFXTextField email;
     @FXML private JFXTextField wagetype;
     @FXML private JFXTextField wagerate;
-    @FXML private JFXTextField Admin_id;
+    @FXML private JFXTextField admin_id;
     @FXML private JFXTextField contact;
 
     //////////// BUTTONS /////////
@@ -46,7 +46,7 @@ public class Admin_edit_Controller {
         // set values
         wagetype.setText(emp.getWage_type());
         wagerate.setText(Integer.toString(emp.getWage_rate()));
-        Admin_id.setText(emp.getAdmin_id());
+        admin_id.setText(emp.getAdmin_id());
         contact.setText(emp.getPhone_no());
 
         // get values
@@ -79,7 +79,7 @@ public class Admin_edit_Controller {
         dob.setEditable(false);
         dob.setDisable(true);
         dob.setOpacity(0.7);
-        Admin_id.setEditable(false);
+        admin_id.setEditable(false);
     }
 
     public boolean checkInputs() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
@@ -102,6 +102,11 @@ public class Admin_edit_Controller {
             return false;
         }
 
+        // check if acc no has any letters
+        if (accountno.getText().matches(".*[a-zA-Z]+.*")) {
+            openPopup("Invalid Input", "Account number should contain only numbers.");
+            return false;
+        }
 
         // invalid email address
         if (email.getText().indexOf('@') == -1) {
@@ -116,7 +121,7 @@ public class Admin_edit_Controller {
 
     public void handleExitButton(ActionEvent actionEvent) throws IOException {
         System.out.println("Exit button pressed.");
-        goToAdminmenu();
+        goToAdminMenu();
     }
 
     public void handleSaveButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
@@ -176,7 +181,7 @@ public class Admin_edit_Controller {
 
     //////////////// SCENE SWITCHING ///////////////////
 
-    public void goToAdminmenu() throws IOException {
+    public void goToAdminMenu() throws IOException {
         System.out.println("Loading Admin menu window");
 
         //Load next
