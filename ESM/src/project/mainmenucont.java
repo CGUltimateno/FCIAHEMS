@@ -21,7 +21,7 @@ public class mainmenucont {
 
 
     public void handleManagerButton() throws IOException {
-        System.out.println("Employee button pressed");
+        System.out.println("Manager button pressed");
         goToMgrSignIn();
     }
 
