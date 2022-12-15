@@ -163,33 +163,33 @@ public class Event
         EventDB eventDB = new EventDB();
 
         String venue_id = eventDB.selectVenue();
-        String catering_id = eventDB.selectCateringService();
+        String caterer_id = eventDB.selectCateringService();
         String menu_id = eventDB.selectMenu();
         String studio_id = eventDB.selectStudio();
         String media_id = eventDB.enterMediaRequirements();
 
         bill.setMenu_cost(eventDB.getChosenMenuCost(menu_id));
         bill.setVenue_cost(eventDB.getChosenVenueCost(venue_id));
-        bill.setCatering_cost(eventDB.getChosenCateringServiceCost(catering_id));
+        bill.setCatering_cost(eventDB.getChosenCateringServiceCost(caterer_id));
         bill.setStudio_cost(eventDB.getChosenStudioCost(studio_id));
 
         price = this.getTotalBill();
         payment.inputDetails();
 
-        eventDB.addEvent(name, type, date, total_guests, price, starting_time, ending_time, cust_id, venue_id, studio_id, menu_id, catering_id, media_id, 0);
+        eventDB.addEvent(name, type, date, total_guests, price, starting_time, ending_time, cust_id, venue_id, studio_id, menu_id, caterer_id, media_id, 0);
     }
 
-    public void bookEvent(String cust_id, String venue_id, String studio_id, String menu_id, String catering_id, String media_id) {
+    public void bookEvent(String cust_id, String venue_id, String studio_id, String menu_id, String caterer_id, String media_id) {
         EventDB eventDB = new EventDB();
 
         bill.setMenu_cost(eventDB.getChosenMenuCost(menu_id));
         bill.setVenue_cost(eventDB.getChosenVenueCost(venue_id));
-        bill.setCatering_cost(eventDB.getChosenCateringServiceCost(catering_id));
+        bill.setCatering_cost(eventDB.getChosenCateringServiceCost(caterer_id));
         bill.setStudio_cost(eventDB.getChosenStudioCost(studio_id));
 
         price = this.getTotalBill();
 
-        eventDB.addEvent(name, type, date, total_guests, price, starting_time, ending_time, cust_id, venue_id, studio_id, menu_id, catering_id, media_id, 0);
+        eventDB.addEvent(name, type, date, total_guests, price, starting_time, ending_time, cust_id, venue_id, studio_id, menu_id, caterer_id, media_id, 0);
     }
 
     public Event getEvent(String id, int IDtype) {

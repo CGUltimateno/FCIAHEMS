@@ -1,6 +1,7 @@
 package project;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,19 +10,86 @@ import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import javax.sound.sampled.Line;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class mainmenucont {
 
     @FXML private JFXButton admin_btn;
     @FXML private JFXButton mgr_btn;
     @FXML private JFXButton SP_btn;
+    @FXML private JFXButton custsignin_btn;
+    @FXML private JFXButton reg_btn;
+    @FXML private JFXTextField id;
+    @FXML private JFXTextField pass;
 
+
+    ////////////////////////////////////////////////////////
+    //check input if pass or id is not inserted
+    public boolean checkInputs() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+        if(id == null || pass == null){
+            popup("Invalid Input", "Please fill all the fields");
+            return false;
+        }
+
+        if(id.getText().isEmpty() || pass.getText().isEmpty()){
+            popup("Invalid Input", "Please fill all the fields");
+            return false;
+        }
+        return true;
+    }
+    public void handleForgotPassword(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+        if (id == null || id.getText().isEmpty()) {
+            popup("Missing Input", "Enter employee ID first before selecting 'Forgot Password'");
+            return;
+        }
+
+        // generate random password
+        String randomPass = Integer.toString(ThreadLocalRandom.current().nextInt());
+        randomPass = randomPass.substring(0,5);
+
+        // change password
+        Customer cust = new Customer();
+        cust.changePassword(id.getText(), randomPass);
+
+        // email customer their new password
+        String email = cust.getCustomerEmailByID(id.getText());
+        System.out.println("email = " + email);
+        String msg = "Your password has been reseted. New password is: " + randomPass + ". Change it as soon as possible for security reasons.";
+        emailClass.sendEmail("Password Changed", msg, email);
+
+        popup("Successful", "A new password has been generated for you and sent to your email.");
+    }
+    public void HandleSigninbuttonpressed() throws IOException, LineUnavailableException, UnsupportedAudioFileException{
+        System.out.println("Sign in button pressed");
+        if(checkInputs() == false){
+            System.out.println("Logging in failed");
+            return;
+        }
+        String c_pass = pass.getText();
+        String c_id = id.getText();
+
+        System.out.println("ID/Email = " + c_id);
+        System.out.println("Password = " + c_pass);
+
+        Customer obj = new Customer();
+        boolean login = obj.customerLogin(c_id, c_pass);
+
+        if(!login){
+            popup("Login Failed", "Invalid ID/Pass Combination. Please try again");
+        }
+        else{
+            LoggedInUsers.initCust(c_id);
+            System.out.println("You have logged in to our system.");
+            gotoCustMenu();
+        }
+    }
 
     public void handleManagerButton() throws IOException {
-        System.out.println("Manager button pressed");
+        System.out.println("Employee button pressed");
         goToMgrSignIn();
     }
 
@@ -35,8 +103,40 @@ public class mainmenucont {
         gotoSPSignIn();
     }
 
+    public void handleRegisterButtonAction(ActionEvent actionEvent) throws IOException {
+        System.out.println("Register button pressed");
+        goToRegister();
+    }
+
     /////////////////// SCENE SWITCHING /////////////////
 
+    public void goToRegister() throws IOException {
+        System.out.println("Loading register window");
+
+        //Load next
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("cust_register.fxml"));
+        Parent root = loader.load();
+
+        //Get controller of register scene
+        cust_register_Controller controller = loader.getController();
+
+        // close current window
+        Stage window = (Stage) reg_btn.getScene().getWindow();
+        window.close();
+
+        // start new window for main scene
+        window = new Stage();
+        window.setScene(new Scene(root, 400, 600));
+
+        Font.loadFont(getClass().getResourceAsStream("Fonts/Alifiyah.otf"), 10);
+        Font.loadFont(getClass().getResourceAsStream("Fonts/Honeymoon Avenue Script Demo.ttf"), 10);
+
+        Font.loadFont(getClass().getResourceAsStream("Fonts/ArchivoNarrow-Regular.ttf"), 10);
+        Font.loadFont(getClass().getResourceAsStream("Fonts/JuliusSansOne-Regular.ttf"), 10);
+
+        window.setTitle("Register Your Account");
+        window.show();
+    }
 
     public void goToMgrSignIn() throws IOException {
         System.out.println("Loading Manager sign in window");
@@ -45,8 +145,9 @@ public class mainmenucont {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("mgr_signin.fxml"));
         Parent root = loader.load();
 
-        //Get controller of admin ign in scene
-
+        //Get controller of manager ign in scene
+        mgr_signin_Controller controller = loader.getController();
+        controller.enableManagerButton();
 
         // close current window
         Stage window = (Stage) mgr_btn.getScene().getWindow();
@@ -79,6 +180,35 @@ public class mainmenucont {
 
         // close current window
         Stage window = (Stage) admin_btn.getScene().getWindow();
+        window.close();
+
+        // start new window for sign in scene
+        window = new Stage();
+        window.setScene(new Scene(root, 900, 600));
+
+        Font.loadFont(getClass().getResourceAsStream("Fonts/Alifiyah.otf"), 10);
+        Font.loadFont(getClass().getResourceAsStream("Fonts/Honeymoon Avenue Script Demo.ttf"), 10);
+
+        Font.loadFont(getClass().getResourceAsStream("Fonts/ArchivoNarrow-Regular.ttf"), 10);
+        Font.loadFont(getClass().getResourceAsStream("Fonts/JuliusSansOne-Regular.ttf"), 10);
+
+        window.setTitle("Sign In");
+        window.show();
+    }
+    public void gotoCustMenu() throws IOException {
+        System.out.println("Signing in");
+
+        //Load next
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("cust_menu.fxml"));
+        Parent root = loader.load();
+
+        //Get controller of admin ign in scene
+        cust_menu_Controller controller = loader.getController();
+        controller.setName(LoggedInUsers.getCust().getName());
+        controller.setEventBookedStatus(LoggedInUsers.getCust_id());
+
+        // close current window
+        Stage window = (Stage) custsignin_btn.getScene().getWindow();
         window.close();
 
         // start new window for sign in scene

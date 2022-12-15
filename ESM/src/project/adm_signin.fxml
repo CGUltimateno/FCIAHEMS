@@ -31,7 +31,7 @@
                 </JFXButton>
                 <AnchorPane layoutX="449.0" layoutY="84.0" prefHeight="467.0" prefWidth="380.0">
                     <children>
-                        <JFXTextField fx:id="emp_id" focusColor="MEDIUMSPRINGGREEN" layoutX="40.0" layoutY="190.0" prefHeight="42.0" prefWidth="300.0" promptText="Employee ID/Email" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                        <JFXTextField fx:id="emp_id" focusColor="MEDIUMSPRINGGREEN" layoutX="40.0" layoutY="190.0" prefHeight="42.0" prefWidth="300.0" promptText="Admin ID/Email" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                             <font>
                                 <Font size="19.0" />
                             </font>
@@ -81,14 +81,14 @@
                         <DropShadow />
                     </effect>
                 </Label>
-                <Label alignment="CENTER" layoutX="51.0" layoutY="300.0" style="-fx-font-size: 60;" styleClass="Honey" stylesheets="@css/Text_Style.css" text="Where your dreams come true" textFill="WHITE">
+                <Label alignment="CENTER" layoutX="132.0" layoutY="314.0" style="-fx-font-size: 24;" styleClass="Archivo" stylesheets="@css/Text_Style.css" text="Planning Your Dreams" textFill="WHITE">
                     <effect>
                         <DropShadow />
                     </effect>
                <font>
                   <Font size="36.0" />
                </font></Label>
-                <Label layoutX="14.0" layoutY="551.0" text="© 2022 All Rights Reserved" textFill="WHITE">
+                <Label layoutX="525.0" layoutY="545.0" text="© 2022 All Rights Reserved" textFill="WHITE">
                     <font>
                         <Font size="19.0" />
                     </font>

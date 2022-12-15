@@ -22,24 +22,16 @@
                     <image>
                         <Image url="@images/mainmenu.jpg" />
                     </image></ImageView>
-                <Label layoutX="370.0" layoutY="204.0" style="-fx-font-size: 60;" styleClass="CarryYou" stylesheets="@css/Text_Style.css" text="Welcome" textFill="WHITE">
+                <Label layoutX="381.0" layoutY="160.0" style="-fx-font-size: 60;" styleClass="CarryYou" stylesheets="@css/Text_Style.css" text="Welcome" textFill="WHITE">
                     <effect>
                         <DropShadow />
                     </effect>
                 </Label>
-            <Label contentDisplay="CENTER" layoutX="394.0" layoutY="292.0" prefHeight="51.0" prefWidth="111.0" text="   Sign In" textAlignment="CENTER" textFill="WHITE">
+            <Label contentDisplay="CENTER" layoutX="381.0" layoutY="445.0" prefHeight="51.0" prefWidth="111.0" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-                <JFXButton buttonType="RAISED" layoutX="31.0" layoutY="10.0" prefWidth="150.0" ripplerFill="#d0d0d0" text="Contact Us" textFill="WHITE" AnchorPane.rightAnchor="719.0" AnchorPane.topAnchor="10.0">
-                    <effect>
-                        <DropShadow />
-                    </effect>
-                    <font>
-                        <Font size="19.0" />
-                    </font>
-                </JFXButton>
                 <JFXButton buttonType="RAISED" layoutX="205.0" layoutY="20.0" onAction="#handlePrivacyButton" prefWidth="150.0" ripplerFill="#d0d0d0" text="Privacy Policy" textFill="WHITE" AnchorPane.bottomAnchor="20.0">
                     <effect>
                         <DropShadow />
@@ -56,7 +48,7 @@
                         <Font size="19.0" />
                     </font>
                 </JFXButton>
-                <Label layoutX="321.0" layoutY="130.0" style="-fx-font-size: 40;" styleClass="LatoLight" stylesheets="@css/Text_Style.css" text="FCAIH EVENTS" textFill="WHITE">
+                <Label layoutX="321.0" layoutY="93.0" style="-fx-font-size: 40;" styleClass="LatoLight" stylesheets="@css/Text_Style.css" text="FCAIH EVENTS" textFill="WHITE">
                     <font>
                         <Font name="Yu Gothic Light" size="58.0" />
                     </font>
@@ -96,16 +88,40 @@
                   <DropShadow />
                </effect>
             </JFXButton>
-            <JFXTextField focusColor="#48d39c" layoutX="355.0" layoutY="358.0" promptText="Customer ID/Email" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+            <JFXTextField fx:id="id" focusColor="#48d39c" layoutX="343.0" layoutY="300.0" promptText="Customer ID/Email" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                <font>
                   <Font size="19.0" />
                </font>
             </JFXTextField>
-            <JFXTextField focusColor="#49d19c" layoutX="355.0" layoutY="419.0" promptText="Password" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+            <JFXTextField fx:id="pass" focusColor="#49d19c" layoutX="343.0" layoutY="369.0" promptText="Password" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                <font>
                   <Font size="19.0" />
                </font>
             </JFXTextField>
+            <JFXButton fx:id="custsignin_btn" buttonType="RAISED" layoutX="341.0" layoutY="440.0" onAction="#HandleSigninbuttonpressed" opacity="0.79" prefHeight="31.0" prefWidth="219.0" style="-fx-background-color: A17B3F;" text="Sign In" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="reg_btn" buttonType="RAISED" layoutX="28.0" layoutY="15.0" onAction="#handleRegisterButtonAction" opacity="0.79" prefHeight="31.0" prefWidth="150.0" style="-fx-background-color: A17B3F;" text="Register" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXButton>
+            <Hyperlink cursor="$null" layoutX="390.0" layoutY="484.0" mnemonicParsing="true" onAction="#handleForgotPassword" prefHeight="25.0" prefWidth="132.0" text="Forgot Password?" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Hyperlink>
             </children>
         </AnchorPane>
     </children>

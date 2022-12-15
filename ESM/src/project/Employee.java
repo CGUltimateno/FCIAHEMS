@@ -312,7 +312,10 @@ public class Employee
         empdb obj = new empdb();
         return obj.getEmployee(id);
     }
-
+    public Employee getEmp(String id) {
+        empdb obj = new empdb();
+        return obj.getEmployee(id);
+    }
     public static boolean checkIfEmailRegistered(String email) {
         empdb obj = new empdb();
         return !(obj.getEmployeeByEmail(email).getEmp_id().isEmpty());

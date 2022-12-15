@@ -97,11 +97,11 @@ public class EventDB {
     }
 
     public String addEvent(String name, String type, String date, int guests, int total_cost, String start, String end, String cust_id,
-                           String venue_id, String studio_id, String menu_id, String catering_id,
+                           String venue_id, String studio_id, String menu_id, String caterer_id,
                            String media_id, int approved) {
 
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
         )
         {
             if (conn != null)
@@ -124,9 +124,9 @@ public class EventDB {
                 String new_id = Integer.toString(temp);
 
                 query = "INSERT into EVENT(event_id, name, type, event_date, guests, total_cost, starting_time, ending_time," +
-                        "cust_id, venue_id, studio_id, menu_id, catering_id, media_id, approved)" + "values('" + new_id + "','" + name + "','" + type + "'," +
-                        "STR_TO_DATE('" + date + "','%d/%m/%Y')" + "," + guests + "," + total_cost + ",'" + start + "','" +
-                        end + "','" + cust_id + "','" + venue_id + "','" + studio_id + "','" + menu_id + "','" + catering_id + "','" + media_id + "'," + approved + ")";
+                        "cust_id, venue_id, studio_id, menu_id, caterer_id, media_id, approved)" + "values('" + new_id + "','" + name + "','" + type + "'," +
+                        "STR_TO_DATE('" + date + "','%d/%m/%Y')" + "," + Integer.toString(guests) + "," + Integer.toString(total_cost) + ",'" + start + "','" +
+                        end + "','" + cust_id + "','" + venue_id + "','" + studio_id + "','" + menu_id + "','" + caterer_id + "','" + media_id + "'," + Integer.toString(approved) + ")";
 
            //     System.out.println("query = " + query);
 
@@ -155,7 +155,7 @@ public class EventDB {
 
     public void displayEventDetails(String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
         )
         {
             if (conn != null)
@@ -180,7 +180,7 @@ public class EventDB {
                     String venue_id = rs.getString("venue_id");
                     String studio_id = rs.getString("studio_id");
                     String menu_id = rs.getString("menu_id");
-                    String catering_id = rs.getString("catering_id");
+                    String caterer_id = rs.getString("caterer_id");
                     String media_id = rs.getString("media_id");
                     int approved = rs.getInt("approved");
 
@@ -222,14 +222,14 @@ public class EventDB {
 
     public Event getEvent(String id, int IDtype) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
         )
         {
             if (conn != null)
             {
                 System.out.println("Database - getting an event");
 
-                String query = "";
+                String query = new String();
 
                 if (IDtype == 0)
                     query = " SELECT * FROM event where event_id = " + id;  // query to be sent
@@ -251,14 +251,14 @@ public class EventDB {
                     String venue_id = rs.getString("venue_id");
                     String studio_id = rs.getString("studio_id");
                     String menu_id = rs.getString("menu_id");
-                    String catering_id = rs.getString("catering_id");
+                    String caterer_id = rs.getString("caterer_id");
                     String media_id = rs.getString("media_id");
                     int approved = rs.getInt("approved");
 
                     Bill bill = new Bill();
                     bill.setMenu_cost(this.getChosenMenuCost(menu_id));
                     bill.setVenue_cost(this.getChosenVenueCost(venue_id));
-                    bill.setCatering_cost(this.getChosenCateringServiceCost(catering_id));
+                    bill.setCatering_cost(this.getChosenCateringServiceCost(caterer_id));
                     bill.setStudio_cost(this.getChosenStudioCost(studio_id));
                     bill.totalCost(guests);
 
@@ -289,7 +289,7 @@ public class EventDB {
         ArrayList<Event> eventList = new ArrayList<>();
 
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
         )
         {
             if (conn != null)
@@ -314,14 +314,14 @@ public class EventDB {
                     String venue_id = rs.getString("venue_id");
                     String studio_id = rs.getString("studio_id");
                     String menu_id = rs.getString("menu_id");
-                    String catering_id = rs.getString("catering_id");
+                    String caterer_id = rs.getString("caterer_id");
                     String media_id = rs.getString("media_id");
                     int approved = rs.getInt("approved");
 
                     Bill bill = new Bill();
                     bill.setMenu_cost(this.getChosenMenuCost(menu_id));
                     bill.setVenue_cost(this.getChosenVenueCost(venue_id));
-                    bill.setCatering_cost(this.getChosenCateringServiceCost(catering_id));
+                    bill.setCatering_cost(this.getChosenCateringServiceCost(caterer_id));
                     bill.setStudio_cost(this.getChosenStudioCost(studio_id));
                     bill.totalCost(guests);
 
@@ -351,14 +351,14 @@ public class EventDB {
         HashMap<String, String> ids = null;
 
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
         )
         {
             if (conn != null)
             {
                 System.out.println("Database - getting all IDs associated with an event");
 
-                String query = "";
+                String query = new String();
 
                 if (IDtype == 0)
                     query = " SELECT * FROM event where event_id = " + id;  // query to be sent
@@ -374,7 +374,7 @@ public class EventDB {
                     String venue_id = rs.getString("venue_id");
                     String studio_id = rs.getString("studio_id");
                     String menu_id = rs.getString("menu_id");
-                    String catering_id = rs.getString("catering_id");
+                    String caterer_id = rs.getString("caterer_id");
                     String media_id = rs.getString("media_id");
                     String cust_id = rs.getString("cust_id");
 
@@ -385,7 +385,7 @@ public class EventDB {
                     ids.put("venue_id", venue_id);
                     ids.put("studio_id", studio_id);
                     ids.put("menu_id", menu_id);
-                    ids.put("catering_id", catering_id);
+                    ids.put("caterer_id", caterer_id);
                     ids.put("media_id", media_id);
 
                     return ids;
@@ -411,7 +411,7 @@ public class EventDB {
     public void removeEvent(String id)
     {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
         )
         {
             if (conn != null) {
@@ -442,7 +442,7 @@ public class EventDB {
 
     public boolean isDateBooked(String date) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
         )
         {
             if (conn != null)
@@ -481,7 +481,7 @@ public class EventDB {
 
     public String getCustomerEmailByEventID(String event_id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
         )
         {
             if (conn != null)

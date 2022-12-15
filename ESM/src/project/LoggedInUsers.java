@@ -2,46 +2,48 @@ package project;
 
 public class LoggedInUsers {
     private static String cust_id;
-  //  private static Customer cust = new Customer();
+    private static Customer cust = new Customer();
 
     private static String emp_id;
     private static Employee emp = new Employee();
 
     ////////////// CUST METHODS ////////////////////
 
-  //  public static String getCust_id() {
-    //    return cust_id;
-   // }
-   // public static void setCust_id(String cust_id) {
-    //    LoggedInUsers.cust_id = cust_id;
-   // }
+    public static String getCust_id() {
+        return cust_id;
+    }
 
-   // public static void initCust(String idOrEmail) {
-     //   if (idOrEmail.indexOf('@') == -1)
-    //        cust_id = idOrEmail;
+    public static void setCust_id(String cust_id) {
+        LoggedInUsers.cust_id = cust_id;
+    }
 
-    //    else {
-    //        cust_id = cust.getCustomerIDbyEmail(idOrEmail);
-   //     }
+    public static void initCust(String idOrEmail) {
+        if (idOrEmail.indexOf('@') == -1)
+            cust_id = idOrEmail;
 
-    //    cust.getCustomerDetails(cust_id);
-   // }
+        else {
+            cust_id = cust.getCustomerIDbyEmail(idOrEmail);
+        }
 
-   // public static void clearCust() {
-   //     cust_id = "";
-    //    cust.clear();
-   // }
+        cust.getCustomerDetails(cust_id);
+    }
 
-   // public static Customer getCust() {
-  //      return cust;
-  //  }
-  //  public static void setCust(Customer cust) {
-   //     LoggedInUsers.cust = cust;
-   // }
+    public static void clearCust() {
+        cust_id = "";
+        cust.clear();
+    }
 
-    ///////////// EMP METHODS //////////////////
+    public static Customer getCust() {
+        return cust;
+    }
 
-    public static String getEmp_id() {
+    public static void setCust(Customer cust) {
+        LoggedInUsers.cust = cust;
+    }
+
+            ///////////// EMP METHODS //////////////////
+
+            public static String getEmp_id() {
         return emp_id;
     }
     public static void setEmp_id(String emp_id) {

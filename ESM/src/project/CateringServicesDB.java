@@ -22,7 +22,7 @@ public class CateringServicesDB
             {
                 System.out.println("Database - getting a catering record");
 
-                String query = "select * from CATERING where CATERING_ID = " + id;  // query to be sent
+                String query = "select * from CATERING where caterer_id = " + id;  // query to be sent
 
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(query);
@@ -67,7 +67,7 @@ public class CateringServicesDB
             {
                 System.out.println("Database - displaying catering");
 
-                String query = "select * from CATERING where CATERING_ID = " + id;  // query to be sent
+                String query = "select * from CATERING where caterer_id = " + id;  // query to be sent
 
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(query);
@@ -264,7 +264,7 @@ public class CateringServicesDB
             {
                 System.out.println("Database - Removing catering");
 
-                String query = "delete from CATERING where CATERING_ID = " + id;  // query to be sent
+                String query = "delete from CATERING where caterer_id = " + id;  // query to be sent
 
                 Statement stmt = conn.createStatement();
                 stmt.executeUpdate(query);
@@ -322,7 +322,7 @@ public class CateringServicesDB
             {
                 System.out.println("Database - getting catering charges");
 
-                String query = "select * from CATERING where CATERING_ID = " + id;  // query to be sent
+                String query = "select * from CATERING where caterer_id = " + id;  // query to be sent
 
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(query);
@@ -421,9 +421,9 @@ public class CateringServicesDB
                 String query = "";
 
                 if (isNumeric)
-                    query = "update catering set " + field + " = " + new_value + " where catering_id = " + id;
+                    query = "update catering set " + field + " = " + new_value + " where caterer_id = " + id;
                 else
-                    query = "update catering set " + field + " = '" + new_value + "' where catering_id = " + id;
+                    query = "update catering set " + field + " = '" + new_value + "' where caterer_id = " + id;
 
                 Statement stmt = conn.createStatement();
                 stmt.executeUpdate(query);

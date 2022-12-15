@@ -1,14 +1,5 @@
 package project;
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This class has a list of catering vendors that we have contracts with. Each has its own speciality. Customer will be
-// displayed
-// a list of these vendors and he/she will select the vendor they wanna go with
-// Only Admin will be able to Add/Remove/Edit this class.
-// Has it's own table in database
-// This customer will choose their preferred catering vendor in the EVENT CLASS.
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -16,9 +7,9 @@ public class Catering_Service
 {
     private String company_name;
     private String contact_info;
-    private String speciality;              //Continental/Desi
-    private int days;                       //no. of days order needs to be placed prior to
-    private int charges;                    //Charges of the vendor
+    private String speciality;
+    private int days;
+    private int charges;
 
     public Catering_Service()
     {
@@ -80,9 +71,9 @@ public class Catering_Service
         System.out.println("Charges = " + charges);
     }
 
-    public Catering_Service getCaterer(String catering_id) {
+    public Catering_Service getCaterer(String caterer_id) {
         CateringServicesDB obj = new CateringServicesDB();
-        return obj.getCatering(catering_id);
+        return obj.getCatering(caterer_id);
     }
 
     public HashMap<ArrayList<String>, ArrayList<Catering_Service>> getListOfCaterersAndIDs() {

@@ -38,31 +38,7 @@
                   <Font size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="150.0" layoutY="1158.0" ripplerFill="#d0d0d0" text="Privacy Policy" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
-               <effect>
-                  <DropShadow />
-               </effect>
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="298.0" layoutY="1158.0" ripplerFill="#d0d0d0" text="Terms of Use" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
-               <effect>
-                  <DropShadow />
-               </effect>
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="38.0" layoutY="1158.0" ripplerFill="#d0d0d0" text="About Us" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="38.0">
-               <effect>
-                  <DropShadow />
-               </effect>
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </JFXButton>
-            <Label layoutX="534.0" layoutY="1165.0" text="© 2020 All Rights Reserved" textFill="WHITE" AnchorPane.bottomAnchor="7.0">
+            <Label layoutX="534.0" layoutY="1165.0" text="©2022 All Rights Reserved" textFill="WHITE" AnchorPane.bottomAnchor="7.0">
                <font>
                   <Font size="19.0" />
                </font>

@@ -249,11 +249,11 @@ public class event_view_Controller {
         Parent root = loader.load();
 
         //Get controller of cust bg scene
-      //  cust_menu_Controller controller = loader.getController();
+        cust_menu_Controller controller = loader.getController();
 
         //setting information
-      //  controller.setWelcome(LoggedInUsers.getCust().getName());
-       //  controller.setEventBookedStatus(LoggedInUsers.getCust_id());
+        controller.setName(LoggedInUsers.getCust().getName());
+         controller.setEventBookedStatus(LoggedInUsers.getCust_id());
 
         // close current window
         Stage stage = (Stage) exit_btn.getScene().getWindow();
