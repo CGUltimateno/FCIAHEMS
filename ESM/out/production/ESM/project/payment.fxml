@@ -27,11 +27,6 @@
             <Font size="18.0" />
          </font>
       </JFXButton>
-      <Label layoutX="535.0" layoutY="555.0" text="© 2022 All Rights Reserved" textFill="WHITE">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Label>
       <JFXButton fx:id="save_btn" buttonType="RAISED" layoutX="346.0" layoutY="517.0" onAction="#handleSaveButton" prefHeight="30.0" prefWidth="201.0" style="-fx-background-color: A17B3F;" text="Save Changes" textFill="WHITE">
          <font>
             <Font size="14.0" />

@@ -30,14 +30,6 @@
                   <Font size="18.0" />
                </font>
             </JFXButton>
-            <Label layoutX="629.0" layoutY="547.0" text="© 2022 All Rights Reserved" textFill="WHITE">
-               <font>
-                  <Font size="19.0" />
-               </font>
-               <effect>
-                  <DropShadow />
-               </effect>
-            </Label>
             <AnchorPane layoutX="101.0" layoutY="138.0" prefHeight="373.0" prefWidth="179.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="70.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" height="373.0" opacity="0.49" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="225.0" AnchorPane.leftAnchor="0.0" />

@@ -966,87 +966,87 @@
                         <Insets />
                      </opaqueInsets>
                   </Label>
-                  <JFXCheckBox fx:id="menu_rice_eggfried" checkedColor="#12ff88" layoutX="77.0" layoutY="110.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Egg Fried -/7,000" textFill="#780000" unCheckedColor="#780000">
+                  <JFXCheckBox fx:id="menu_rice_yellow" checkedColor="#12ff88" layoutX="77.0" layoutY="110.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Yellow -/ 500" textFill="#780000" unCheckedColor="#780000">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="menu_rice_biryani" checkedColor="#12ff88" layoutX="77.0" layoutY="132.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Biryani -/11,000" textFill="#780000" unCheckedColor="#780000">
+                  <JFXCheckBox fx:id="menu_rice_brown" checkedColor="#12ff88" layoutX="77.0" layoutY="132.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Brown -/ 600" textFill="#780000" unCheckedColor="#780000">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="menu_rice_plain" checkedColor="#12ff88" layoutX="195.0" layoutY="110.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Plain Boiled -/3,000" textFill="#780000" unCheckedColor="#780000">
+                  <JFXCheckBox fx:id="menu_rice_plain" checkedColor="#12ff88" layoutX="195.0" layoutY="110.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Plain Boiled -/ 300" textFill="#780000" unCheckedColor="#780000">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="menu_bread_naan" checkedColor="#12ff88" layoutX="77.0" layoutY="173.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Naan -/5000" textFill="#780000" unCheckedColor="#780000">
+                  <JFXCheckBox fx:id="menu_bread_baladi" checkedColor="#12ff88" layoutX="77.0" layoutY="173.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Baladi -/ 200" textFill="#780000" unCheckedColor="#780000">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="menu_bread_tandoori" checkedColor="#12ff88" layoutX="77.0" layoutY="196.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Tandori -/4500" textFill="#780000" unCheckedColor="#780000">
+                  <JFXCheckBox fx:id="menu_bread_feeno" checkedColor="#12ff88" layoutX="77.0" layoutY="196.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Feeno -/ 350" textFill="#780000" unCheckedColor="#780000">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="menu_bread_lebanese" checkedColor="#12ff88" layoutX="195.0" layoutY="173.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Lebanese Bread -/7000" textFill="#780000" unCheckedColor="#780000">
+                  <JFXCheckBox fx:id="menu_bread_lebanese" checkedColor="#12ff88" layoutX="195.0" layoutY="173.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Lebanese Bread -/ 400" textFill="#780000" unCheckedColor="#780000">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="menu_protein_chicken" checkedColor="#12ff88" layoutX="77.0" layoutY="237.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Chicken -/12,000" textFill="#780000" unCheckedColor="#780000">
+                  <JFXCheckBox fx:id="menu_protein_chicken" checkedColor="#12ff88" layoutX="77.0" layoutY="237.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Chicken -/ 600" textFill="#780000" unCheckedColor="#780000">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="menu_protein_seafood" checkedColor="#12ff88" layoutX="77.0" layoutY="260.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Seafood Mix -/22,000" textFill="#780000" unCheckedColor="#780000">
+                  <JFXCheckBox fx:id="menu_protein_seafood" checkedColor="#12ff88" layoutX="77.0" layoutY="260.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Seafood Mix -/ 1,500" textFill="#780000" unCheckedColor="#780000">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="menu_drink_water" checkedColor="#12ff88" layoutX="193.0" layoutY="333.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Water -/7,000" textFill="#780000" unCheckedColor="#780000">
+                  <JFXCheckBox fx:id="menu_drink_water" checkedColor="#12ff88" layoutX="193.0" layoutY="333.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Water -/ 150" textFill="#780000" unCheckedColor="#780000">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="menu_drink_coke" checkedColor="#12ff88" layoutX="193.0" layoutY="311.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Coke -/7,000" textFill="#780000" unCheckedColor="#780000">
+                  <JFXCheckBox fx:id="menu_drink_coke" checkedColor="#12ff88" layoutX="193.0" layoutY="311.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Coke -/ 150" textFill="#780000" unCheckedColor="#780000">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="menu_drink_sprite" checkedColor="#12ff88" layoutX="75.0" layoutY="332.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Sprite -/7,000" textFill="#780000" unCheckedColor="#780000">
+                  <JFXCheckBox fx:id="menu_drink_sprite" checkedColor="#12ff88" layoutX="75.0" layoutY="332.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Sprite -/ 150" textFill="#780000" unCheckedColor="#780000">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="menu_drink_miranda" checkedColor="#12ff88" layoutX="75.0" layoutY="310.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Mirinda -/7,000" textFill="#780000" unCheckedColor="#780000">
+                  <JFXCheckBox fx:id="menu_drink_miranda" checkedColor="#12ff88" layoutX="75.0" layoutY="310.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Mirinda -/ 150" textFill="#780000" unCheckedColor="#780000">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="menu_protein_mutton" checkedColor="#12ff88" layoutX="195.0" layoutY="259.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Mutton -/19,000" textFill="#780000" unCheckedColor="#780000">
+                  <JFXCheckBox fx:id="menu_protein_mutton" checkedColor="#12ff88" layoutX="195.0" layoutY="259.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Mutton -/ 700" textFill="#780000" unCheckedColor="#780000">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="menu_protein_beef" checkedColor="#12ff88" layoutX="195.0" layoutY="236.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Beef -/15,000" textFill="#780000" unCheckedColor="#780000">
+                  <JFXCheckBox fx:id="menu_protein_poultry" checkedColor="#12ff88" layoutX="195.0" layoutY="236.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Poultry -/ 800" textFill="#780000" unCheckedColor="#780000">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="menu_extra_cake" checkedColor="#12ff88" layoutX="195.0" layoutY="385.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Chocolate Cake -/7,000" textFill="#780000" unCheckedColor="#780000">
+                  <JFXCheckBox fx:id="menu_extra_cake" checkedColor="#12ff88" layoutX="195.0" layoutY="385.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Chocolate Cake -/ 300" textFill="#780000" unCheckedColor="#780000">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="menu_extra_dryfruit" checkedColor="#12ff88" layoutX="77.0" layoutY="406.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Dry Fruit -/7,000" textFill="#780000" unCheckedColor="#780000">
+                  <JFXCheckBox fx:id="menu_extra_dryfruit" checkedColor="#12ff88" layoutX="77.0" layoutY="406.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Dry Fruit -/ 200" textFill="#780000" unCheckedColor="#780000">
                      <font>
                         <Font size="9.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="menu_extra_icecream" checkedColor="#12ff88" layoutX="77.0" layoutY="384.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Ice Cream -/7,000" textFill="#780000" unCheckedColor="#780000">
+                  <JFXCheckBox fx:id="menu_extra_icecream" checkedColor="#12ff88" layoutX="77.0" layoutY="384.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Ice Cream -/ 200" textFill="#780000" unCheckedColor="#780000">
                      <font>
                         <Font size="9.0" />
                      </font>
@@ -1091,7 +1091,7 @@
                         <Font name="Segoe Script" size="12.0" />
                      </font>
                   </Label>
-                  <JFXCheckBox fx:id="menu_rice_kabuli" checkedColor="#12ff88" layoutX="195.0" layoutY="133.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Kabuli -/13,000" textFill="#780000" unCheckedColor="#780000">
+                  <JFXCheckBox fx:id="menu_rice_basmati" checkedColor="#12ff88" layoutX="195.0" layoutY="133.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="113.0" text="Basmati -/ 400" textFill="#780000" unCheckedColor="#780000">
                      <font>
                         <Font size="9.0" />
                      </font>

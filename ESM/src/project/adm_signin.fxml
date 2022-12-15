@@ -88,11 +88,6 @@
                <font>
                   <Font size="36.0" />
                </font></Label>
-                <Label layoutX="525.0" layoutY="545.0" text="© 2022 All Rights Reserved" textFill="WHITE">
-                    <font>
-                        <Font size="19.0" />
-                    </font>
-                </Label>
             </children>
         </AnchorPane>
     </children>

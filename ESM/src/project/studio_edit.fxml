@@ -30,14 +30,6 @@
                   <Font size="18.0" />
                </font>
             </JFXButton>
-            <Label layoutX="640.0" layoutY="555.0" text="© 2022 All Rights Reserved" textFill="WHITE">
-               <font>
-                  <Font size="19.0" />
-               </font>
-               <effect>
-                  <DropShadow />
-               </effect>
-            </Label>
             <JFXButton fx:id="save_btn" buttonType="RAISED" layoutX="334.0" layoutY="491.0" onAction="#handleSaveButton" opacity="0.98" prefHeight="30.0" prefWidth="222.0" style="-fx-background-color: A17B3F;" text="Save Changes" textFill="WHITE">
                <font>
                   <Font size="14.0" />

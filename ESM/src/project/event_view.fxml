@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXCheckBox?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="915.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.event_view_Controller">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="915.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.event_view_Controller">
    <content>
       <AnchorPane prefHeight="1200.0" prefWidth="900.0" style="-fx-background-color: black;">
          <children>
@@ -30,7 +26,7 @@
                   <DropShadow />
                </effect>
             </Label>
-            <JFXButton fx:id="exit_btn" onAction="#handleExitButton" buttonType="RAISED" layoutX="840.0" layoutY="19.0" ripplerFill="#d0d0d0" text="X" textFill="WHITE" AnchorPane.topAnchor="20.0">
+            <JFXButton fx:id="exit_btn" buttonType="RAISED" layoutX="840.0" layoutY="19.0" onAction="#handleExitButton" ripplerFill="#d0d0d0" text="X" textFill="WHITE" AnchorPane.topAnchor="20.0">
                <effect>
                   <DropShadow />
                </effect>
@@ -38,14 +34,6 @@
                   <Font size="18.0" />
                </font>
             </JFXButton>
-            <Label layoutX="534.0" layoutY="1165.0" text="©2022 All Rights Reserved" textFill="WHITE" AnchorPane.bottomAnchor="7.0">
-               <font>
-                  <Font size="19.0" />
-               </font>
-               <effect>
-                  <DropShadow />
-               </effect>
-            </Label>
             <Label alignment="CENTER" layoutX="185.0" layoutY="200.0" opacity="0.72" prefHeight="17.0" prefWidth="150.0" style="-fx-background-color: white;" text="Event Name" textFill="#430000">
                <effect>
                   <DropShadow />

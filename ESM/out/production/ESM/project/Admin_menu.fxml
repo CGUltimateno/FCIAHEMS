@@ -152,14 +152,6 @@
                         <DropShadow />
                      </effect>
                   </JFXButton>
-                  <Label layoutX="624.0" layoutY="536.0" text="© 2022 All Rights Reserved" textFill="WHITE">
-                     <font>
-                        <Font size="19.0" />
-                     </font>
-                     <effect>
-                        <DropShadow />
-                     </effect>
-                  </Label>
                </children>
             </AnchorPane>
             <Label fx:id="welcome" layoutX="275.0" layoutY="24.0" style="-fx-font-size: 80;" styleClass="Honey" stylesheets="@css/Text_Style.css" text="Welcome Admin" textFill="WHITE" AnchorPane.topAnchor="20.0">

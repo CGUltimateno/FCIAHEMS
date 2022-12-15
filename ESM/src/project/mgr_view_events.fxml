@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="center" hgap="10" prefHeight="600.0" prefWidth="900.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.mgr_view_events_Controller">
+<GridPane alignment="center" hgap="10" prefHeight="600.0" prefWidth="900.0" vgap="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.mgr_view_events_Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -24,7 +24,7 @@
                </image>
             </ImageView>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="600.0" layoutX="-6.0" layoutY="1.0" opacity="0.4" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: black;" width="900.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <JFXButton fx:id="exit_btn" buttonType="RAISED" layoutX="740.0" layoutY="52.0" style="-fx-background-color: transparent;" text="X" textFill="WHITE" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" onAction="#handleExitButton">
+            <JFXButton fx:id="exit_btn" buttonType="RAISED" layoutX="740.0" layoutY="52.0" onAction="#handleExitButton" style="-fx-background-color: transparent;" text="X" textFill="WHITE" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                <effect>
                   <DropShadow />
                </effect>
@@ -92,35 +92,6 @@
                <effect>
                   <DropShadow />
                </effect>
-            </Label>
-            <JFXButton buttonType="RAISED" layoutX="162.0" layoutY="546.0" ripplerFill="#d0d0d0" text="Privacy Policy" textFill="WHITE">
-               <effect>
-                  <DropShadow />
-               </effect>
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="310.0" layoutY="546.0" ripplerFill="#d0d0d0" text="Terms of Use" textFill="WHITE">
-               <effect>
-                  <DropShadow />
-               </effect>
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="50.0" layoutY="546.0" ripplerFill="#d0d0d0" text="About Us" textFill="WHITE">
-               <effect>
-                  <DropShadow />
-               </effect>
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </JFXButton>
-            <Label layoutX="535.0" layoutY="555.0" text="© 2020 All Rights Reserved" textFill="WHITE">
-               <font>
-                  <Font size="19.0" />
-               </font>
             </Label>
          </children>
       </AnchorPane>

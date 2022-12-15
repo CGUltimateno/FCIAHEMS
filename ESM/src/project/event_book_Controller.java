@@ -102,17 +102,17 @@ public class event_book_Controller {
 
     ////////////// MENU VARS //////////////
 
-    @FXML private JFXCheckBox menu_rice_eggfried;
-    @FXML private  JFXCheckBox menu_rice_biryani;
+    @FXML private JFXCheckBox menu_rice_yellow;
+    @FXML private  JFXCheckBox menu_rice_brown;
     @FXML private  JFXCheckBox menu_rice_plain;
-    @FXML private  JFXCheckBox menu_rice_kabuli;
+    @FXML private  JFXCheckBox menu_rice_basmati;
 
-    @FXML private  JFXCheckBox menu_bread_naan;
-    @FXML private  JFXCheckBox menu_bread_tandoori;
+    @FXML private  JFXCheckBox menu_bread_baladi;
+    @FXML private  JFXCheckBox menu_bread_feeno;
     @FXML private  JFXCheckBox menu_bread_lebanese;
 
     @FXML private  JFXCheckBox menu_protein_chicken;
-    @FXML private  JFXCheckBox menu_protein_beef;
+    @FXML private  JFXCheckBox menu_protein_poultry;
     @FXML private  JFXCheckBox menu_protein_seafood;
     @FXML private  JFXCheckBox menu_protein_mutton;
 
@@ -209,7 +209,7 @@ public class event_book_Controller {
         venue1_addr.setText(v1.getVenue_address());
         venue1_loc.setText(v1.getLocation());
         venue1_cap.setText("Capacity: " + Integer.toString(v1.getMax_capacity()));
-        venue1_price.setText(Integer.toString(v1.getCost()) + " Rs");
+        venue1_price.setText(Integer.toString(v1.getCost()) + " EGP");
         venue1_contact.setText(v1.getContact_info());
 
         // second venue details
@@ -218,7 +218,7 @@ public class event_book_Controller {
         venue2_addr.setText(v2.getVenue_address());
         venue2_loc.setText(v2.getLocation());
         venue2_cap.setText("Capacity: " + Integer.toString(v2.getMax_capacity()));
-        venue2_price.setText(Integer.toString(v2.getCost()) + " Rs");
+        venue2_price.setText(Integer.toString(v2.getCost()) + " EGP");
         venue2_contact.setText(v2.getContact_info());
 
         // third venue details
@@ -227,7 +227,7 @@ public class event_book_Controller {
         venue3_addr.setText(v3.getVenue_address());
         venue3_loc.setText(v3.getLocation());
         venue3_cap.setText("Capacity: " + Integer.toString(v3.getMax_capacity()));
-        venue3_price.setText(Integer.toString(v3.getCost()) + " Rs");
+        venue3_price.setText(Integer.toString(v3.getCost()) + " EGP");
         venue3_contact.setText(v3.getContact_info());
     }
 
@@ -253,48 +253,48 @@ public class event_book_Controller {
         caterer1_name.setText(c1.getCompany_name());
         caterer1_contact.setText(c1.getContact_info());
         caterer1_specialty.setText(c1.getSpeciality());
-        caterer1_price.setText(Integer.toString(c1.getCharges()) + " Rs");
+        caterer1_price.setText(Integer.toString(c1.getCharges()) + " EGP");
         caterer1_days.setText(Integer.toString(c1.getDays()));
 
         // second caterer details
         caterer2_name.setText(c2.getCompany_name());
         caterer2_contact.setText(c2.getContact_info());
         caterer2_specialty.setText(c2.getSpeciality());
-        caterer2_price.setText(Integer.toString(c2.getCharges()) + " Rs");
+        caterer2_price.setText(Integer.toString(c2.getCharges()) + " EGP");
         caterer2_days.setText(Integer.toString(c2.getDays()));
 
         // second caterer details
         caterer3_name.setText(c3.getCompany_name());
         caterer3_contact.setText(c3.getContact_info());
         caterer3_specialty.setText(c3.getSpeciality());
-        caterer3_price.setText(Integer.toString(c3.getCharges()) + " Rs");
+        caterer3_price.setText(Integer.toString(c3.getCharges()) + " EGP");
         caterer3_days.setText(Integer.toString(c3.getDays()));
 
         // set menu prices
         menuPrices = new HashMap<String, Integer>();
         // rice
-        menuPrices.put("biryani", 11000);
-        menuPrices.put("eggfried",7000);
-        menuPrices.put("plain", 3000);
-        menuPrices.put("kabuli", 13000);
+        menuPrices.put("brown", 600);
+        menuPrices.put("yellow",500);
+        menuPrices.put("plain", 300);
+        menuPrices.put("basmati", 400);
         // bread
-        menuPrices.put("naan", 5000);
-        menuPrices.put("tandoori", 4500);
-        menuPrices.put("lebanese", 7000);
+        menuPrices.put("baladi", 200);
+        menuPrices.put("feeno", 350);
+        menuPrices.put("lebanese", 400);
         // meat
-        menuPrices.put("chicken",12000);
-        menuPrices.put("beef", 15000);
-        menuPrices.put("seafood", 22000);
-        menuPrices.put("mutton", 19000);
+        menuPrices.put("chicken",600);
+        menuPrices.put("poultry", 800);
+        menuPrices.put("seafood", 1500);
+        menuPrices.put("mutton", 700);
         // drinks
-        menuPrices.put("miranda", 7000);
-        menuPrices.put("coke", 7000);
-        menuPrices.put("sprite", 7000);
-        menuPrices.put("water", 7000);
+        menuPrices.put("miranda", 150);
+        menuPrices.put("coke", 150);
+        menuPrices.put("sprite", 150);
+        menuPrices.put("water", 150);
         // extras
-        menuPrices.put("dryfruit",7000);
-        menuPrices.put("icecream", 7000);
-        menuPrices.put("cake", 7000);
+        menuPrices.put("dryfruit",200);
+        menuPrices.put("icecream", 200);
+        menuPrices.put("cake", 300);
     }
 
     public void initStudioVariables() {
@@ -484,18 +484,18 @@ public class event_book_Controller {
 
         String rice = "", bread = "", protein = "";
 
-        if (menu_rice_biryani.isSelected()) {
-            rice += "Biryani";
-            price += menuPrices.get("biryani");
+        if (menu_rice_brown.isSelected()) {
+            rice += "Brown";
+            price += menuPrices.get("brown");
         }
 
-        if (menu_rice_eggfried.isSelected()) {
+        if (menu_rice_yellow.isSelected()) {
             if (rice.isEmpty())
-                rice += "Egg-fried";
+                rice += "Yellow";
             else
-                rice += ", Egg-fried";
+                rice += ", Yellow";
 
-            price += menuPrices.get("eggfried");
+            price += menuPrices.get("yellow");
         }
 
         if (menu_rice_plain.isSelected()) {
@@ -507,29 +507,29 @@ public class event_book_Controller {
             price += menuPrices.get("plain");
         }
 
-        if (menu_rice_kabuli.isSelected()) {
+        if (menu_rice_basmati.isSelected()) {
             if (rice.isEmpty())
-                rice += "Kabuli";
+                rice += "Basmati";
             else
-                rice += ", Kabuli";
+                rice += ", Basmati";
 
-            price += menuPrices.get("kabuli");
+            price += menuPrices.get("basmati");
         }
 
         menu.setRice(rice);
 
-        if (menu_bread_naan.isSelected()) {
-            bread += "Naan";
-            price += menuPrices.get("naan");
+        if (menu_bread_baladi.isSelected()) {
+            bread += "Baladi";
+            price += menuPrices.get("baladi");
         }
 
-        if (menu_bread_tandoori.isSelected()) {
+        if (menu_bread_feeno.isSelected()) {
             if (bread.isEmpty())
-                bread += "Tandoori";
+                bread += "Feeno";
             else
-                bread += ", Tandoori";
+                bread += ", Feeno";
 
-            price += menuPrices.get("tandoori");
+            price += menuPrices.get("Feeno");
         }
 
         if (menu_bread_lebanese.isSelected()) {
@@ -548,13 +548,13 @@ public class event_book_Controller {
             price += menuPrices.get("chicken");
         }
 
-        if (menu_protein_beef.isSelected()) {
+        if (menu_protein_poultry.isSelected()) {
             if (protein.isEmpty())
-                protein += "Beef";
+                protein += "Poultry";
             else
-                protein += ", Beef";
+                protein += ", Poultry";
 
-            price += menuPrices.get("biryani");
+            price += menuPrices.get("poultry");
         }
 
         if (menu_protein_mutton.isSelected()) {

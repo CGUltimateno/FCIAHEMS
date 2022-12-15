@@ -31,7 +31,7 @@
                 </JFXButton>
                 <AnchorPane layoutX="449.0" layoutY="84.0" prefHeight="467.0" prefWidth="380.0">
                     <children>
-                        <JFXTextField fx:id="emp_id" focusColor="MEDIUMSPRINGGREEN" layoutX="40.0" layoutY="190.0" prefHeight="42.0" prefWidth="300.0" promptText="Employee ID/Email" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                        <JFXTextField fx:id="emp_id" focusColor="MEDIUMSPRINGGREEN" layoutX="40.0" layoutY="190.0" prefHeight="42.0" prefWidth="300.0" promptText="Manager ID/Email" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
                             <font>
                                 <Font size="19.0" />
                             </font>
@@ -85,11 +85,6 @@
                     <effect>
                         <DropShadow />
                     </effect></Label>
-                <Label layoutX="525.0" layoutY="545.0" text="© 2022 All Rights Reserved" textFill="WHITE">
-                    <font>
-                        <Font size="19.0" />
-                    </font>
-                </Label>
             </children>
         </AnchorPane>
     </children>

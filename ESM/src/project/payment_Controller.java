@@ -20,7 +20,7 @@ public class payment_Controller {
     @FXML private JFXTextField netTotal;
 
     @FXML private JFXRadioButton card;
-    @FXML private JFXRadioButton Fawry;
+    @FXML private JFXRadioButton PayPal;
     @FXML private JFXRadioButton Vodafone_cash;
 
     @FXML private JFXTextField cardNo;
@@ -52,7 +52,7 @@ public class payment_Controller {
     ///////////////////////////////
 
     public boolean checkInputs() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-        if (!card.isSelected() && !Vodafone_cash.isSelected() && !Vodafone_cash.isSelected()) {
+        if (!card.isSelected() && !Vodafone_cash.isSelected() && !PayPal.isSelected()) {
             openPopup("Missing Input", "Please select a payment method.");
             return false;
         }
@@ -70,11 +70,11 @@ public class payment_Controller {
         Parent root = loader.load();
 
         //Get controller of menu scene
-       // cust_menu_Controller controller = loader.getController();
+        cust_menu_Controller controller = loader.getController();
 
         //setting information
-      //  controller.setWelcome(LoggedInUsers.getCust().getName());
-       // controller.setEventBookedStatus(LoggedInUsers.getCust_id());
+        controller.setName(LoggedInUsers.getCust().getName());
+        controller.setEventBookedStatus(LoggedInUsers.getCust_id());
 
         // close current window
         Stage window = (Stage) exit_btn.getScene().getWindow();

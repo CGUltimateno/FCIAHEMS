@@ -29,14 +29,6 @@
                   <Font size="18.0" />
                </font>
             </JFXButton>
-            <Label layoutX="535.0" layoutY="555.0" text="© 2022 All Rights Reserved" textFill="WHITE" AnchorPane.bottomAnchor="27.0">
-               <font>
-                  <Font size="19.0" />
-               </font>
-               <effect>
-                  <DropShadow />
-               </effect>
-            </Label>
             <JFXTextField fx:id="fname" focusColor="MEDIUMSPRINGGREEN" layoutX="40.0" layoutY="146.0" prefHeight="42.0" prefWidth="250.0" promptText="First Name" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE" AnchorPane.leftAnchor="40.0">
                <font>
                   <Font size="19.0" />

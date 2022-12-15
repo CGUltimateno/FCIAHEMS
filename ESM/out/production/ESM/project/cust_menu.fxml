@@ -128,14 +128,22 @@
                                 <DropShadow />
                             </effect>
                         </JFXButton>
-                      <Label layoutX="636.0" layoutY="541.0" text="© 2022 All Rights Reserved" textFill="WHITE">
-                          <font>
-                              <Font size="19.0" />
-                          </font>
-                          <effect>
-                              <DropShadow />
-                          </effect>
-                      </Label>
+                  <Label layoutX="8.0" layoutY="548.0" text="If there are any concerns, do not hesitate to contact us on:" textFill="WHITE">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="562.0" text="fcaihtest123@gmail.com" textFill="WHITE">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
                     </children>
                 </AnchorPane>
                 <Label fx:id="welcome" layoutX="275.0" layoutY="24.0" style="-fx-font-size: 80;" styleClass="Honey" stylesheets="@css/Text_Style.css" text="Welcome Customer" textFill="WHITE" AnchorPane.topAnchor="20.0">

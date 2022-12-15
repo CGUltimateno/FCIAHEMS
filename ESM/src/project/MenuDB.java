@@ -195,13 +195,13 @@ public class MenuDB {
         int net_sum;
         char c;
 
-        System.out.print("Enter rice dish (Biryani / Pulao / Plain White Rice / Plain Brown Rice) : ");
+        System.out.print("Enter rice dish (Brown / Yellow / Plain White Rice / Basmati Rice) : ");
         rice = input.nextLine();
 
         System.out.print("Enter the protein (Chicken/Beef/Mutton/Fish): ");
         protein = input.nextLine();
 
-        System.out.print("Enter your bread preference (Tandoori, naan, lebanese) : ");
+        System.out.print("Enter your bread preference (Baladi, Feeno, lebanese) : ");
         bread = input.nextLine();
 
         System.out.print("Do you need dry-fruits in your menu? y/n : ");
@@ -441,61 +441,6 @@ public class MenuDB {
             e.printStackTrace();
         }
     }
-
-    /*
-    public void editMenu(String id)                                   //Manager can edit menu
-    {
-        Menu obj = getMenu(id);
-
-        Scanner input = new Scanner(System.in);
-        char c;
-
-        System.out.print("Enter name for the menu: ");
-        obj.setName(input.nextLine());
-
-        System.out.print("Enter rice dish (Biryani / Pulao / Plain White Rice / Plain Brown Rice) : ");
-        obj.setRice(input.nextLine());
-
-        System.out.print("Enter the protein (Chicken/Beef/Mutton/Fish): ");
-        obj.setProtein(input.nextLine());
-
-        System.out.print("Enter your dish (Karahi, Qorma, Daal, Manchurian, White Qorma) : ");
-        obj.setDish(input.nextLine());
-
-        System.out.print("Do you need dry-fruits in your menu? y/n : ");
-        c = input.next().charAt(0);
-        obj.setDry_fruit((c == 'y'));
-
-        System.out.print("Do you need roti/naan in your menu? y/n : ");
-        c = input.next().charAt(0);
-        obj.setBread((c == 'y'));
-
-        System.out.print("Do you need sugarfree in your menu? y/n : ");
-        c = input.next().charAt(0);
-        obj.setSugarFree((c == 'y'));
-
-        System.out.print("Do you need Coke in your menu? y/n : ");
-        c = input.next().charAt(0);
-        obj.setCoke((c == 'y'));
-
-        System.out.print("Do you need Miranda in your menu? y/n : ");
-        c = input.next().charAt(0);
-        obj.setMiranda((c == 'y'));
-
-        System.out.print("Do you need Sprite in your menu? y/n : ");
-        c = input.next().charAt(0);
-        obj.setSprite((c == 'y'));
-
-        System.out.print("Do you need water in your menu? y/n : ");
-        c = input.next().charAt(0);
-        obj.setWater((c == 'y'));
-
-        System.out.print("Enter the total price for this menu: ");
-        obj.setNet_sum(input.nextInt());
-
-        this.removeMenu(id);
-        this.addMenu(obj, id);
-    } */
 
     public int getMenuCost(String id) {
         try (
