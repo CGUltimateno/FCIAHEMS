@@ -1,7 +1,6 @@
 package project;
 
 import com.jfoenix.controls.JFXButton;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -255,7 +254,7 @@ public class Admin_menu_Controller {
         controller.init();
 
         // close current window
-        Stage window = (Stage) exit_btn.getScene().getWindow();
+        Stage window = (Stage) edit_btn.getScene().getWindow();
         window.close();
 
         // start new window for edit scene

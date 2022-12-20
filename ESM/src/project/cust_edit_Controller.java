@@ -5,7 +5,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import java.io.IOException;
@@ -89,10 +88,10 @@ public class cust_edit_Controller {
     //////////////////////////////////////////////////////
 
     // called when "save changes" button pressed
-    public void handleEditButtonAction(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void handleEditButtonAction() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("Edit button pressed");
 
-        if (checkInputs() == false) {
+        if (!checkInputs()) {
             System.out.println("Input check failed");
             return;
         }
@@ -171,41 +170,13 @@ public class cust_edit_Controller {
     }
 
     // called when exit X button pressed
-    public void handleExitButton(ActionEvent actionEvent) throws IOException {
+    public void handleExitButton() throws IOException {
         System.out.println("Exit button pressed");
         goToCustMenu();
     }
 
     ///////////////////// SCENE SWITCHING  //////////////////////////
 
-    /// switches to another window (sign in window)
-    public void goToSignIn() throws IOException {
-        System.out.println("Loading Main Menu");
-
-        //Load next
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("main_menu.fxml"));
-        Parent root = loader.load();
-
-        //Get controller of sign in scene
-        mainmenucont controller = loader.getController();
-
-        // close current window
-        Stage window = (Stage) exit_btn.getScene().getWindow();
-        window.close();
-
-        // start new window for sign in scene
-        window = new Stage();
-        window.setScene(new Scene(root, 900, 600));
-
-        Font.loadFont(getClass().getResourceAsStream("Fonts/Alifiyah.otf"), 10);
-        Font.loadFont(getClass().getResourceAsStream("Fonts/Honeymoon Avenue Script Demo.ttf"), 10);
-
-        Font.loadFont(getClass().getResourceAsStream("Fonts/ArchivoNarrow-Regular.ttf"), 10);
-        Font.loadFont(getClass().getResourceAsStream("Fonts/JuliusSansOne-Regular.ttf"), 10);
-
-        window.setTitle("Main Menu");
-        window.show();
-    }
 
     public void goToCustMenu() throws IOException {
         System.out.println("Loading customer menu window");

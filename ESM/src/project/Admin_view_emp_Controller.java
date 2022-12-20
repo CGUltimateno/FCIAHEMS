@@ -6,7 +6,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -85,36 +84,33 @@ public class Admin_view_emp_Controller implements Initializable {
         ArrayList<Employee> EmpList = emp.getListOfEmployees();
 
         // loading all employees
-        for (int i = 0; i < EmpList.size(); i++)
-            dataList.add(EmpList.get(i));
+        dataList.addAll(EmpList);
 
         loadTable();
     }
 
     // for searching through table
     public void setFilter(FilteredList<Employee> filteredData) {
-        Text_Searchbar.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredData.setPredicate(employee -> {
-                // If filter text is empty, display all persons.
+        Text_Searchbar.textProperty().addListener((observable, oldValue, newValue) -> filteredData.setPredicate(employee -> {
+            // If filter text is empty, display all persons.
 
-                if (newValue == null || newValue.isEmpty()) {
-                    return true;
-                }
+            if (newValue == null || newValue.isEmpty()) {
+                return true;
+            }
 
-                // Compare first name and last name of every person with filter text.
-                String lowerCaseFilter = newValue.toLowerCase();
+            // Compare first name and last name of every person with filter text.
+            String lowerCaseFilter = newValue.toLowerCase();
 
-                if (employee.getFname().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
-                    return true; // Filter matches first name.
-                } else if (employee.getEmp_id().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                    return true; // Filter matches last name.
-                } else // Does not match.
-                    if (employee.getLname().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                    return true; // Filter matches last name.
-                }
-                else return String.valueOf(employee.getWage_rate()).indexOf(lowerCaseFilter) != -1;
-            });
-        });
+            if (employee.getFname().toLowerCase().contains(lowerCaseFilter)) {
+                return true; // Filter matches first name.
+            } else if (employee.getEmp_id().toLowerCase().contains(lowerCaseFilter)) {
+                return true; // Filter matches last name.
+            } else // Does not match.
+                if (employee.getLname().toLowerCase().contains(lowerCaseFilter)) {
+                return true; // Filter matches last name.
+            }
+            else return String.valueOf(employee.getWage_rate()).contains(lowerCaseFilter);
+        }));
     }
 
     public void loadTable() {
@@ -146,8 +142,7 @@ public class Admin_view_emp_Controller implements Initializable {
         Text_Account.clear();
         Text_AID.clear();
     }
-     //  SQL GIVES smtp error. FIX LATER
-    public boolean checkAddInputs() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public boolean checkAddInputs() throws IOException {
 
         // check for null values
         if (Text_Fname == null || Text_LName == null || Text_DOB == null || Text_Email == null || Text_Contact == null
@@ -198,7 +193,7 @@ public class Admin_view_emp_Controller implements Initializable {
         return true;
     }
 
-    public boolean checkID() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public boolean checkID() throws IOException{
         if (selectedEmpID == null || selectedEmpID.getText().isEmpty()) {
             openPopup("Missing Input", "Please enter an employee ID.");
             return false;
@@ -210,12 +205,12 @@ public class Admin_view_emp_Controller implements Initializable {
     ///////////////////////////////////////////////////////
 
     // called when exit X button pressed
-    public void handleExitButton(ActionEvent actionEvent) throws IOException {
+    public void handleExitButton() throws IOException {
         System.out.println("Exit button pressed");
         goToAdminMenu();
     }
 
-    public void handleDeleteButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void handleDeleteButton() throws IOException {
         System.out.println("Delete button pressed");
 
         if (!checkID()) {
@@ -251,7 +246,7 @@ public class Admin_view_emp_Controller implements Initializable {
         loadTable();
     }
 
-    public void handleRefreshButton(ActionEvent actionEvent) {
+    public void handleRefreshButton() {
         System.out.println("Refresh button pressed");
 
         Employee emp = new Employee();
@@ -259,13 +254,12 @@ public class Admin_view_emp_Controller implements Initializable {
 
         dataList.clear();
 
-        for(int i = 0; i < EmpList.size(); i++)
-            dataList.add(EmpList.get(i));
+        dataList.addAll(EmpList);
 
         loadTable();
     }
 
-    public void handleEditButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void handleEditButton() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("Edit button pressed");
 
         if (!checkID()) {
@@ -296,7 +290,7 @@ public class Admin_view_emp_Controller implements Initializable {
     }
 
     // called when add Add Employee button pressed
-    public void handleAddButtonAction(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void handleAddButtonAction() throws IOException{
         System.out.println("Add button pressed");
 
         if (!checkAddInputs()) {

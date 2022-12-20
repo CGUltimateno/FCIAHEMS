@@ -1,21 +1,4 @@
 package project;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This is the most important class with the most functionalities happening here. In this class the data of all other
-// classes will use used to book. This class will be used initially when customer decides to login, then to book and
-// then customer will be shown the list of venues from VenueDB, after which customer will be asked to select a venue.
-// Then the next part will to to decide menu for the event, for which the customer will be first shown a list of
-// vendors from CateringServicesDB from which they will select the vendor they want to continue with. Then a list of
-// menus will be shown from MenuDB from which customer can select a menu. Then,customer will be first shown a list of
-// studios from StudioDB from which they will select the studio they want to continue with. Then customer will select
-// their media requirements which will be stored im MediaRequirementsDB. After selecting each and every thing, all
-// this information will be stored in EventDB. After this, customer will be redirected to Payment class where they will
-// first select payment method (Bank Transfer/ Jazz cash/ Easypaisa/ Credit card). Then the total bill will be generated
-// from Bill class and booking will be finalized and the customer id will be assigned to the booking.
-
-// Similarly admin can also view/edit/remove a booking
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -33,6 +16,7 @@ public class Event
     Payment payment;
     Bill bill;
     String approved;
+    String verified;
 
     public Event() {
         name = type = date = starting_time = ending_time = "";
@@ -132,6 +116,12 @@ public class Event
     public void setApproved(int app) {
        this.approved = (app == 1) ? "Yes" : "No";
     }
+    public String getVerified() {
+        return verified;
+    }
+    public void setVerified(int app) {
+        this.verified = (app == 1) ? "Yes" : "No";
+    }
 
     /////////////////// Utility Functions ////////////////////
 
@@ -207,7 +197,10 @@ public class Event
         EventDB obj = new EventDB();
         return obj.getListOfEvents();
     }
-
+    public ArrayList<Event> getListOfApprovedEvents() {
+        EventDB obj = new EventDB();
+        return obj.getListOfApprovedEvents();
+    }
     public void deleteEvent() {
         EventDB obj = new EventDB();
         obj.removeEvent(this.event_id);

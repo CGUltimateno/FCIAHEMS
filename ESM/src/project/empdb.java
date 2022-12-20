@@ -10,52 +10,6 @@ import java.util.Scanner;
 public class empdb
 {
 
-    public void displayAllEmployees()
-    {
-        try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
-        )
-        {
-            if (conn != null)
-            {
-                System.out.println("Database - displaying all employees");
-
-                String query = "select * from employee";  // query to be sent
-
-                Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(query);
-
-                while (rs.next())
-                {                                                                   // reads a row
-                    String name = rs.getString("name");                  // finds a column in the row
-                    String dob = rs.getString("dob");
-                    String phone = rs.getString("phone_no");
-                    String email = rs.getString("email");
-                    String acc = rs.getString("account_number");
-                    String wt = rs.getString("wage_type");
-                    String wr = rs.getString("wage_rate");
-                    String id = rs.getString("emp_id");
-                    String admin_id = rs.getString("admin_id");
-
-                    Employee emp = new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), admin_id);
-                    emp.display();
-                }
-            }
-
-            else {
-                System.out.println("Failed to make connection!");
-            }
-        }
-
-        catch (SQLException e) {
-            System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-        }
-
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     public Employee getEmployee(String id) {
         try (
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
@@ -81,8 +35,7 @@ public class empdb
                     String wr = rs.getString("wage_rate");
                     String admin_id = rs.getString("admin_id");
 
-                    Employee emp = new Employee(id, name, dob, phone, email, acc , wt, Integer.parseInt(wr), admin_id);
-                    return emp;
+                    return new Employee(id, name, dob, phone, email, acc , wt, Integer.parseInt(wr), admin_id);
                 }
             }
 
@@ -99,133 +52,7 @@ public class empdb
             e.printStackTrace();
         }
 
-        Employee empty = new Employee();
-        return empty;
-    }
-
-    public void displayEmployee(String id)
-    {
-        try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
-        )
-        {
-            if (conn != null)
-            {
-                System.out.println("Database - displaying an employee");
-
-                String query = "select * from employee where emp_id = " + id;  // query to be sent
-
-                Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(query);
-
-                while (rs.next())
-                {                                            // reads a row
-                    String name = rs.getString("name");             // finds a column in the row
-                    String dob = rs.getString("dob");
-                    String phone = rs.getString("phone_no");
-                    String email = rs.getString("email");
-                    String acc = rs.getString("account_number");
-                    String wt = rs.getString("wage_type");
-                    String wr = rs.getString("wage_rate");
-                    String admin_id = rs.getString("admin_id");
-
-                    Employee emp = new Employee(id, name, dob, phone, email, acc, wt, Integer.parseInt(wr), admin_id);
-                    emp.display();
-                }
-            }
-
-            else {
-                System.out.println("Failed to make connection!");
-            }
-        }
-
-        catch (SQLException e) {
-            System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-        }
-
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void insertEmployee() {
-        Employee emp = new Employee();
-
-        Scanner input = new Scanner(System.in);
-
-        System.out.print("Enter Admin ID: ");
-        emp.setAdmin_id(input.nextLine());
-
-        System.out.print("Enter name: ");
-        emp.setName(input.nextLine());
-
-        System.out.print("Enter date of birth (dd/mm/yy): ");
-        emp.setDob(input.nextLine());
-
-        System.out.print("Enter phone no: ");
-        emp.setPhone_no(input.nextLine());
-
-        System.out.print("Enter email: ");
-        emp.setEmail(input.nextLine());
-
-        System.out.print("Enter account number: ");
-        emp.setAccount_number(input.nextLine());
-
-        System.out.print("Enter wage type (hourly/daily/monthly): ");
-        emp.setWage_type(input.nextLine());
-
-        System.out.print("Enter wage rate: ");
-        emp.setWage_rate(input.nextInt());
-        
-
-        try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
-        )
-        {
-            if (conn != null) {
-                System.out.println("Database - inserting an employee");
-
-                String query = "select * from employee";  // selects all data from database
-
-                Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(query);
-
-                String last_id = "10000";
-
-                while (rs.next()) {                                            // reads a row
-                    last_id = rs.getString("emp_id");             // reads an id
-                }
-
-                int temp = Integer.parseInt(last_id);
-                temp++;
-                String new_id = Integer.toString(temp);
-
-                emp.setEmp_id(new_id);
-
-                query = "insert into employee(emp_id, name, dob, email, phone_no, account_number, wage_type, wage_rate, admin_id)" +
-                        "values('" + emp.getEmp_id() + "','" + emp.getName() + "'," + "STR_TO_DATE('" + emp.getDob() + "','%d/%m/%y')" + ",'" + emp.getEmail() +
-                        "','" + emp.getPhone_no() + "','" +  emp.getAccount_number() + "','" + emp.getWage_type() + "'," +
-                        Integer.toString(emp.getWage_rate()) + ",'" + emp.getAdmin_id() + "')";
-
-                //System.out.println(query);
-                stmt.executeUpdate(query);
-                stmt.executeUpdate("commit");
-
-                this.addPasswordRecord(emp.getEmp_id(), emp.getEmp_id());
-            }
-
-            else {
-                System.out.println("Failed to make connection!");
-            }
-        }
-
-        catch (SQLException e) {
-            System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-        }
-
-        catch (Exception e) {
-            e.printStackTrace();
-        }
+        return new Employee();
     }
 
     public void insertEmployee(Employee emp, String id) {
@@ -300,38 +127,6 @@ public class empdb
             e.printStackTrace();
         }
     }
-
-    public void changeAdmin(String emp_id, String admin_id) {
-        try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
-        )
-        {
-            if (conn != null) {
-                System.out.println("Database - changing Admin id");
-
-                String query = "UPDATE EMPLOYEE SET admin_id = " + admin_id + " WHERE EMP_ID = " + emp_id;
-
-                Statement stmt = conn.createStatement();
-                stmt.executeUpdate(query);
-
-                query = "commit";
-                stmt.executeUpdate(query);
-            }
-
-            else {
-                System.out.println("Failed to make connection!");
-            }
-        }
-
-        catch (SQLException e) {
-            System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-        }
-
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     public void editEmployee(String id) {
         Employee emp = this.getEmployee(id);
 

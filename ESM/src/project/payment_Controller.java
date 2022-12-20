@@ -3,7 +3,6 @@ package project;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -36,11 +35,11 @@ public class payment_Controller {
         netTotal.setText(total);
     }
 
-    public void handleExitButton(ActionEvent actionEvent) throws IOException {
+    public void handleExitButton() throws IOException {
         goToCustMenu();
     }
 
-    public void handleSaveButton(ActionEvent actionEvent) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+    public void handleSaveButton() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         if (!checkInputs()) {
             return;
         }

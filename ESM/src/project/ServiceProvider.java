@@ -1,6 +1,5 @@
 package project;
 
-import java.util.Scanner;
 
 public class ServiceProvider {
     protected String sp_id;
@@ -27,8 +26,6 @@ public class ServiceProvider {
         this.name = name;
         this.phone_no = phone_no;
         this.account_number = account_number;
-        this.fname = fname;
-        this.lname = lname;
 
         fname = name.contains(" ") ? name.split(" ")[0] : name;
         lname = name.contains(" ") ? name.split(" ")[1] : "";
@@ -38,14 +35,12 @@ public class ServiceProvider {
         this.name = name;
         this.phone_no = phone_no;
         this.account_number = account_number;
-        this.fname = fname;
-        this.lname = lname;
 
         fname = name.contains(" ") ? name.split(" ")[0] : name;
         lname = name.contains(" ") ? name.split(" ")[1] : "";
     }
     public ServiceProvider(ServiceProvider sp){
-        this.sp_id = sp.getSp_id();
+        this.sp_id = sp.getsp_id();
         this.name = sp.getName();
         this.account_number = sp.getAccount_number();
         this.phone_no = sp.getPhone_no();
@@ -55,17 +50,14 @@ public class ServiceProvider {
     }
 
  //////////////////////////////////
-    public String getSp_id() {
+    public String getsp_id() {
         return sp_id;
     }
-
     public void setSp_id(String sp_id) {
         this.sp_id = sp_id;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() {return name;}
 
     public void setName(String name) {
         this.name = name;
@@ -114,7 +106,10 @@ public class ServiceProvider {
     }
 
     ////////// CALLING DATABASE METHODS /////////////
-
+    public boolean changePassword(String curr, String neww) {
+        SPDB obj = new SPDB();
+        return obj.changeSPPassword(sp_id,curr,neww);
+    }
     public void getSPRecord(String id) {
         SPDB obj = new SPDB();
         ServiceProvider sp = obj.getSP(id);
@@ -124,24 +119,7 @@ public class ServiceProvider {
         this.phone_no = sp.getPhone_no();
         this.account_number = sp.getAccount_number();
     }
-    public void editSP() {
-        SPDB obj = new SPDB();
-        obj.editsp(this.sp_id);
-    }
-    public boolean splogin() {
-        String id, pass;
 
-        Scanner input = new Scanner(System.in);
-
-        System.out.print("Logging in. Enter your SP ID: ");
-        id = input.nextLine();
-
-        System.out.print("Enter your password: ");
-        pass = input.nextLine();
-
-        SPDB obj = new SPDB();
-        return obj.splogin(id, pass);
-    }
     public boolean splogin(String id, String pass) {
         SPDB obj = new SPDB();
         return obj.splogin(id, pass);
@@ -150,7 +128,8 @@ public class ServiceProvider {
         SPDB obj = new SPDB();
         obj.updateField(id,field,new_value, isNumeric);
     }
-    public void clear() {
-        sp_id = name = phone_no = account_number =  "";
+    public void verifyEvent(String eventid) {
+        SPDB obj = new SPDB();
+        obj.verifyEvent(eventid);
     }
 }

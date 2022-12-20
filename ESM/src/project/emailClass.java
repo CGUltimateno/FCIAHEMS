@@ -14,27 +14,11 @@ import javax.mail.internet.MimeMessage;
 public class emailClass {
 
     private static final String start = "<body style=\"background-color:mintcream;\"> <h1 style = \"color:firebrick;text-align:center\">FCAIH Event Planners </h1><p style = \"color:black;font-family:calibri;font-size:120%\">Dear User,</p> <p style = \"color:black;font-family:calibri;font-size:120%\"> ";
-    private static String temp;
     private static final String temp2 = "</p> <p style = \"color:black;font-family:calibri;font-size:120%\">Thank you for using FCAIH Planners.</p> <h1 style = \"color:firebrick;font-family:calibri;text-align:center\">Have a great day. :) </h1> </body>";
-    private static String finalstring;
 
     private static Properties props;
     private static String username;
     private static String password;
-
-    public static void setProps(Properties props) {
-        emailClass.props = props;
-    }
-    public static Properties getProps() {
-        return props;
-    }
-
-    public static String getUsername() {
-        return username;
-    }
-    public static void setUsername(String username) {
-        emailClass.username = username;
-    }
 
     public static String getPassword() {
         return password;
@@ -65,8 +49,8 @@ public class emailClass {
 
     public static void sendEmail(String subject, String msg_to_send, String receiver) {
 
-        temp = start + msg_to_send;
-        finalstring = temp + temp2;
+        String temp = start + msg_to_send;
+        String finalstring = temp + temp2;
         try {
             Session session = Session.getDefaultInstance(props, new Authenticator() {
                         protected PasswordAuthentication getPasswordAuthentication() {

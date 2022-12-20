@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/project/CateringServicesDB.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/project/CustomerDB.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/project/EventDB.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/project/ManagerDB.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/project/Media_RequirementsDB.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/project/MenuDB.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/project/SPDB.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/project/StudioDB.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/project/VenueDB.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/project/empdb.java" dialect="GenericSQL" />
+  </component>
+</project>

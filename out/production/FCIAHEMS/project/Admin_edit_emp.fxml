@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.Admin_edit_emp_Controller">
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <AnchorPane prefHeight="424.0" prefWidth="643.0" style="-fx-background-color: black;">
+            <children>
+                <ImageView fitHeight="450.0" fitWidth="643.0" opacity="0.64" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <image>
+                        <Image url="@images/img_empbg.jpg" />
+                    </image></ImageView>
+                <JFXButton fx:id="exit_btn" buttonType="RAISED" layoutX="600.0" layoutY="16.0" onAction="#handleExitButton" style="-fx-background-color: transparent;" text="X" textFill="WHITE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                    <font>
+                        <Font name="Arial Black" size="12.0" />
+                    </font>
+                </JFXButton>
+                <JFXTextField fx:id="fname" focusColor="WHITE" layoutX="113.0" layoutY="140.0" pickOnBounds="false" prefHeight="30.0" prefWidth="160.0" promptText="First Name" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                    <effect>
+                        <DropShadow />
+                    </effect></JFXTextField>
+                <JFXTextField fx:id="lname" focusColor="WHITE" layoutX="347.0" layoutY="140.0" pickOnBounds="false" prefHeight="30.0" prefWidth="160.0" promptText="Last Name" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                    <effect>
+                        <DropShadow />
+                    </effect></JFXTextField>
+                <JFXTextField fx:id="accountno" focusColor="WHITE" layoutX="242.0" layoutY="267.0" pickOnBounds="false" prefHeight="30.0" prefWidth="160.0" promptText="Account Number" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </JFXTextField>
+                <JFXTextField fx:id="email" focusColor="WHITE" layoutX="347.0" layoutY="211.0" pickOnBounds="false" prefHeight="30.0" prefWidth="160.0" promptText="Email Address" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </JFXTextField>
+                <JFXButton fx:id="save_btn" buttonType="RAISED" layoutX="203.0" layoutY="352.0" onAction="#handleSaveButton" prefHeight="51.0" prefWidth="228.0" style="-fx-background-color: Crimson;" text="Save Changes" textFill="WHITE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </JFXButton>
+                <Label layoutX="226.0" layoutY="23.0" text="Edit Employee Info" textFill="WHITE">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Label>
+                <JFXTextField fx:id="dob" focusColor="WHITE" layoutX="113.0" layoutY="213.0" prefHeight="30.0" prefWidth="160.0" promptText="Date of Birth" style="-fx-text-fill: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </JFXTextField>
+
+            </children>
+        </AnchorPane>
+    </children>
+</GridPane>

@@ -35,8 +35,7 @@ public class CateringServicesDB
                     int days = rs.getInt("days");
                     int charges = rs.getInt("charges");
 
-                    Catering_Service caterer = new Catering_Service(name, contact, specialty, days, charges);
-                    return caterer;
+                    return new Catering_Service(name, contact, specialty, days, charges);
                 }
             }
 
@@ -53,8 +52,7 @@ public class CateringServicesDB
             e.printStackTrace();
         }
 
-        Catering_Service emptyObj = new Catering_Service();
-        return emptyObj;
+        return new Catering_Service();
     }
 
     // displays one caterer

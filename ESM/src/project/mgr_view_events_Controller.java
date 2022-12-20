@@ -73,35 +73,29 @@ public class mgr_view_events_Controller implements Initializable {
         Event event = new Event();
         ArrayList<Event> EventList = event.getListOfEvents();
 
-        for (int i = 0; i < EventList.size(); i++)
-            dataList.add(EventList.get(i));
+        dataList.addAll(EventList);
 
         loadTable();
     }
 
     public void setFilter(FilteredList<Event> filteredData) {
-        Text_Searchbar.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredData.setPredicate(employee -> {
-                // If filter text is empty, display all persons.
+        Text_Searchbar.textProperty().addListener((observable, oldValue, newValue) -> filteredData.setPredicate(employee -> {
+            // If filter text is empty, display all persons.
 
-                if (newValue == null || newValue.isEmpty()) {
-                    return true;
-                }
+            if (newValue == null || newValue.isEmpty()) {
+                return true;
+            }
 
-                // Compare first name and last name of every person with filter text.
-                String lowerCaseFilter = newValue.toLowerCase();
+            // Compare first name and last name of every person with filter text.
+            String lowerCaseFilter = newValue.toLowerCase();
 
-                if (employee.getEvent_id().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
-                    return true; // Filter matches id
-                } else if (employee.getName().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                    return true; // Filter matches name
-                } else if (employee.getType().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                    return true; // Filter matches last type
-                }
-                else
-                    return false; // Does not match.
-            });
-        });
+            if (employee.getEvent_id().toLowerCase().contains(lowerCaseFilter)) {
+                return true; // Filter matches id
+            } else // Does not match.
+                if (employee.getName().toLowerCase().contains(lowerCaseFilter)) {
+                return true; // Filter matches name
+            } else return employee.getType().toLowerCase().contains(lowerCaseFilter); // Filter matches last type
+        }));
     }
 
     public void loadTable() {
@@ -134,15 +128,15 @@ public class mgr_view_events_Controller implements Initializable {
     ///////////////////////////////////////////////////////////////
 
     // called when exit X button pressed
-    public void handleExitButton(ActionEvent actionEvent) throws IOException {
+    public void handleExitButton() throws IOException {
         System.out.println("Exit button pressed");
         goToMgrMenu();
     }
 
-    public void handleDeleteButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void handleDeleteButton() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("Delete button pressed");
 
-        if (checkID() == false) {
+        if (!checkID()) {
             System.out.println("Input check failed");
             return;
         }
@@ -173,10 +167,10 @@ public class mgr_view_events_Controller implements Initializable {
         loadTable();
     }
 
-    public void handleViewButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void handleViewButton() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("View button pressed");
 
-        if (checkID() == false) {
+        if (!checkID()) {
             System.out.println("Input check failed");
             return;
         }
@@ -184,10 +178,10 @@ public class mgr_view_events_Controller implements Initializable {
         goToViewEvent(selectedEventID.getText());
     }
 
-    public void handleApproveButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void handleApproveButton() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("Aprrove button pressed");
 
-        if (checkID() == false) {
+        if (!checkID()) {
             System.out.println("Input check failed");
             return;
         }
@@ -207,8 +201,7 @@ public class mgr_view_events_Controller implements Initializable {
 
         ArrayList<Event> EventList = event.getListOfEvents();
 
-        for (int i = 0; i < EventList.size(); i++)
-            dataList.add(EventList.get(i));
+        dataList.addAll(EventList);
 
         loadTable();
     }

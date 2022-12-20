@@ -1,14 +1,12 @@
 package project;
 
 import com.jfoenix.controls.JFXButton;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -31,17 +29,17 @@ public class mgr_menu_Controller {
 
     ///////////////////////////////////////////////////////
 
-    public void handleEventButton(ActionEvent actionEvent) throws IOException {
+    public void handleEventButton() throws IOException {
         System.out.println("Event button pressed");
         goToEventOptions();
     }
 
-    public void handleEditButton(ActionEvent actionEvent) throws IOException {
+    public void handleEditButton() throws IOException {
         System.out.println("Edit button pressed");
         goToEditOptions();
     }
 
-    public void handleExitButton(ActionEvent actionEvent) throws IOException {
+    public void handleExitButton() throws IOException {
         System.out.println("Exit button pressed");
         LoggedInUsers.clearEmp();
         goToMgrSignIn();
@@ -85,8 +83,6 @@ public class mgr_menu_Controller {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("mgr_view_events.fxml"));
         Parent root = loader.load();
 
-        //Get controller of event scene
-        mgr_view_events_Controller controller = loader.getController();
 
         // close current window
         Stage window = (Stage) event_btn.getScene().getWindow();

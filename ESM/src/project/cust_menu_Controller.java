@@ -1,14 +1,11 @@
 package project;
 import com.jfoenix.controls.JFXButton;
-import com.sun.glass.ui.EventLoop;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import javax.sound.sampled.LineUnavailableException;
@@ -37,26 +34,23 @@ public class cust_menu_Controller {
         event = event.getEvent(cust_id,1);
 
         // no event against that cust_id
-        if (event.getName().isEmpty())
-            hasCustBookedEvent = false;
-        else
-            hasCustBookedEvent = true;
+        hasCustBookedEvent = !event.getName().isEmpty();
     }
 
     //////////////////////////////////////////////////
 
-    public void handleEditButton(ActionEvent actionEvent) throws IOException {
+    public void handleEditButton() throws IOException {
         System.out.println("Edit button pressed");
         goToEditScreen();
     }
 
-    public void handleSignOutButton(ActionEvent actionEvent) throws IOException {
+    public void handleSignOutButton() throws IOException {
         System.out.println("Sign out button pressed");
         LoggedInUsers.clearCust();
         goToSignIn();
     }
 
-    public void handleBookButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void handleBookButton() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("Book button pressed");
 
         // customer cannot book another event
@@ -66,7 +60,7 @@ public class cust_menu_Controller {
             goToBookEvent();
     }
 
-    public void handleViewButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void handleViewButton() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("View button pressed");
 
         // customer view event if it isn't booked
@@ -113,9 +107,6 @@ public class cust_menu_Controller {
         //Load next
         FXMLLoader loader = new FXMLLoader(getClass().getResource("main_menu.fxml"));
         Parent root = loader.load();
-
-        //Get controller of sign in scene
-        mainmenucont controller = loader.getController();
 
         // close current window
         Stage window = (Stage) signout_btn.getScene().getWindow();
@@ -168,9 +159,7 @@ public class cust_menu_Controller {
 
         // customer has not booked event
         // show user prompt that event is not booked
-        else {
 
-        }
     }
 
     public void goToBookEvent() throws IOException {

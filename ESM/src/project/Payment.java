@@ -1,11 +1,5 @@
 package project;
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// For asking payment details from customer
-// This class will not store anything, simply ask for details and then display the selected details on the screen
-// Its simply cin and cout (ONLY FOR INTERFACE WALE)
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 import java.util.Scanner;
 
 public class Payment
@@ -20,33 +14,6 @@ public class Payment
         card_no = "";
         cvc = 0;
     }
-
-    public Payment(int method, float discount_amount, String discount_details, String date_paid)
-    {
-        this.method = method;
-        this.date_paid = date_paid;
-    }
-
-    public int getMethod()
-    {
-        return method;
-    }
-
-    public void setMethod(int method)
-    {
-        this.method = method;
-    }
-
-    public String getDate_paid()
-    {
-        return date_paid;
-    }
-
-    public void setDate_paid(String date_paid)
-    {
-        this.date_paid = date_paid;
-    }
-
 public void inputDetails()                                    //Will input payement details
     {
 

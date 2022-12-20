@@ -26,51 +26,21 @@ public class Bill
         tax = 3/100; // 3% tax
     }
 
-    public int getElectricity_cost() {
-        return electricity_cost;
-    }
-    public void setElectricity_cost(int electricity_cost) {
-        this.electricity_cost = electricity_cost;
-    }
 
-    public int getSecurity_cost() {
-        return security_cost;
-    }
-    public void setSecurity_cost(int security_cost) {
-        this.security_cost = security_cost;
-    }
-
-    public int getStaff_cost() {
-        return staff_cost;
-    }
-    public void setStaff_cost(int staff_cost) {
-        this.staff_cost = staff_cost;
-    }
-
-    public int getMenu_cost() {
-        return menu_cost;
-    }
     public void setMenu_cost(int menu_cost) {
         this.menu_cost = menu_cost;
     }
 
-    public int getVenue_cost() {
-        return venue_cost;
-    }
     public void setVenue_cost(int venue_cost) {
         this.venue_cost = venue_cost;
     }
 
-    public int getStudio_cost() {
-        return studio_cost;
-    }
+
     public void setStudio_cost(int studio_cost) {
         this.studio_cost = studio_cost;
     }
 
-    public int getCatering_cost() {
-        return catering_cost;
-    }
+
     public void setCatering_cost(int catering_cost) {
         this.catering_cost = catering_cost;
     }

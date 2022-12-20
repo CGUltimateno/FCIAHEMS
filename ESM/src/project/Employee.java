@@ -1,15 +1,5 @@
 package project;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This class is inherited by Admin
-// A super class that has information variables to store information about the employees. Every employee will be given
-// a unique employee id (5 digit).
-
-// Employee -> EmployeeDB -> Admin
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Employee
 {
@@ -225,51 +215,14 @@ public class Employee
         this.admin_id = emp.getAdmin_id();
     }
 
-    public void editEmployee() {
-        empdb obj = new empdb();
-        obj.editEmployee(this.emp_id);
-    }
 
     // Employee logging in
-    public boolean employeeLogin() {
-        String id, pass;
-
-        Scanner input = new Scanner(System.in);
-
-        System.out.print("Logging in. Enter your employee ID: ");
-        id = input.nextLine();
-
-        System.out.print("Enter your password: ");
-        pass = input.nextLine();
-
-        empdb obj = new empdb();
-        return obj.employeeLogin(id, pass);
-    }
-
     public boolean employeeLogin(String id, String pass) {
         empdb obj = new empdb();
         return obj.employeeLogin(id, pass);
     }
 
     // Employee changing password
-    public void changePassword() {
-        String id, old_pass, new_pass;
-
-        Scanner input = new Scanner(System.in);
-
-        System.out.print("Changing password. Enter your employee ID: ");
-        id = input.nextLine();
-
-        System.out.print("Enter your current password: ");
-        old_pass = input.nextLine();
-
-        System.out.print("Enter your new password: ");
-        new_pass = input.nextLine();
-
-        empdb obj = new empdb();
-        obj.changeEmployeePassword(id, old_pass, new_pass);
-    }
-
     public boolean changePassword(String curr, String neww) {
         empdb obj = new empdb();
         return obj.changeEmployeePassword(emp_id,curr,neww);
@@ -320,4 +273,5 @@ public class Employee
         empdb obj = new empdb();
         return !(obj.getEmployeeByEmail(email).getEmp_id().isEmpty());
     }
+
 }

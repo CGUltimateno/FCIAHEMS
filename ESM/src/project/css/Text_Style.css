@@ -14,14 +14,18 @@
 .Honey{
     -fx-font-family: "Honeymoon Avenue Script";
 }
+
 .CarryYou{
     -fx-font-family:"Carry You Regular";
 }
 .LatoLight{
      -fx-font-family:"Lato Light";
 }
-.Raleway{
-     -fx-font-family: "Raleway";
+.LovelineGlamour{
+     -fx-font-family: "Loveline Glamour";
+}
+.lolidk{
+     -fx-font-family: "";
 }
 /*Design the Date Picker*/
 

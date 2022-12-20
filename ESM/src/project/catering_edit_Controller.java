@@ -2,7 +2,6 @@ package project;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -153,12 +152,12 @@ public class catering_edit_Controller {
     ////////////////////////////////////////////////
 
     // exit this screen, go back to manager menu
-    public void handleExitButton(ActionEvent actionEvent) throws IOException {
+    public void handleExitButton() throws IOException {
         System.out.println("Exit button pressed");
         goToMgrMenu();
     }
 
-    public void handleSaveButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void handleSaveButton() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("Save button pressed");
 
         if (!checkInputs()) {

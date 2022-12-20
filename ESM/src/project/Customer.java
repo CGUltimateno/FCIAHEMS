@@ -1,6 +1,5 @@
 package project;
 
-import java.util.*;
 public class Customer {
         private String name;
         private int age;
@@ -103,12 +102,6 @@ public class Customer {
             System.out.println(priority_status);
         }
 
-        // project.Customer creating their account with default password
-        public void createCustomerAccount()
-        {
-            CustomerDB obj = new CustomerDB();
-            obj.insertCustomer();
-        }
 
         // project.Customer creating their account with custom password
         public String createCustomerAccountWithPass(String pass)
@@ -117,19 +110,7 @@ public class Customer {
             return obj.insertCustomerWithPassword(this, pass);
         }
 
-        // project.Customer editing their account
-        public void editCustomerAccount(String id)
-        {
-            CustomerDB obj = new CustomerDB();
-            obj.editCustomer(id);
-        }
 
-        // project.Customer editing their account
-        public void editCustomerAccountWithObj(String id)
-        {
-            CustomerDB obj = new CustomerDB();
-            obj.editCustomer(this, id);
-        }
 
         // edit one field
         public void editCustomerAccountField(String id, String field, String new_value) {
@@ -137,17 +118,6 @@ public class Customer {
             obj.updateField(id,field,new_value);
         }
 
-        // project.Customer deleting their account
-        public void deleteCustomerAccount()
-        {
-            CustomerDB obj = new CustomerDB();
-            String id;
-            System.out.print("Deleting your account. Enter your customer id: ");
-            Scanner input = new Scanner(System.in);
-            id = input.nextLine();
-
-            obj.removeCustomer(id);
-        }
 
         // project.Customer logging in - returns true or false
         public boolean customerLogin(String id, String pass) {
@@ -156,23 +126,6 @@ public class Customer {
         }
 
         // project.Customer changing password
-        public void changePassword() {
-            String id, old_pass, new_pass;
-
-            Scanner input = new Scanner(System.in);
-
-            System.out.print("Changing password. Enter your customer ID: ");
-            id = input.nextLine();
-
-            System.out.print("Enter your current password: ");
-            old_pass = input.nextLine();
-
-            System.out.print("Enter your new password: ");
-            new_pass = input.nextLine();
-
-            CustomerDB obj = new CustomerDB();
-            obj.changeCustomerPassword(id, old_pass, new_pass);
-        }
 
         // project.Customer changing password
         public boolean changePassword(String id, String old_pass, String new_pass) {

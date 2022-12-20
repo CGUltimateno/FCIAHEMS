@@ -1,10 +1,5 @@
 package project;
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This class stores the requirements of the client. All the requirements required related to media are stored by using
-// this class
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 public class Media_Requirements
 {
     private int photography, videography;
@@ -89,7 +84,6 @@ public class Media_Requirements
 
     public String addMediaRequirements() {
         Media_RequirementsDB obj = new Media_RequirementsDB();
-        String media_id = obj.addMediaRequirement(this);
-        return media_id;
+        return obj.addMediaRequirement(this);
     }
 }

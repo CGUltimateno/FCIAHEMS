@@ -2,7 +2,6 @@ package project;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -92,12 +91,12 @@ public class Admin_edit_emp_Controller {
 
     //////////////////////////////////////////////////
 
-    public void handleExitButton(ActionEvent actionEvent) throws IOException {
+    public void handleExitButton() throws IOException {
         System.out.println("Exit button pressed");
         exitScreen();
     }
 
-    public void handleSaveButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void handleSaveButton() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("Save button pressed");
 
         if (!checkInputs()) {
@@ -133,7 +132,7 @@ public class Admin_edit_emp_Controller {
 
     /////////////////// SCENE SWITCHING ///////////////
 
-    public void exitScreen() throws IOException {
+    public void exitScreen() {
         System.out.println("Closing edit window");
         Stage window = (Stage) exit_btn.getScene().getWindow();
         window.close();

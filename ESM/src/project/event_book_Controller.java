@@ -3,13 +3,11 @@ package project;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXTextField;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
@@ -379,7 +377,7 @@ public class event_book_Controller {
 
     //////////////////////////////////////////////////////////
 
-    public void handleVenue1Button(MouseEvent  actionEvent) {
+    public void handleVenue1Button() {
         System.out.println("Venue 1 selected");
         selectedVenue_id = venueIDs.get(0);
 
@@ -393,7 +391,7 @@ public class event_book_Controller {
         venue3_btn.setSelected(false);
     }
 
-    public void handleVenue2Button(MouseEvent actionEvent) {
+    public void handleVenue2Button() {
         System.out.println("Venue 2 selected");
         selectedVenue_id = venueIDs.get(1);
 
@@ -407,7 +405,7 @@ public class event_book_Controller {
         venue3_btn.setSelected(false);
     }
 
-    public void handleVenue3Button(MouseEvent  actionEvent) {
+    public void handleVenue3Button() {
         System.out.println("Venue 3 selected");
         selectedVenue_id = venueIDs.get(2);
 
@@ -421,7 +419,7 @@ public class event_book_Controller {
         venue2_btn.setSelected(false);
     }
 
-    public void handleCaterer1Button(MouseEvent  actionEvent) {
+    public void handleCaterer1Button() {
         System.out.println("Caterer 1 selected");
         selectedCatering_id = catererIDs.get(0);
 
@@ -429,7 +427,7 @@ public class event_book_Controller {
         caterer3_btn.setSelected(false);
     }
 
-    public void handleCaterer2Button(MouseEvent  actionEvent) {
+    public void handleCaterer2Button() {
         System.out.println("Caterer 2 selected");
         selectedCatering_id = catererIDs.get(1);
 
@@ -437,7 +435,7 @@ public class event_book_Controller {
         caterer3_btn.setSelected(false);
     }
 
-    public void handleCaterer3Button(MouseEvent actionEvent) {
+    public void handleCaterer3Button() {
         System.out.println("Caterer 3 selected");
         selectedCatering_id = catererIDs.get(2);
 
@@ -445,7 +443,7 @@ public class event_book_Controller {
         caterer1_btn.setSelected(false);
     }
 
-    public void handleStudio1Button(MouseEvent  actionEvent) {
+    public void handleStudio1Button() {
         System.out.println("Studio 1 selected");
         selectedStudio_id = studioIDs.get(0);
 
@@ -453,7 +451,7 @@ public class event_book_Controller {
         studio3_btn.setSelected(false);
     }
 
-    public void handleStudio2Button(MouseEvent  actionEvent) {
+    public void handleStudio2Button() {
         System.out.println("Studio 2 selected");
         selectedStudio_id = studioIDs.get(1);
 
@@ -461,7 +459,7 @@ public class event_book_Controller {
         studio3_btn.setSelected(false);
     }
 
-    public void handleStudio3Button(MouseEvent  actionEvent) {
+    public void handleStudio3Button() {
         System.out.println("Studio 3 selected");
         selectedStudio_id = studioIDs.get(2);
 
@@ -469,7 +467,7 @@ public class event_book_Controller {
         studio1_btn.setSelected(false);
     }
 
-    public void handleExitButton(ActionEvent actionEvent) throws IOException {
+    public void handleExitButton() throws IOException {
         System.out.println("Exit button pressed");
         goToCustMenu();
     }
@@ -529,7 +527,7 @@ public class event_book_Controller {
             else
                 bread += ", Feeno";
 
-            price += menuPrices.get("Feeno");
+            price += menuPrices.get("feeno");
         }
 
         if (menu_bread_lebanese.isSelected()) {
@@ -622,10 +620,10 @@ public class event_book_Controller {
     }
 
     // processing booking details
-    public void handleBookButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void handleBookButton() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("Book button pressed");
 
-        if (checkInputs() == false) {
+        if (!checkInputs()) {
             System.out.println("Input check failed.");
             return;
         }

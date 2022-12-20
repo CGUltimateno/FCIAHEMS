@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="600.0" prefWidth="900.0" vgap="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.Admin_Signin_Controller">
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: black;">
+            <children>
+                <ImageView fitHeight="600.0" fitWidth="900.0" layoutX="-1.0" opacity="0.56" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <image>
+                        <Image url="@images/adminsignin.jpg" />
+                    </image></ImageView>
+                <JFXButton fx:id="exit_btn" buttonType="RAISED" layoutX="840.0" layoutY="19.0" onAction="#handleExitButton" ripplerFill="#d0d0d0" text="X" textFill="WHITE" AnchorPane.topAnchor="20.0">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </JFXButton>
+                <AnchorPane layoutX="449.0" layoutY="84.0" prefHeight="467.0" prefWidth="380.0">
+                    <children>
+                        <JFXTextField fx:id="emp_id" focusColor="MEDIUMSPRINGGREEN" layoutX="40.0" layoutY="190.0" prefHeight="42.0" prefWidth="300.0" promptText="Admin ID/Email" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                            <font>
+                                <Font size="19.0" />
+                            </font>
+                            <effect>
+                                <DropShadow />
+                            </effect>
+                        </JFXTextField>
+                        <JFXTextField fx:id="emp_pass" focusColor="MEDIUMSPRINGGREEN" layoutX="40.0" layoutY="268.0" prefHeight="42.0" prefWidth="300.0" promptText="Password" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                            <font>
+                                <Font size="19.0" />
+                            </font>
+                            <effect>
+                                <DropShadow />
+                            </effect>
+                        </JFXTextField>
+                        <Label layoutX="121.0" layoutY="100.0" text="Sign in" textFill="WHITE">
+                            <font>
+                                <Font size="48.0" />
+                            </font>
+                            <effect>
+                                <DropShadow />
+                            </effect>
+                        </Label>
+                        <JFXButton fx:id="signin_btn" buttonType="RAISED" layoutX="40.0" layoutY="334.0" onAction="#handleSignInButton" opacity="0.78" prefHeight="26.0" prefWidth="300.0" style="-fx-background-color: A17B3F;" text="sign in" textFill="WHITE">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <effect>
+                                <DropShadow />
+                            </effect>
+                        </JFXButton>
+                        <JFXRadioButton fx:id="admin_btn" layoutX="40.0" layoutY="241.0" style="-jfx-unselected-color: White; -jfx-selected-color: MediumSpringGreen;" text="Admin" textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <effect>
+                                <DropShadow />
+                            </effect>
+                        </JFXRadioButton>
+                    </children>
+                </AnchorPane>
+                <Label layoutX="60.0" layoutY="260.0" style="-fx-font-size: 40;" styleClass="LatoLight" stylesheets="@css/Text_Style.css" text="FCAIH EVENTS " textFill="WHITE">
+                    <font>
+                        <Font name="Yu Gothic Light" size="58.0" />
+                    </font>
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Label>
+                <Label alignment="CENTER" layoutX="132.0" layoutY="314.0" style="-fx-font-size: 24;" styleClass="Archivo" stylesheets="@css/Text_Style.css" text="Planning Your Dreams" textFill="WHITE">
+                    <effect>
+                        <DropShadow />
+                    </effect>
+               <font>
+                  <Font size="36.0" />
+               </font></Label>
+            </children>
+        </AnchorPane>
+    </children>
+</GridPane>

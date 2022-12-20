@@ -1,10 +1,8 @@
 package project;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -52,10 +50,10 @@ public class mgr_signin_Controller {
         return true;
     }
 
-    public void handleSignInButton(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void handleSignInButton() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("Sign in button pressed");
 
-        if (checkInputs() == false) {
+        if (!checkInputs()) {
             System.out.println("Input check failed");
             return;
         }
@@ -79,16 +77,11 @@ public class mgr_signin_Controller {
             // store customer info
             System.out.println("Login successful");
             LoggedInUsers.initEmp(id);
-
-            // send email
-            String msg = "You have just signed in to our system. If this was not you, then please contact us at asheventshelp@gmail.com";
-           // emailClass.sendEmail("Successful Login", msg, LoggedInUsers.getEmp().getEmail());
-
             goToMgrMenu();
         }
     }
 
-    public void handleExitButton(ActionEvent actionEvent) throws IOException {
+    public void handleExitButton() throws IOException {
         System.out.println("Exit button pressed");
         goToMainMenu();
     }
@@ -101,9 +94,6 @@ public class mgr_signin_Controller {
         //Load next
         FXMLLoader loader = new FXMLLoader(getClass().getResource("main_menu.fxml"));
         Parent root = loader.load();
-
-        //Get controller of menu scene
-        mainmenucont controller = loader.getController();
 
         // close current window
         Stage window = (Stage) exit_btn.getScene().getWindow();

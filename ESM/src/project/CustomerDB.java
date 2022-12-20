@@ -5,7 +5,7 @@ public class CustomerDB {
     public void displayAllCustomers()                                   //Will display the list of all the customers for manager
     {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -70,7 +70,7 @@ public class CustomerDB {
     public void displayCustomer(String id)                            //Display the specific customer details
     {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -134,7 +134,7 @@ public class CustomerDB {
     public Customer getCustomer(String id)
     {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -155,8 +155,7 @@ public class CustomerDB {
                     int ps = rs.getInt("priority_status");
                     int age = rs.getInt("age");
 
-                    Customer cust = new Customer(name, age, phone, email, acc, ps);
-                    return cust;
+                    return new Customer(name, age, phone, email, acc, ps);
                 }
             }
 
@@ -176,14 +175,13 @@ public class CustomerDB {
             e.printStackTrace();
         }
 
-        Customer emptyObj = new Customer();
-        return emptyObj;
+        return new Customer();
     }
 
     public Customer getCustomerByEmail(String email)
     {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -203,8 +201,7 @@ public class CustomerDB {
                     int ps = rs.getInt("priority_status");
                     int age = rs.getInt("age");
 
-                    Customer cust = new Customer(name, age, phone, email, acc, ps);
-                    return cust;
+                    return new Customer(name, age, phone, email, acc, ps);
                 }
             }
 
@@ -224,8 +221,7 @@ public class CustomerDB {
             e.printStackTrace();
         }
 
-        Customer emptyObj = new Customer();
-        return emptyObj;
+        return new Customer();
     }
 
     public void insertCustomer()
@@ -253,7 +249,7 @@ public class CustomerDB {
         cust.setAge(input.nextInt());
 
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -300,7 +296,7 @@ public class CustomerDB {
     public String insertCustomerWithPassword(Customer cust, String pass)
     {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -353,7 +349,7 @@ public class CustomerDB {
     public void insertCustomer(Customer cust, String id)
     {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -389,7 +385,7 @@ public class CustomerDB {
     public void removeCustomer(String id)
     {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -448,16 +444,10 @@ public class CustomerDB {
         this.insertCustomer(cust, id);
     }
 
-    public void editCustomer(Customer cust, String id)
-    {
-        this.removeCustomer(id);
-        this.insertCustomer(cust, id);
-    }
-
     // Returns true if password correct against that id, false otherwise
     public boolean customerLogin(String idOrEmail, String pass) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -466,12 +456,12 @@ public class CustomerDB {
                 String query;
 
                 if (idOrEmail.indexOf('@') == -1) {
-                    query = "SELECT password FROM customerpass WHERE cust_id = \'" + idOrEmail + "\'";
+                    query = "SELECT password FROM customerpass WHERE cust_id = '" + idOrEmail + "'";
                 }
 
                 else {
                     query = "SELECT password FROM customerpass WHERE cust_id IN " +
-                            "(SELECT cust_id FROM customer WHERE email = \'" + idOrEmail + "\')";
+                            "(SELECT cust_id FROM customer WHERE email = '" + idOrEmail + "')";
                 }
 
                 Statement stmt = conn.createStatement();
@@ -509,7 +499,7 @@ public class CustomerDB {
     public void updateField(String id, String field, String new_value) {
         System.out.println("field = " + field);
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -543,7 +533,7 @@ public class CustomerDB {
     // Returns true if password changed successfully, false otherwise
     public boolean changeCustomerPassword(String id, String old_pass, String new_pass) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -579,7 +569,7 @@ public class CustomerDB {
     // Changes password without checking
     public void changeCustomerPassword(String id, String new_pass) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -610,7 +600,7 @@ public class CustomerDB {
 
     public void deletePasswordRecord(String id) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -642,7 +632,7 @@ public class CustomerDB {
     // Default password is same as cust when customer is created
     public void addPasswordRecord(String id, String pass) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null) {
@@ -672,7 +662,7 @@ public class CustomerDB {
 
     public String getCustomerIDbyEmail(String email) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)
@@ -712,7 +702,7 @@ public class CustomerDB {
 
     public String getCustomerEmailByID(String ID) {
         try (
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass());
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + Database.getDb_name(), Database.getDb_user(), Database.getDb_pass())
         )
         {
             if (conn != null)

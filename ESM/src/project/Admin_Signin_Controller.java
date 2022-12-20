@@ -9,9 +9,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public class Admin_Signin_Controller {
@@ -35,7 +32,7 @@ public class Admin_Signin_Controller {
 
     ///////////////////////////////////////////////////
 
-    public void handleSignInButton() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void handleSignInButton() throws IOException {
         System.out.println("Sign in button pressed (Admin)");
 
         String id = emp_id.getText();
@@ -109,7 +106,7 @@ public class Admin_Signin_Controller {
         controller.setName(LoggedInUsers.getEmp().getName());
 
         // close current window
-      Stage window = (Stage) exit_btn.getScene().getWindow();
+      Stage window = (Stage) signin_btn.getScene().getWindow();
        window.close();
 
         // start new window for admin scene

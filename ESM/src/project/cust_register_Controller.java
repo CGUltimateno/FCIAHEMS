@@ -2,7 +2,6 @@ package project;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -61,11 +60,11 @@ public class cust_register_Controller {
     }
 
     // called when register button pressed
-    public void handleRegisterButtonAction(ActionEvent actionEvent) throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+    public void handleRegisterButtonAction() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         System.out.println("Register button pressed.");
 
         // user entered incorrect input/no input
-        if (checkInputs() == false) {
+        if (!checkInputs()) {
             System.out.println("Input check failed.");
             return;
         }
@@ -108,7 +107,7 @@ public class cust_register_Controller {
         goBackToSignIn();
     }
 
-    public void handleExitButton(ActionEvent actionEvent) throws IOException {
+    public void handleExitButton() throws IOException {
         System.out.println("Exit button pressed");
         goBackToSignIn();
     }
@@ -122,9 +121,6 @@ public class cust_register_Controller {
         //Load next
         FXMLLoader loader = new FXMLLoader(getClass().getResource("main_menu.fxml"));
         Parent root = loader.load();
-
-        //Get controller of sign in scene
-        mainmenucont controller = loader.getController();
 
         // close current window
         Stage window = (Stage) exit_btn.getScene().getWindow();
